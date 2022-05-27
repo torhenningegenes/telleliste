@@ -1,5 +1,9 @@
 function Barn(props) {
-  return <div>{props.navn}</div>;
+  return (
+    <div>
+      <h2>{props.navn}</h2>
+    </div>
+  );
 }
 
 export default Barn;

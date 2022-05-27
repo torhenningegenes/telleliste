@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Barn from "./barn";
+import classes from "./nytelling.module.css";
 
 function NyTelling(props) {
   const barn = [
@@ -18,14 +19,25 @@ function NyTelling(props) {
     { id: 13, navn: "Heidi", tilstede: true },
   ];
 
+  function counted() {
+    console.log("Click");
+
+    return;
+    //Remove from list. use state
+  }
   return (
     <Fragment>
-      <div className="container">
-        <ul className="list-group center">
+      <div className="container ">
+        <ul className="list-group text-center d-flex justify-content-center align-items-center">
           {barn.map((b, i) => (
-            <li className="list-group-item">
-              <Barn key={i} navn={b.navn} />
-              <button>Tellt</button>
+            <li className="list-group-item list-barn" key={b.id}>
+              <Barn navn={b.navn} />
+              <button
+                className="btn btn-lg  btn-success rounded-pill"
+                onClick={counted}
+              >
+                Ok
+              </button>
             </li>
           ))}
         </ul>
