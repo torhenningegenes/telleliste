@@ -1,0 +1,27 @@
+.customBtn {
+  background-color: #48e055;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-size: 31px;
+  height: 100px;
+  width: 100px;
+  box-shadow: 0 2px 4px darkslategray;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 70%;
+}
+
+.customBtn:active {
+  background-color: #aaaaaa;
+  box-shadow: 0 0 2px darkslategray;
+  transform: translateY(2px);
+  border-radius: 70%;
+}
+
+.btnCounted {
+  background-color: #aaaaaa;
+  box-shadow: 0 0 2px darkslategray;
+  transform: translateY(2px);
+  border-radius: 70%;
+}

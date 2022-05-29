@@ -4,9 +4,8 @@ import classes from "./nytelling.module.css";
 import { useState, useRef } from "react";
 
 function NyTelling(props) {
-  let btnCss = classes.customBtn;
   // Setting useState for holding the state for the button presses.
-  let [counted, setCounted] = useState(false);
+
   const [btnColor, setBtnColor] = useState("");
 
   // dummy-data for kids.
@@ -25,36 +24,18 @@ function NyTelling(props) {
     { id: 12, navn: "Tor Henning", tilstede: true },
     { id: 13, navn: "Heidi", tilstede: true },
   ]);
-  let barnIdClicked;
-  function barnCounted() {
-    setCounted((current) => !current);
-    console.log(counted);
-    // barn id clicked.
-    let barnId;
-    for (const b of barn) {
-      console.log(b.id);
-    }
-  }
 
+  const ids = barn.entries();
   return (
     <Fragment>
       <div className="container ">
         <ul className="list-group text-center d-flex justify-content-center align-items-center">
-          {barn.map((b, i) => (
-            <li className="list-group-item list-barn" key={b.id}>
-              <Barn navn={b.navn} />
-              <button
-                id="countBtn"
-                className={`${btnCss}`}
-                onClick={barnCounted}
-                style={{
-                  backgroundColor: counted ? "salmon" : "",
-                }}
-              >
-                ✓
-              </button>
-            </li>
-          ))}
+          {barn.map((barn) => {
+            return <Barn key={barn.id} navn={barn.navn} />;
+          })}
+          <button className="btn btn-info btn-lg mt-5 ">
+            Registrer telling
+          </button>
         </ul>
       </div>
     </Fragment>
