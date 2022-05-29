@@ -1,7 +1,7 @@
 .customBtn {
   background-color: #48e055;
-  color: white;
-  border: none;
+  color: rgb(39, 102, 41);
+  border: solid 2px #276629;
   padding: 5px;
   font-size: 31px;
   height: 100px;
