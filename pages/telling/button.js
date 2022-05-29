@@ -17,6 +17,7 @@ function CountButton() {
       onClick={barnCounted}
       style={{
         backgroundColor: counted ? "#48e055" : "grey",
+        color: counted ? "#276629" : "white",
       }}
     >
       ✓

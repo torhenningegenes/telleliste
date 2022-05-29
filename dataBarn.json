@@ -1,0 +1,27 @@
+[
+  { "id": 1, "navn": "Aria", "tilstede": true, "avdeling": "Avdeling 8" },
+  { "id": 2, "navn": "Per", "tilstede": true, "avdeling": "Avdeling 8" },
+  { "id": 3, "navn": "Olav", "tilstede": true, "avdeling": "Avdeling 8" },
+  { "id": 4, "navn": "Kari", "tilstede": true, "avdeling": "Avdeling 8" },
+  { "id": 5, "navn": "Harald", "tilstede": true, "avdeling": "Avdeling 8" },
+  { "id": 6, "navn": "Sonja", "tilstede": true, "avdeling": "Avdeling 8" },
+  {
+    "id": 7,
+    "navn": "Mette-Marit",
+    "tilstede": true,
+    "avdeling": "Avdeling 8"
+  },
+  { "id": 8, "navn": "Haakon", "tilstede": true, "avdeling": "Avdeling 8" },
+  { "id": 9, "navn": "Magnus", "tilstede": true, "avdeling": "Avdeling 8" },
+  { "id": 10, "navn": "Ellie", "tilstede": true, "avdeling": "Avdeling 8" },
+  { "id": 11, "navn": "Nora", "tilstede": true, "avdeling": "Avdeling 8" },
+  {
+    "id": 12,
+    "navn": "Tor Henning",
+    "tilstede": true,
+    "avdeling": "Avdeling 8"
+  },
+  { "id": 13, "navn": "Heidi", "tilstede": true, "avdeling": "Avdeling 8" },
+  { "id": 14, "navn": "Ingunn", "tilstede": true, "avdeling": "Avdeling 8" },
+  { "id": 15, "navn": "Øystein", "tilstede": true, "avdeling": "Avdeling 8" }
+]
