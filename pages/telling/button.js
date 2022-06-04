@@ -4,12 +4,17 @@ function CountButton() {
   let [counted, setCounted] = useState(false);
   let btnCss = classes.customBtn;
 
-  let barnIdClicked;
-  function barnCounted() {
-    setCounted((current) => !current);
+  // let barnIdClicked;
+  // function barnCounted() {
+  //   setCounted((current) => !current);
+  //   console.log(counted);
+  //   // barn id clicked.}
+
+  function barnCounted(e) {
+    setCounted((counted = true));
     console.log(counted);
-    // barn id clicked.
   }
+
   return (
     <button
       id="countBtn"
