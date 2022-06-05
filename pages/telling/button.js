@@ -1,11 +1,14 @@
 import classes from "./button.module.css";
 import { useState } from "react";
+import { useAppContext } from "../AppWrapper";
+import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 
-function CountButton() {
+function CountButton(props) {
   let [counted, setCounted] = useState(false);
   const btnCss = classes.customBtn;
   const regBtn = classes.regretBtn;
-
+  const { navn, avdeling } = props;
+  const myContext = useAppContext();
   // let barnIdClicked;
   // function barnCounted() {
   //   setCounted((current) => !current);
@@ -14,9 +17,14 @@ function CountButton() {
 
   function barnCounted(e) {
     setCounted((counted = true));
+    myContext.push({ navn: navn, avdeling: avdeling });
+
+    console.log(myContext);
   }
   function regret() {
     setCounted((counted = false));
+    myContext.pop({ navn: navn, avdeling: avdeling });
+    console.log(myContext);
   }
 
   return (
@@ -29,7 +37,6 @@ function CountButton() {
           backgroundColor: counted ? "#48e055" : "grey",
           color: counted ? "#276629" : "white",
         }}
-        isKidCounted={counted}
       >
         ✓
       </button>

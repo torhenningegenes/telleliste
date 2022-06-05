@@ -3,7 +3,7 @@ import CountButton from "./button";
 import NyTelling from "./nytelling";
 function Barn(props) {
   const { id, navn, avdeling } = props;
-  console.log(id, navn);
+  //console.log(id, navn);
 
   return (
     <li
@@ -14,7 +14,7 @@ function Barn(props) {
         <h4>{navn}</h4>
         <h6>{avdeling}</h6>
       </div>
-      <CountButton />
+      <CountButton navn={navn} avdeling={avdeling} />
     </li>
   );
 }

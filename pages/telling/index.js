@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { useRouter } from "next/router";
+import NyTelling from "./nytelling";
 
 function Telling(props) {
   const router = useRouter();
@@ -17,13 +18,7 @@ function Telling(props) {
   return (
     <Fragment>
       <div className="container mx-auto center">
-        <button
-          type="button"
-          className="btn btn-primary rounded-pill mx-auto "
-          onClick={telleKnapp}
-        >
-          <h3>Ny telling</h3>
-        </button>
+        <NyTelling />
       </div>
     </Fragment>
   );

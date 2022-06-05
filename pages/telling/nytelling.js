@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import Barn from "./barn";
 import classes from "./nytelling.module.css";
 import { useState, useRef } from "react";
+import RegistrereTelling from "./registrere-telling";
 
 function NyTelling(props) {
   // Setting useState for holding the state for the button presses.
@@ -36,9 +37,7 @@ function NyTelling(props) {
             );
           })}
           <p>Antall barn: </p>
-          <button className="btn btn-info btn-lg mt-5 ">
-            Registrer telling
-          </button>
+          <RegistrereTelling />
         </ul>
       </div>
     </Fragment>
