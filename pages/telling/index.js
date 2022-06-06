@@ -17,7 +17,7 @@ function Telling(props) {
   }
   return (
     <Fragment>
-      <div className="container mx-auto center">
+      <div className="container-fluid mx-auto center bg-light">
         <NyTelling />
       </div>
     </Fragment>

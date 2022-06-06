@@ -29,7 +29,7 @@ function NyTelling(props) {
   const ids = barn.entries();
   return (
     <Fragment>
-      <div className="container-fluid ">
+      <div className="container-fluid bg-light">
         <ul className="list-group text-center d-flex justify-content-center align-items-center">
           {barn.map((barn) => {
             return (

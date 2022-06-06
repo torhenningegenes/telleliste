@@ -1,4 +1,4 @@
-import { useAppContext } from "../AppWrapper";
+import { setUseAppContext, useAppContext } from "../AppWrapper";
 function RegistrereTelling(props) {
   //Getting context
   const myContext = useAppContext();
@@ -18,12 +18,15 @@ function RegistrereTelling(props) {
 
   // function for pushing context to local storage/ JSON
   function regCountHandler() {
-    console.log("Telling registrert");
-    myContext.push(currentDate);
-    console.log(myContext);
-    myContext.lenght = 0;
-    console.log("My context cleared:---   " + myContext);
-    console.log(myContext.lenght);
+    if (myContext) {
+      console.log("Telling registrert");
+      myContext.push({ dato: currentDate });
+      console.log(myContext);
+      if (myContext.lenght < 0) {
+        myContext.lenght = 0;
+      }
+      //   myContext.length = 0;
+    }
   }
   return (
     <button
