@@ -1,7 +1,10 @@
 import { setUseAppContext, useAppContext } from "../AppWrapper";
+
 function RegistrereTelling(props) {
   //Getting context
   const myContext = useAppContext();
+  // total count
+  let totalKids = myContext.lenght;
 
   // Creating date object.
   const options = {
@@ -20,21 +23,27 @@ function RegistrereTelling(props) {
   function regCountHandler() {
     if (myContext) {
       console.log("Telling registrert");
+
       myContext.push({ dato: currentDate });
-      console.log(myContext);
+      let myContext_serialized = JSON.stringify(myContext);
+      localStorage.setItem(myContext, myContext_serialized);
+      const liste1 = JSON.parse(localStorage.getItem(myContext));
+      console.log(liste1);
       if (myContext.lenght < 0) {
         myContext.lenght = 0;
       }
-      //   myContext.length = 0;
+      console.log(localStorage);
     }
   }
   return (
-    <button
-      className="btn btn-info btn-lg mt-5 mb-4 "
-      onClick={regCountHandler}
-    >
-      Registrer telling
-    </button>
+    <div>
+      <button
+        className="btn btn-info btn-lg mt-5 mb-4 "
+        onClick={regCountHandler}
+      >
+        Registrer telling
+      </button>
+    </div>
   );
 }
 

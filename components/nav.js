@@ -8,7 +8,7 @@ function Nav() {
     >
       <div className="container-fluid">
         <Link href={"/"} passHref>
-          <a className="navbar-brand">TelleListe</a>
+          <a className="navbar-brand">Telleliste</a>
         </Link>
         <button
           className="navbar-toggler"

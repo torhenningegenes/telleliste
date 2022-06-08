@@ -3,6 +3,8 @@ import Barn from "./barn";
 import classes from "./nytelling.module.css";
 import { useState, useRef } from "react";
 import RegistrereTelling from "./registrere-telling";
+import AntallBarn from "./antall-barn";
+import { Button } from "bootstrap";
 
 function NyTelling(props) {
   // Setting useState for holding the state for the button presses.
@@ -30,13 +32,14 @@ function NyTelling(props) {
   return (
     <Fragment>
       <div className="container-fluid bg-light">
+        <h2>Ny telleliste</h2>
         <ul className="list-group text-center d-flex justify-content-center align-items-center">
           {barn.map((barn) => {
             return (
               <Barn key={barn.id} navn={barn.navn} avdeling={barn.avdeling} />
             );
           })}
-          <p>Antall barn: </p>
+
           <RegistrereTelling />
         </ul>
       </div>

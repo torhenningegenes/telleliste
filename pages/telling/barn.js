@@ -1,8 +1,9 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import CountButton from "./button";
 import NyTelling from "./nytelling";
 function Barn(props) {
   const { id, navn, avdeling } = props;
+  const [totalKids, setTotalKids] = useState(0);
   //console.log(id, navn);
 
   return (
@@ -14,7 +15,12 @@ function Barn(props) {
         <h4>{navn}</h4>
         <h6>{avdeling}</h6>
       </div>
-      <CountButton navn={navn} avdeling={avdeling} />
+      <CountButton
+        navn={navn}
+        avdeling={avdeling}
+        total={totalKids}
+        setTotal={setTotalKids}
+      />
     </li>
   );
 }
