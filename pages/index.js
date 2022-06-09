@@ -1,5 +1,7 @@
 import StartButton from "../components/start-button";
+// import initFirebase from "../.next/firebase/initFirebase";
 
+// initFirebase();
 function Home(props) {
   const label1 = "Ny liste";
   const label2 = "Se gamle lister";
