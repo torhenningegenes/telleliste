@@ -1,6 +1,7 @@
 // import { messaging } from "firebase-admin";
 import firebase from "firebase/app";
 import { initializeApp, getApps } from "firebase/app";
+import { getDatabase } from "firebase/database";
 import "firebase/auth";
 
 const clientCredentials = {
@@ -16,6 +17,8 @@ const clientCredentials = {
 function initFirebase() {
   if (!getApps().length) {
     const app = initializeApp(clientCredentials);
+    console.log(clientCredentials);
+    const database = getDatabase(app);
     if (typeof window !== "undefined") {
       if ("measurmentId" in clientCredentials) {
         firebase.analytics();

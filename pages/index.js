@@ -1,3 +1,4 @@
+import { async } from "@firebase/util";
 import StartButton from "../components/start-button";
 import firebase from "../firebase/initFirebase";
 
@@ -16,3 +17,12 @@ function Home(props) {
 }
 
 export default Home;
+
+export async function getServerSideProps() {
+  console.log(process.env.NEXT_PUBLIC_HEI_PAA_DEG);
+  return {
+    props: {
+      hello: "World",
+    },
+  };
+}
