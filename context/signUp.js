@@ -2,14 +2,22 @@ import { Fragment } from "react";
 import { Card, Button, Form, Container } from "react-bootstrap";
 import React, { useRef, useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useAuth } from "../context/auth-context";
 
 function SignUp() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
+
   // States
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { signup } = useAuth;
+
+  function handleSubmit(e) {
+    e.prevendDefault();
+    signup(emailRef.current.value, passwordRef.current.value);
+  }
 
   return (
     <Fragment>
