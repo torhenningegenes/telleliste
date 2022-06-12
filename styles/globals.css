@@ -23,3 +23,12 @@ a {
 .list-barn {
   width: 100%;
 }
+
+.hide {
+  opacity: 0;
+  /*
+  alternatively:
+  opacity: 0%;
+  filter: opacity(0%);
+*/
+}

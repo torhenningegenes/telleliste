@@ -3,8 +3,9 @@ function Nav() {
   const test = "Hello";
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-light bg-body text-dark container-fluid
+      className="navbar navbar-expand-lg navbar-light bg-body text-dark container-fluid 
     "
+      id="navBar"
     >
       <div className="container-fluid">
         <Link href={"/"} passHref>

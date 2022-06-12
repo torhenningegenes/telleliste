@@ -1,16 +1,15 @@
 import { Fragment } from "react";
 import { Card, Button, Form, Container } from "react-bootstrap";
-import React, { useRef } from "react";
-
-// const hideNav = function() {
-
-//   <Nav style={{display: 'hidden'}}
-// }
+import React, { useRef, useState } from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 function SignUp() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
+  // States
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <Fragment>
