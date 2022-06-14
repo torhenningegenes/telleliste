@@ -17,7 +17,9 @@ const firebaseConfig = {
 // }
 
 const app = initializeApp(firebaseConfig);
+if (app) {
+  console.log("Firebase was succsessfully init..");
+}
 const auth = getAuth(app);
-console.log("Firebase was succsessfully init..");
 
-export { auth };
+export { auth, app };

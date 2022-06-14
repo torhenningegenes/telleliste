@@ -22,7 +22,7 @@ export function AuthProvider({ children }) {
 
   // Signup function from firebase
   function signup() {
-    const auth = getAuth();
+    const auth = getAuth(app);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
@@ -30,6 +30,7 @@ export function AuthProvider({ children }) {
         // ...
       })
       .catch((error) => {
+        console.log("Error creating user");
         const errorCode = error.code;
         const errorMessage = error.message;
         // ..
@@ -40,6 +41,9 @@ export function AuthProvider({ children }) {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
     });
+    if (unsubscribe) {
+      console.log("onAuthStateChanged success");
+    }
     return unsubscribe;
   }, []);
 

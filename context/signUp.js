@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Card, Button, Form, Container } from "react-bootstrap";
+import { Card, Button, Form, Container, Alert } from "react-bootstrap";
 import React, { useRef, useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useAuth } from "../context/auth-context";
@@ -12,11 +12,25 @@ function SignUp() {
   // States
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signup } = useAuth;
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { signup, currentUser } = useAuth;
 
-  function handleSubmit(e) {
-    e.prevendDefault();
-    signup(emailRef.current.value, passwordRef.current.value);
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    if (passwordRef.current.vaule !== passwordConfirmRef.current.value) {
+      return setError("Passwords do not match");
+    }
+
+    try {
+      setError("");
+      setLoading(true);
+      await signup(emailRef.current.value, passwordRef.current.value);
+    } catch {
+      setError("Failed to create account");
+    }
+    setLoading(false);
   }
 
   return (
@@ -29,7 +43,9 @@ function SignUp() {
           <Card>
             <Card.Body>
               <h2 className="center mb-4">Opprett konto</h2>
-              <Form>
+              <p>{currentUser && currentUser.email}</p>
+              {error && <Alert variant="danger">{error}</Alert>}
+              <Form onSubmit={handleSubmit}>
                 <Form.Group id="epost">
                   <Form.Label>Epost</Form.Label>
                   <Form.Control type="email" ref={emailRef} required />
@@ -46,7 +62,7 @@ function SignUp() {
                     required
                   />
                 </Form.Group>
-                <Button type="submit" className="w-100 mt-2">
+                <Button type="submit" className="w-100 mt-2" disabled={loading}>
                   Opprett ny konto
                 </Button>
               </Form>
