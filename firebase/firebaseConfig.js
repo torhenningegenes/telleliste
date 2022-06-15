@@ -1,4 +1,4 @@
-import { initializeApp, getApps } from "firebase/app";
+import { initializeApp, getApps, apps } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
@@ -15,10 +15,19 @@ const firebaseConfig = {
 //   app = initializeApp(firebaseConfig);
 //   console.log("Firebase was successfully init.");
 // }
+const createOrGetApp = () => {
+  if (!apps) {
+    return initializeApp(firebaseConfig);
+  } else {
+    return apps[0];
+  }
+};
 
-const app = initializeApp(firebaseConfig);
+const app = createOrGetApp();
+// const app = initializeApp(firebaseConfig);
 if (app) {
   console.log("Firebase was succsessfully init..");
+  console.log(app);
 }
 const auth = getAuth(app);
 
