@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { Card, Button, Form, Container, Alert } from "react-bootstrap";
 import React, { useRef, useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useAuth, signup } from "../context/auth-context";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { useAuth, signup, currentUser } from "../context/auth-context";
 
 function SignUp() {
   const emailRef = useRef();
@@ -15,6 +15,9 @@ function SignUp() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { currentUser } = useAuth;
+
+  const auth = getAuth();
+  const newUser = auth.currentUser;
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -46,8 +49,8 @@ function SignUp() {
         <div className="w-100 " style={{ maxWidth: "400px" }}>
           <Card>
             <Card.Body>
+              <h3>{currentUser && currentUser.email}</h3>
               <h2 className="center mb-4">Opprett konto</h2>
-              <p>{currentUser && currentUser.email}</p>
               {error && <Alert variant="danger">{error}</Alert>}
               <Form onSubmit={handleSubmit}>
                 <Form.Group id="epost">

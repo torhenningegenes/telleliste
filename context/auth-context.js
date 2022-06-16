@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { app } from "../firebase/firebaseConfig";
+import Link from "next/link";
 
 import {
   createUserWithEmailAndPassword,
@@ -16,13 +17,13 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
-export function signup(email, password) {
+export async function signup(email, password) {
   const auth = getAuth(app);
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      // ...
+      console.log(user);
     })
     .catch((error) => {
       console.log("Error creating user");
@@ -35,6 +36,18 @@ export function signup(email, password) {
 
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
+
+  useEffect(() => {
+    const auth = getAuth(app);
+    console.log("Auth = " + auth);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user);
+    });
+    if (unsubscribe) {
+      console.log("onAuthStateChanged success");
+    }
+    return unsubscribe;
+  }, []);
 
   // Signup function from firebase
   // function signup() {
@@ -52,16 +65,6 @@ export function AuthProvider({ children }) {
   //       // ..
   //     });
   // }
-  useEffect(() => {
-    const auth = getAuth();
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
-    });
-    if (unsubscribe) {
-      console.log("onAuthStateChanged success");
-    }
-    return unsubscribe;
-  }, []);
 
   const value = {
     currentUser,
