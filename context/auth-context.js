@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { app } from "../firebase/firebaseConfig";
 
 import {
   createUserWithEmailAndPassword,
@@ -15,27 +16,42 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
+export function signup(email, password) {
+  const auth = getAuth(app);
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      // ...
+    })
+    .catch((error) => {
+      console.log("Error creating user");
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
+}
 // Context provider. Lets other components know if and who is logged in
 
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
 
   // Signup function from firebase
-  function signup() {
-    const auth = getAuth(app);
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        // ...
-      })
-      .catch((error) => {
-        console.log("Error creating user");
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-      });
-  }
+  // function signup() {
+  //   const auth = getAuth(app);
+  //   createUserWithEmailAndPassword(auth, email, password)
+  //     .then((userCredential) => {
+  //       // Signed in
+  //       const user = userCredential.user;
+  //       // ...
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error creating user");
+  //       const errorCode = error.code;
+  //       const errorMessage = error.message;
+  //       // ..
+  //     });
+  // }
   useEffect(() => {
     const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (user) => {
