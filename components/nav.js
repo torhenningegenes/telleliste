@@ -3,7 +3,7 @@ function Nav() {
   const test = "Hello";
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-light bg-body text-dark container-fluid 
+      className="navbar navbar-expand-lg navbar-light bg-body text-dark container-fluid fixed-top
     "
       id="navBar"
     >

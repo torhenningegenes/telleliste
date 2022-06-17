@@ -8,6 +8,7 @@ import {
   getAuth,
   onAuthStateChanged,
 } from "firebase/auth";
+import { async } from "@firebase/util";
 // import { auth } from "firebase-admin";
 
 const AuthContext = createContext();
@@ -33,7 +34,11 @@ export async function signup(email, password) {
     });
 }
 // Context provider. Lets other components know if and who is logged in
+// Login function
 
+export async function logIn(email, password) {
+  console.log("login function");
+}
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
 

@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useAuth, signup } from "../context/auth-context";
 
-function SignUp() {
+function LogIn() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
