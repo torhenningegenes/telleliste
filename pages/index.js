@@ -10,8 +10,11 @@ function Home(props) {
   const label2 = "Se gamle lister";
   return (
     <Fragment>
-      <Container className="d-flex align-items-center justify-content-center flex-column ">
-        <h2 className="text-center mt-4">Velkommen til Tellelista</h2>
+      <Container
+        className="d-flex align-items-center justify-content-center flex-column bg-light
+"
+      >
+        <h2 className="text-center main__header">Velkommen til Tellelista</h2>
         <Link href={"/login-user"} passHref>
           <Button className="center btn btn-lg">Login</Button>
         </Link>

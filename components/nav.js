@@ -3,13 +3,13 @@ function Nav() {
   const test = "Hello";
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-light bg-body text-dark container-fluid fixed-top
+      className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-auto
     "
       id="navBar"
     >
-      <div className="container-fluid">
+      <div className="container-fluid ">
         <Link href={"/"} passHref>
-          <a className="navbar-brand">Telleliste</a>
+          <a className="navbar-brand">📝 Telleliste</a>
         </Link>
         <button
           className="navbar-toggler"

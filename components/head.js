@@ -1,6 +1,6 @@
 function Head() {
   return (
-    <header>
+    <header className="bg-light">
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </header>
   );
