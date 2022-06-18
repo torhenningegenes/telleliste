@@ -1,8 +1,7 @@
 import StartButton from "../components/start-button";
 import firebase from "../firebase/firebaseConfig";
-import { Container, Button } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { Fragment } from "react";
-import Link from "next/link";
 import SignUp from "../context/signUp";
 
 function Home(props) {
@@ -10,15 +9,19 @@ function Home(props) {
   const label2 = "Se gamle lister";
   return (
     <Fragment>
-      <Container className="d-flex align-items-center justify-content-center flex-column ">
-        <h2 className="text-center mt-4">Velkommen til Tellelista</h2>
-        <Link href={"/login-user"} passHref>
-          <Button className="center btn btn-lg">Login</Button>
-        </Link>
-        <h4 className="mt-4">Eller opprett ny bruker</h4>
-        <Link href={"/new-user"} passHref>
-          <Button className="center btn btn-lg">Ny bruker</Button>
-        </Link>
+      <div className="center">
+        <h1 className="bg-body text-dark center">Velkommen til tellelista!</h1>
+        <StartButton label={label1} className="mt-5 mb-5" />
+        <br />
+        <StartButton label={label2} className="mb-5" />
+      </div>
+      <Container
+        className="d-flex align-items-center justify-content-center "
+        style={{ minHeight: "100vh" }}
+      >
+        <div className="w-100 " style={{ maxWidth: "400px" }}>
+          <SignUp />
+        </div>
       </Container>
     </Fragment>
   );

@@ -7,23 +7,21 @@ function Barn(props) {
   //console.log(id, navn);
 
   return (
-    <>
-      <li
-        className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center mt-4"
-        key={id}
-      >
-        <div className="navnOgAvdeling">
-          <h4>{navn}</h4>
-          <h6>{avdeling}</h6>
-        </div>
-        <CountButton
-          navn={navn}
-          avdeling={avdeling}
-          total={totalKids}
-          setTotal={setTotalKids}
-        />
-      </li>
-    </>
+    <li
+      className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center"
+      key={id}
+    >
+      <div className="navnOgAvdeling">
+        <h4>{navn}</h4>
+        <h6>{avdeling}</h6>
+      </div>
+      <CountButton
+        navn={navn}
+        avdeling={avdeling}
+        total={totalKids}
+        setTotal={setTotalKids}
+      />
+    </li>
   );
 }
 

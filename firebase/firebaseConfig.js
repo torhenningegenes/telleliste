@@ -11,21 +11,19 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-function createOrGetApp() {
-  if (!getApps().length) initializeApp(firebaseConfig);
-  console.log("Firebase was successfully init.");
-}
+// if (!getApps().length) {
+//   app = initializeApp(firebaseConfig);
+//   console.log("Firebase was successfully init.");
+// }
+const createOrGetApp = () => {
+  if (!apps) {
+    return initializeApp(firebaseConfig);
+  } else {
+    return apps[0];
+  }
+};
 
 const app = createOrGetApp();
-
-// const createOrGetApp = () => {
-//   if (!getApps) {
-//     return initializeApp(firebaseConfig);
-//   } else {
-//     return getApps[0];
-//   }
-// };
-
 // const app = initializeApp(firebaseConfig);
 if (app) {
   console.log("Firebase was succsessfully init..");

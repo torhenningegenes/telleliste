@@ -5,12 +5,6 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background: rgb(121, 246, 133);
-  background: radial-gradient(
-    circle,
-    rgba(121, 246, 133, 1) 0%,
-    rgba(244, 245, 235, 1) 100%
-  );
 }
 
 a {
@@ -37,8 +31,4 @@ a {
   opacity: 0%;
   filter: opacity(0%);
 */
-}
-
-.btnLogi {
-  background-color: rgb(133, 22, 22);
 }

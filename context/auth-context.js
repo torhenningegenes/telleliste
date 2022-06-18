@@ -1,6 +1,4 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { app } from "../firebase/firebaseConfig";
-import Link from "next/link";
 
 import {
   createUserWithEmailAndPassword,
@@ -8,7 +6,6 @@ import {
   getAuth,
   onAuthStateChanged,
 } from "firebase/auth";
-import { async } from "@firebase/util";
 // import { auth } from "firebase-admin";
 
 const AuthContext = createContext();
@@ -18,33 +15,29 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
-export async function signup(email, password) {
-  const auth = getAuth(app);
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      console.log(user);
-    })
-    .catch((error) => {
-      console.log("Error creating user");
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
-    });
-}
 // Context provider. Lets other components know if and who is logged in
-// Login function
 
-export async function logIn(email, password) {
-  console.log("login function");
-}
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
 
-  useEffect(() => {
+  // Signup function from firebase
+  function signup() {
     const auth = getAuth(app);
-    console.log("Auth = " + auth);
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        console.log("Error creating user");
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
+  }
+  useEffect(() => {
+    const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
     });
@@ -53,23 +46,6 @@ export function AuthProvider({ children }) {
     }
     return unsubscribe;
   }, []);
-
-  // Signup function from firebase
-  // function signup() {
-  //   const auth = getAuth(app);
-  //   createUserWithEmailAndPassword(auth, email, password)
-  //     .then((userCredential) => {
-  //       // Signed in
-  //       const user = userCredential.user;
-  //       // ...
-  //     })
-  //     .catch((error) => {
-  //       console.log("Error creating user");
-  //       const errorCode = error.code;
-  //       const errorMessage = error.message;
-  //       // ..
-  //     });
-  // }
 
   const value = {
     currentUser,
