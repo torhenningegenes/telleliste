@@ -40,3 +40,8 @@ a {
 .btnLogi {
   background-color: rgb(133, 22, 22);
 }
+
+.user__login {
+  display: flex;
+  justify-content: flex-end;
+}
