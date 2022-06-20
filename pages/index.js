@@ -2,6 +2,7 @@ import StartButton from "../components/start-button";
 import firebase from "../firebase/firebaseConfig";
 import { Container, Button } from "react-bootstrap";
 import { Fragment } from "react";
+import Footer from "../components/footer";
 import Link from "next/link";
 import SignUp from "../context/signUp";
 
@@ -22,6 +23,7 @@ function Home(props) {
         <Link href={"/new-user"} passHref>
           <Button className="center btn btn-lg">Ny bruker</Button>
         </Link>
+        <Footer />
       </Container>
     </Fragment>
   );

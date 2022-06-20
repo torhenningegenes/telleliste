@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { useRouter } from "next/router";
 import NyTelling from "./nytelling";
+import Footer from "../../components/footer";
 
 function Telling(props) {
   const router = useRouter();
@@ -19,6 +20,7 @@ function Telling(props) {
     <Fragment>
       <div className="container-fluid mx-auto center bg-light">
         <NyTelling />
+        <Footer />
       </div>
     </Fragment>
   );
