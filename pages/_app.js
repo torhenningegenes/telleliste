@@ -4,10 +4,13 @@ import NavBar from "../components/nav";
 import { AppWrapper } from "./AppWrapper";
 import { AuthProvider } from "../context/auth-context";
 import StartNav from "../components/startNav";
-
+import ProtecedRoutes from "../components/proteced-routes";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
+  const noAuthRequired = ["/", "/login-user", "/new-user"];
+  const router = useRouter();
   return (
     <div>
       <AuthProvider>
@@ -16,7 +19,13 @@ function MyApp({ Component, pageProps }) {
             <title>Tellelista</title>
           </Head>
           <StartNav />
-          <Component {...pageProps} />
+          {noAuthRequired.includes(router.pathname) ? (
+            <Component {...pageProps} />
+          ) : (
+            <ProtecedRoutes>
+              <Component {...pageProps} />
+            </ProtecedRoutes>
+          )}
         </AppWrapper>
       </AuthProvider>
     </div>

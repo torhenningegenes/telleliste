@@ -55,7 +55,7 @@ a {
   background-repeat: no-repeat;
   background-position: center center;
   /* background-attachment: fixed; */
-  height: 80vh;
+  height: 90vh;
 }
 
 .bg-overlay {
@@ -65,7 +65,7 @@ a {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  height: 80vh;
+  height: 90vh;
   z-index: 10;
 }
 

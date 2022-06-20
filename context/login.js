@@ -2,12 +2,12 @@ import { Fragment } from "react";
 import { Card, Button, Form, Container, Alert } from "react-bootstrap";
 import React, { useRef, useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useAuth, signup } from "../context/auth-context";
+import { useAuth, LogIn } from "../context/auth-context";
+import { useRouter } from "next/router";
 
-function LogIn() {
+function LoginUser() {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
 
   // States
   const [email, setEmail] = useState("");
@@ -15,23 +15,28 @@ function LogIn() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { currentUser } = useAuth;
+  const router = useRouter();
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError("Passwords do not match");
+    // if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+    if (!passwordRef.current.value) {
+      return setError("Skriv inn ditt passord");
     }
 
     try {
       setError("");
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
+      await LogIn(emailRef.current.value, passwordRef.current.value);
+      console.log("Success");
+      router.push("/home");
+
       // Pass in e to get the error
     } catch (e) {
       console.log(e);
-      setError("Failed to create account");
-      console.log(currentUser);
+      setError("Failed to login");
+      console.log(error);
     }
 
     setLoading(false);
@@ -41,12 +46,12 @@ function LogIn() {
     <Fragment>
       <Container
         className="d-flex align-items-center justify-content-center "
-        style={{ minHeight: "100vh" }}
+        style={{ minHeight: "80vh" }}
       >
         <div className="w-100 " style={{ maxWidth: "400px" }}>
           <Card>
             <Card.Body>
-              <h2 className="center mb-4">Opprett konto</h2>
+              <h2 className="center mb-4">Logg in</h2>
               <p>{currentUser && currentUser.email}</p>
               {error && <Alert variant="danger">{error}</Alert>}
               <Form onSubmit={handleSubmit}>
@@ -54,30 +59,23 @@ function LogIn() {
                   <Form.Label>Epost</Form.Label>
                   <Form.Control type="email" ref={emailRef} required />
                 </Form.Group>
+
                 <Form.Group id="password">
                   <Form.Label>Passord</Form.Label>
                   <Form.Control type="password" ref={passwordRef} required />
                 </Form.Group>
-                <Form.Group id="password-confirm">
-                  <Form.Label>Bekreft passord</Form.Label>
-                  <Form.Control
-                    type="password"
-                    ref={passwordConfirmRef}
-                    required
-                  />
-                </Form.Group>
+
                 <Button type="submit" className="w-100 mt-2" disabled={loading}>
-                  Opprett ny konto
+                  Logg inn
                 </Button>
               </Form>
             </Card.Body>
           </Card>
-          <div className="w-100 text-center mt-2">Allerede konto? Log in</div>
-          {currentUser}
+          <div className="w-100 text-center mt-2">{currentUser}</div>
         </div>
       </Container>
     </Fragment>
   );
 }
 
-export default SignUp;
+export default LoginUser;

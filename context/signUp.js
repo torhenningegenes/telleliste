@@ -3,6 +3,7 @@ import { Card, Button, Form, Container, Alert } from "react-bootstrap";
 import React, { useRef, useState } from "react";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { useAuth, signup, currentUser } from "../context/auth-context";
+import { useRouter } from "next/router";
 
 function SignUp() {
   const emailRef = useRef();
@@ -17,7 +18,7 @@ function SignUp() {
   const { currentUser } = useAuth;
 
   const auth = getAuth();
-  const newUser = auth.currentUser;
+  const router = useRouter();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -30,6 +31,7 @@ function SignUp() {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
+      router.push("/home");
       // Pass in e to get the error
     } catch (e) {
       console.log(e);

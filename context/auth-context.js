@@ -7,9 +7,8 @@ import {
   signInWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
-import { async } from "@firebase/util";
-// import { auth } from "firebase-admin";
 
 const AuthContext = createContext();
 
@@ -18,6 +17,7 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
+// Function for creating user
 export async function signup(email, password) {
   const auth = getAuth(app);
   createUserWithEmailAndPassword(auth, email, password)
@@ -33,20 +33,49 @@ export async function signup(email, password) {
       // ..
     });
 }
-// Context provider. Lets other components know if and who is logged in
-// Login function
 
-export async function logIn(email, password) {
+// Function for logging in user
+
+export async function LogIn(email, password) {
   console.log("login function");
+  const auth = getAuth();
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      console.log(user + "Signed inn to firebase");
+    })
+    .catch((error) => {
+      console.log("Error logging in user");
+      const errorCode = error.code;
+      console.log(errorCode);
+      const errorMessage = error.message;
+      console.log(errorMessage);
+    });
 }
-export function AuthProvider({ children }) {
-  const [currentUser, setCurrentUser] = useState();
+// Function for logging out user
 
+// Context provider function
+export function AuthProvider({ children }) {
+  // State variables
+  const [currentUser, setCurrentUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const auth = getAuth(app);
+  // console.log(currentUser);
   useEffect(() => {
     const auth = getAuth(app);
-    console.log("Auth = " + auth);
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
+      if (user) {
+        setCurrentUser({
+          uid: user.uid,
+          email: user.email,
+          displayName: user.displayName,
+        });
+        console.log(currentUser);
+      } else {
+        setCurrentUser(null);
+      }
+      setLoading(false);
     });
     if (unsubscribe) {
       console.log("onAuthStateChanged success");
@@ -54,27 +83,21 @@ export function AuthProvider({ children }) {
     return unsubscribe;
   }, []);
 
-  // Signup function from firebase
-  // function signup() {
-  //   const auth = getAuth(app);
-  //   createUserWithEmailAndPassword(auth, email, password)
-  //     .then((userCredential) => {
-  //       // Signed in
-  //       const user = userCredential.user;
-  //       // ...
-  //     })
-  //     .catch((error) => {
-  //       console.log("Error creating user");
-  //       const errorCode = error.code;
-  //       const errorMessage = error.message;
-  //       // ..
-  //     });
-  // }
+  const logOut = async () => {
+    setCurrentUser(null);
+    await signOut(auth);
+  };
 
   const value = {
     currentUser,
     signup,
+    LogIn,
+    logOut,
   };
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={value}>
+      {loading ? null : children}
+    </AuthContext.Provider>
+  );
 }
