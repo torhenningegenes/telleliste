@@ -1,20 +1,17 @@
 import SignUp from "../context/signUp";
 import { Fragment } from "react";
+import { Container } from "react-bootstrap";
 
 function Home(props) {
   return (
     <Fragment>
-      <div
-        className="center bg-light
-"
-      >
-        <h1 className="bg-body text-dark center mainHeader">
-          Velkommen til tellelista!
-        </h1>
-        <StartButton label={props.label1} className="mt-auto mb-5" />
-        <br />
-        <StartButton label={label2} className="mb-5" />
-      </div>
+      <Container>
+        <div className="mt-5">
+          <h1 className="bg-body text-dark mt-5 center">
+            Velkommen til tellelista!
+          </h1>
+        </div>
+      </Container>
     </Fragment>
   );
 }

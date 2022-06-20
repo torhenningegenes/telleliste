@@ -5,17 +5,22 @@ import { Fragment } from "react";
 import Footer from "../components/footer";
 import Link from "next/link";
 import SignUp from "../context/signUp";
+import BgImg from "../components/bg-img";
 
 function Home(props) {
   const label1 = "Ny liste";
   const label2 = "Se gamle lister";
   return (
     <Fragment>
+      <BgImg />
       <Container
-        className="d-flex align-items-center justify-content-center flex-column bg-light
+        className="d-flex align-items-center  flex-column text-light bg-transparent overlay
 "
       >
-        <h2 className="text-center main__header">Velkommen til Tellelista</h2>
+        <h1 className="text-center main__header shadow-lg ">
+          Velkommen til Tellelista
+        </h1>
+
         <Link href={"/login-user"} passHref>
           <Button className="center btn btn-lg">Login</Button>
         </Link>
@@ -23,8 +28,8 @@ function Home(props) {
         <Link href={"/new-user"} passHref>
           <Button className="center btn btn-lg">Ny bruker</Button>
         </Link>
-        <Footer />
       </Container>
+      <Footer />
     </Fragment>
   );
 }
