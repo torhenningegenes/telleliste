@@ -8,14 +8,13 @@ import { useRouter } from "next/router";
 function LoginUser() {
   const emailRef = useRef();
   const passwordRef = useRef();
-
+  const router = useRouter();
   // States
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { currentUser } = useAuth;
-  const router = useRouter();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -52,7 +51,7 @@ function LoginUser() {
           <Card>
             <Card.Body>
               <h2 className="center mb-4">Logg in</h2>
-              <p>{currentUser && currentUser.email}</p>
+
               {error && <Alert variant="danger">{error}</Alert>}
               <Form onSubmit={handleSubmit}>
                 <Form.Group id="epost">
@@ -69,6 +68,7 @@ function LoginUser() {
                   Logg inn
                 </Button>
               </Form>
+              <p className="text-dark">{currentUser && currentUser.email}</p>
             </Card.Body>
           </Card>
           <div className="w-100 text-center mt-2">{currentUser}</div>

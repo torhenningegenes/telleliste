@@ -9,7 +9,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
-  const noAuthRequired = ["/", "/login-user", "/new-user"];
+  const noAuthRequired = ["/home", "/login-user", "/new-user"];
   const router = useRouter();
   return (
     <div>

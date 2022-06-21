@@ -50,7 +50,7 @@ a {
 .bg-img {
   position: relative;
 
-  background-image: url("../img/hero.webp");
+  background-image: url("../img/pattern.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -64,7 +64,7 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.1);
   height: 90vh;
   z-index: 10;
 }
@@ -76,4 +76,12 @@ a {
   right: 0;
   bottom: 0;
   z-index: 20;
+}
+
+/**********/
+/* Utility classes */
+/**********/
+
+.margin--top--medium {
+  margin-top: 96px;
 }

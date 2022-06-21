@@ -12,13 +12,11 @@ function StartNav() {
   const { currentUser, logOut } = useAuth();
   console.log(currentUser);
   const router = useRouter();
-  const bruker = "Bruker";
-  const avdeling = "Avdeling";
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
-      <Container className="fluid">
-        <Link href={"/"} passHref>
+      <Container>
+        <Link href={"/home"} passHref>
           <Navbar.Brand>📝 Tellelista</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -54,23 +52,21 @@ function StartNav() {
               <>
                 <Link href={"/login-user"} passHref>
                   <Button
-                    className="mt-2 mb-2 me-2"
+                    className=" mb-2 me-2"
                     variant="info"
                     as="input"
                     type="submit"
                     value="Logg inn"
-                    size="lg"
                   />
                 </Link>
 
                 <Link href={"/new-user"} passHref>
                   <Button
-                    className="mt-2 mb-2"
+                    className=" mb-2"
                     variant="outline-info"
                     as="input"
                     type="submit"
                     value="Ny bruker"
-                    size="lg"
                   />
                 </Link>
               </>
