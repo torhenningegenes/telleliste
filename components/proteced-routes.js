@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { useAuth } from "../context/auth-context";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+
 const ProtecedRoutes = ({ children }) => {
   const { currentUser } = useAuth();
   const router = useRouter();
