@@ -1,9 +1,10 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useRef } from "react";
 import CountButton from "./button";
 import NyTelling from "./nytelling";
 function Barn(props) {
   const { id, navn, avdeling } = props;
-  const [totalKids, setTotalKids] = useState(0);
+  const [totalKids, setTotalKids] = useRef();
+
   //console.log(id, navn);
 
   return (

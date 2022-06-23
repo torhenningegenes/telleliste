@@ -1,10 +1,10 @@
 import classes from "./button.module.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useAppContext } from "../AppWrapper";
 
 function CountButton(props) {
   let [counted, setCounted] = useState(false);
-  const { total, setTotal } = props;
+  let totalKids = useRef(0);
   const btnCss = classes.customBtn;
   const regBtn = classes.regretBtn;
   const { navn, avdeling } = props;
@@ -20,13 +20,15 @@ function CountButton(props) {
     setCounted(true);
     myContext.push({ navn: navn, avdeling: avdeling });
     console.log(myContext);
-    setTotal(total + 1);
-    console.log(total);
+    totalKids.current = totalKids.current + 1;
+    console.log("Ref" + totalKids.current);
   }
   function regret() {
     setCounted(counted === false);
     myContext.pop({ navn: navn, avdeling: avdeling });
     console.log(myContext);
+    totalKids.current = totalKids.current - 1;
+    console.log(totalKids.current);
   }
 
   return (

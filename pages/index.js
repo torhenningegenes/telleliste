@@ -4,7 +4,6 @@ import { Container, Button } from "react-bootstrap";
 import { Fragment } from "react";
 import Footer from "../components/footer";
 import Link from "next/link";
-import SignUp from "../context/signUp";
 import BgImg from "../components/bg-img";
 
 function Home(props) {
