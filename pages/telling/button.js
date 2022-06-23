@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import { useAppContext } from "../AppWrapper";
 
 function CountButton(props) {
+  //We dont need to use state on the count button
   let [counted, setCounted] = useState(false);
   let totalKids = useRef(0);
   const btnCss = classes.customBtn;

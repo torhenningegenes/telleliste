@@ -18,7 +18,7 @@ function Telling(props) {
   }
 
   // Here there will be a API-call to the firebase server for fetching the children. For Now we use dummy data.
-  const [barn, setBarn] = useState([
+  const barn = [
     { id: 1, navn: "Aria", tilstede: true, avdeling: "Avdeling 8" },
     { id: 2, navn: "Per", tilstede: true, avdeling: "Avdeling 8" },
     { id: 3, navn: "Olav", tilstede: true, avdeling: "Avdeling 8" },
@@ -32,7 +32,7 @@ function Telling(props) {
     { id: 11, navn: "Nora", tilstede: true, avdeling: "Avdeling 8" },
     { id: 12, navn: "Tor Henning", tilstede: true, avdeling: "Avdeling 8" },
     { id: 13, navn: "Heidi", tilstede: true, avdeling: "Avdeling 8" },
-  ]);
+  ];
   return (
     <Fragment>
       <div className="container-fluid mx-auto center bg-light">
