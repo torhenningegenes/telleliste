@@ -2,6 +2,7 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import InputGroup from "react-bootstrap/InputGroup";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Container } from "react-bootstrap";
+import { useRouter } from "next/router";
 
 function RegKids() {
   // Here there will be a API-call to the firebase server for fetching the children. For Now we use dummy data.
@@ -26,24 +27,35 @@ function RegKids() {
     { id: 13, navn: "Christian", tilstede: true, avdeling: "Avdeling 5" },
   ];
 
-  barn[2].tilstede = false;
-  const testBarn = barn[2];
-  console.log(barn[2].tilstede);
+  const router = useRouter();
+  let nyArray = [];
+  function filterAvdeling() {
+    nyArray = barn.filter((barn) => barn.avdeling === "Avdeling 5");
+  }
 
+  //Function for determening array when selectin avdeling from drop down menu
+  filterAvdeling();
+  console.log(nyArray);
+  const avdelingArray = barn.filter((barn) => barn.avdeling === "Avdeling 8");
+  console.log(avdelingArray);
+
+  const avdeling = "";
+  // Lage dynamiske paths basert på avdeling key.
+  // Populate countlist based on avdeling key
   return (
     <Container>
       <div>
         <h1 className="margin--top--medium">Registrere kids</h1>
         <DropdownButton
           variant="outline-secondary"
-          title="Velg avdeling"
+          title="Velg Avdeling"
           id="input-group-dropdown-1"
         >
           <Dropdown.Item href="#">Avdeling 1</Dropdown.Item>
           <Dropdown.Item href="#">Avdeling 2</Dropdown.Item>
           <Dropdown.Item href="#">Avdeling 3</Dropdown.Item>
           <Dropdown.Item href="#">Avdeling 4</Dropdown.Item>
-          <Dropdown.Item href="#">Avdeling 5</Dropdown.Item>
+          <Dropdown.Item href={`${avdeling}5`}>Avdeling 5</Dropdown.Item>
           <Dropdown.Item href="#">Avdeling 6</Dropdown.Item>
           <Dropdown.Item href="#">Avdeling 7</Dropdown.Item>
           <Dropdown.Item href="#">Avdeling 8</Dropdown.Item>
