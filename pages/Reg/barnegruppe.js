@@ -1,7 +1,8 @@
-export default function Barnegruppe() {
+export default function Barnegruppe(props) {
   return (
     <div>
-      <H1>Oversikt barnegrupper</H1>
+      <h1>Oversikt barnegrupper</h1>
+      <ul></ul>
     </div>
   );
 }

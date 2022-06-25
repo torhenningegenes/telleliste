@@ -1,10 +1,16 @@
 import DropdownButton from "react-bootstrap/DropdownButton";
 import InputGroup from "react-bootstrap/InputGroup";
 import Dropdown from "react-bootstrap/Dropdown";
-import { Container } from "react-bootstrap";
+import { Container, Card, Button } from "react-bootstrap";
 import { useRouter } from "next/router";
+import Barnegruppe from "./barnegruppe";
+import AvdelingPage from "./[avdeling]";
+import { useState } from "react";
+import Select from "react-select";
+import makeAnimated from "react-select";
 
 function RegKids() {
+  const [dropdown, setDropdown] = useState();
   // Here there will be a API-call to the firebase server for fetching the children. For Now we use dummy data.
   // One page per department. passing kids as props
   const barn = [
@@ -27,6 +33,27 @@ function RegKids() {
     { id: 13, navn: "Christian", tilstede: true, avdeling: "Avdeling 5" },
   ];
 
+  // Creating day and date
+  const ukedager = [
+    "Mandag",
+    "Tirsdag",
+    "Onsdag",
+    "Torsdag",
+    "Fredag",
+    "Lørdag",
+    "Søndag",
+  ];
+  const date = new Date();
+  const day = new Date().getDay();
+  const currentDay = ukedager[date.getDate()];
+  console.log(currentDay);
+  const currentDate = date.toLocaleDateString();
+  console.log(currentDate);
+  const avdelinger = [
+    { value: "Avdeling 1", label: "Avdeling 1" },
+    { value: "Avdeling 2", label: "Avdeling 2" },
+    { value: "Avdeling 3", label: "Avdeling 3" },
+  ];
   const router = useRouter();
   let nyArray = [];
   function filterAvdeling() {
@@ -35,34 +62,37 @@ function RegKids() {
 
   //Function for determening array when selectin avdeling from drop down menu
   filterAvdeling();
-  console.log(nyArray);
+  //   console.log(nyArray);
   const avdelingArray = barn.filter((barn) => barn.avdeling === "Avdeling 8");
   console.log(avdelingArray);
 
   const avdeling = "";
   // Lage dynamiske paths basert på avdeling key.
   // Populate countlist based on avdeling key
+
   return (
     <Container>
-      <div>
-        <h1 className="margin--top--medium">Registrere kids</h1>
-        <DropdownButton
-          variant="outline-secondary"
-          title="Velg Avdeling"
-          id="input-group-dropdown-1"
+      <div className="d-flex flex-column align-items-center justify-content-center">
+        <h1 className="margin--top--medium">Oppmøteliste {currentDate}</h1>
+        <Card
+          style={{ width: "50rem" }}
+          className="d-flex align-items-center justify-content-center"
         >
-          <Dropdown.Item href="#">Avdeling 1</Dropdown.Item>
-          <Dropdown.Item href="#">Avdeling 2</Dropdown.Item>
-          <Dropdown.Item href="#">Avdeling 3</Dropdown.Item>
-          <Dropdown.Item href="#">Avdeling 4</Dropdown.Item>
-          <Dropdown.Item href={`${avdeling}5`}>Avdeling 5</Dropdown.Item>
-          <Dropdown.Item href="#">Avdeling 6</Dropdown.Item>
-          <Dropdown.Item href="#">Avdeling 7</Dropdown.Item>
-          <Dropdown.Item href="#">Avdeling 8</Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Item href="#">Separated link</Dropdown.Item>
-        </DropdownButton>
-        <div></div>
+          <Card.Body>
+            <Card.Title className="font-weight-bold">Card Title</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </Card.Text>
+            <Select
+              className="mb-3"
+              options={avdelinger}
+              placeholder="Velg avdeling"
+              isSearchable
+            />
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+        </Card>
       </div>
     </Container>
   );
