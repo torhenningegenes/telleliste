@@ -1,16 +1,30 @@
-import Dropdown from "../../components/layout/dropdown";
+import DropdownAvdeling from "../../components/layout/dropdown-avdeling";
 import { Container, Card, Button } from "react-bootstrap";
 import { useRouter } from "next/router";
 import Barnegruppe from "./barnegruppe";
 import AvdelingPage from "./[avdeling]";
 import { useState } from "react";
 import CurrentDate from "../../components/current-date";
+import Avdeling from "./avdeling";
 
 function RegKids() {
-  const [dropdown, setDropdown] = useState();
+  const [isLoading, setIsLoading] = useState("Loading...");
+  const [valgtAvdeling, setValgtAvdeling] = useState({
+    value: "Ingen avdeling valgt",
+    label: "Ingen avdeling valgt",
+  });
   // Here there will be a API-call to the firebase server for fetching the children. For Now we use dummy data.
   // One page per department. passing kids as props
   const barn = [
+    { id: 1, navn: "Louise", tilstede: true, avdeling: "Avdeling 1" },
+    { id: 2, navn: "Lars", tilstede: true, avdeling: "Avdeling 1" },
+    { id: 3, navn: "Mette", tilstede: true, avdeling: "Avdeling 1" },
+    { id: 4, navn: "Niklas", tilstede: true, avdeling: "Avdeling 1" },
+    { id: 5, navn: "Lily", tilstede: true, avdeling: "Avdeling 1" },
+    { id: 6, navn: "Tobias", tilstede: true, avdeling: "Avdeling 1" },
+    { id: 7, navn: "Andreas", tilstede: true, avdeling: "Avdeling 1" },
+    { id: 9, navn: "Marte", tilstede: true, avdeling: "Avdeling 1" },
+    { id: 8, navn: "Isolde", tilstede: true, avdeling: "Avdeling 1'" },
     { id: 1, navn: "Aria", tilstede: true, avdeling: "Avdeling 8" },
     { id: 2, navn: "Per", tilstede: true, avdeling: "Avdeling 8" },
     { id: 3, navn: "Olav", tilstede: true, avdeling: "Avdeling 8" },
@@ -31,6 +45,7 @@ function RegKids() {
   ];
 
   const router = useRouter();
+
   let nyArray = [];
   function filterAvdeling() {
     nyArray = barn.filter((barn) => barn.avdeling === "Avdeling 5");
@@ -40,11 +55,12 @@ function RegKids() {
   filterAvdeling();
   //   console.log(nyArray);
   const avdelingArray = barn.filter((barn) => barn.avdeling === "Avdeling 8");
-  console.log(avdelingArray);
+  //   console.log(avdelingArray);
 
   const avdeling = "";
   // Lage dynamiske paths basert på avdeling key.
   // Populate countlist based on avdeling key
+  // When the user chooses department, remove
 
   return (
     <Container>
@@ -52,7 +68,11 @@ function RegKids() {
         <h1 className="margin--top--medium d-flex align-items-center justify-content-center">
           Oppmøteliste <CurrentDate />
         </h1>
-        <Dropdown />
+        <DropdownAvdeling
+          barn={barn}
+          valgtAvdeling={valgtAvdeling}
+          setValgtAvdeling={setValgtAvdeling}
+        />
       </div>
     </Container>
   );

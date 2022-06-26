@@ -2,7 +2,7 @@ import StartButton from "../components/start-button";
 import firebase from "../firebase/firebaseConfig";
 import { Container, Button } from "react-bootstrap";
 import { Fragment } from "react";
-import Footer from "../components/footer";
+import Footer from "../components/layout/footer";
 import Link from "next/link";
 import BgImg from "../components/bg-img";
 

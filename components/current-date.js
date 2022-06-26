@@ -11,9 +11,9 @@ function CurrentDate() {
   const date = new Date();
   const day = date.getDay();
   const currentDay = ukedager[date.getDay()];
-  console.log(day);
+  // console.log(day);
   const currentDate = date.toLocaleDateString();
-  console.log(currentDate);
+  // console.log(currentDate);
   const dayAndDate = currentDay + " " + currentDate;
   return <div className="ms-2">{dayAndDate}</div>;
 }
