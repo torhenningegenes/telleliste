@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { useRouter } from "next/router";
 import NyTelling from "./nytelling";
-import Footer from "../../components/footer";
+import Footer from "../../components/layout/footer";
 
 function Telling(props) {
   const router = useRouter();

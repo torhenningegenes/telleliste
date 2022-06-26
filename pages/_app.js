@@ -1,9 +1,9 @@
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.css";
-import NavBar from "../components/nav";
+
 import { AppWrapper } from "./AppWrapper";
 import { AuthProvider } from "../context/auth-context";
-import StartNav from "../components/startNav";
+import StartNav from "../components/layout/startNav";
 import ProtecedRoutes from "../components/proteced-routes";
 import Head from "next/head";
 import { useRouter } from "next/router";

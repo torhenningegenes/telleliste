@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 
-import { useAuth } from "../context/auth-context";
+import { useAuth } from "../../context/auth-context";
 import { useRouter } from "next/router";
 
 function StartNav() {
