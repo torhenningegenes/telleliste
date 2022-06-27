@@ -2,7 +2,7 @@ import Barnegruppe from "./barnegruppe";
 
 function Avdeling(props) {
   //getting props
-  const { barn, valgtAvdeling } = props;
+  const { barn, valgtAvdeling, clicked, setClicked } = props;
   console.log(valgtAvdeling);
 
   const { label } = valgtAvdeling;
@@ -32,7 +32,12 @@ function Avdeling(props) {
       <div>
         {" "}
         du har valgt avdeling {label}
-        <Barnegruppe label={label} sortedBarn={sortedBarn} />
+        <Barnegruppe
+          label={label}
+          sortedBarn={sortedBarn}
+          clicked={clicked}
+          setClicked={setClicked}
+        />
       </div>
     );
   }

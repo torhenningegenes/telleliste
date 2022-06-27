@@ -13,6 +13,7 @@ function RegKids() {
     value: "Ingen avdeling valgt",
     label: "Ingen avdeling valgt",
   });
+  const [clicked, setClicked] = useState(false);
   // Here there will be a API-call to the firebase server for fetching the children. For Now we use dummy data.
   // One page per department. passing kids as props
   const barn = [
@@ -72,6 +73,8 @@ function RegKids() {
           barn={barn}
           valgtAvdeling={valgtAvdeling}
           setValgtAvdeling={setValgtAvdeling}
+          clicked={clicked}
+          setClicked={setClicked}
         />
       </div>
     </Container>

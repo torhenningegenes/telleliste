@@ -8,7 +8,7 @@ function DropdownAvdeling(props) {
   // Getting our props. Barn is sent from index
   const { barn } = props;
 
-  const { valgtAvdeling, setValgtAvdeling } = props;
+  const { valgtAvdeling, setValgtAvdeling, clicked, setClicked } = props;
 
   //********************* ******************//
   // if ref.value.current = avdeling 1 do filter avdeling avdeling 1.
@@ -64,7 +64,12 @@ function DropdownAvdeling(props) {
         style={{ width: "50rem" }}
         className="d-flex align-items-center justify-content-center mt-3 mb-3"
       >
-        <Avdeling valgtAvdeling={valgtAvdeling} barn={barn} />
+        <Avdeling
+          valgtAvdeling={valgtAvdeling}
+          barn={barn}
+          clicked={clicked}
+          setClicked={setClicked}
+        />
       </Card>
     </Container>
   );

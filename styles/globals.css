@@ -85,3 +85,53 @@ a {
 .margin--top--medium {
   margin-top: 96px;
 }
+
+.navnOgAvdeling {
+  margin: 5px;
+}
+
+/******************/
+/*Buttons*/
+/******************/
+
+.customBtn {
+  background-color: #48e055;
+  color: rgb(39, 102, 41);
+  border: solid 2px #276629;
+  padding: 5px;
+  font-size: 31px;
+  height: 100px;
+  width: 100px;
+  box-shadow: 0 2px 4px rgb(45, 45, 45);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 70%;
+}
+
+.customBtn:active {
+  background-color: #aaaaaa;
+  box-shadow: 0 0 2px rgb(45, 45, 45);
+  transform: translateY(2px);
+  border-radius: 70%;
+}
+
+.btnCounted {
+  background-color: #aaaaaa;
+  box-shadow: 0 0 2px rgb(45, 45, 45);
+  transform: translateY(2px);
+  border-radius: 70%;
+}
+
+.regretBtn {
+  background-color: #ff2b20;
+  color: rgb(102, 2, 2);
+  border: solid 2px #ffffff;
+  padding: 5px;
+  font-size: 21px;
+  height: 50px;
+  width: 50px;
+  box-shadow: 0 2px 4px rgb(0, 0, 0);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 70%;
+}
