@@ -1,16 +1,21 @@
 import uniqid from "uniqid";
-
+import { Button } from "react-bootstrap";
+import CountButton from "./count-button";
 function Kid(props) {
-  const { navn, avdeling } = props;
+  const { navn, avdeling, clicked, setClicked } = props;
 
   return (
     <li
       className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center mt-4"
       key={uniqid}
     >
-      <h4>{navn}</h4>
-      <h6>{avdeling}</h6>
-      <button>Kryss inn</button>
+      <h4 className="navnOgAvdeling">{navn}</h4>
+      <h6 className="navnOgAvdeling">{avdeling}</h6>
+      <CountButton
+        handleClick={handleBtnClick}
+        clicked={clicked}
+        setClicked={setClicked}
+      />
     </li>
   );
 }
