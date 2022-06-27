@@ -6,8 +6,9 @@ export default function Barnegruppe(props) {
 
   return (
     <div>
-      <h3>Barnegruppe</h3>
       <Container>
+        <h4>Lag ny telleliste</h4>
+        <h5>Tilstede</h5>
         <ul>
           {" "}
           {sortedBarn.map((sortedBarn) => {

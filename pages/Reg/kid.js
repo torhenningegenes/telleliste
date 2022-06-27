@@ -12,7 +12,8 @@ function Kid(props) {
       <h4 className="navnOgAvdeling">{navn}</h4>
       <h6 className="navnOgAvdeling">{avdeling}</h6>
       <CountButton
-        handleClick={handleBtnClick}
+        navn={navn}
+        avdeling={avdeling}
         clicked={clicked}
         setClicked={setClicked}
       />

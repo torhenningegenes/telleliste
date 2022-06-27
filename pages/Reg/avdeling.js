@@ -30,8 +30,7 @@ function Avdeling(props) {
   } else {
     return (
       <div>
-        {" "}
-        du har valgt avdeling {label}
+        <h3>Du har valgt: {label}</h3>
         <Barnegruppe
           label={label}
           sortedBarn={sortedBarn}

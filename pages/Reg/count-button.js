@@ -1,13 +1,21 @@
 import { useState } from "react";
+import { useAppContext } from "../AppWrapper";
+
 function CountButton(props) {
-  const { handleClick } = props;
+  const { navn, avdeling } = props;
   let [clicked, setClicked] = useState(false);
+  const countContext = useAppContext();
+
   function handleBtnClick() {
+    // Changing state.
     setClicked(true);
-    console.log("click");
+    countContext.push({ navn: navn, avdeling: avdeling });
+    console.log(countContext);
     if (clicked === true) {
       setClicked(false);
     }
+
+    // Pushing kids clicked to new array. Populate countlist from that array
   }
   return (
     <>
@@ -20,8 +28,7 @@ function CountButton(props) {
           color: clicked ? "#276629" : "white",
         }}
       >
-        {" "}
-        ✓{" "}
+        ✓
       </button>
     </>
   );
