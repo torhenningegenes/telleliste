@@ -1,31 +1,40 @@
-import StartButton from "../components/start-button";
-import firebase from "../firebase/firebaseConfig";
 import { Container, Button } from "react-bootstrap";
 import { Fragment } from "react";
 import Footer from "../components/layout/footer";
 import Link from "next/link";
 import BgImg from "../components/bg-img";
+import { useAuth } from "../context/auth-context";
+import { useRouter } from "next/router";
 
 function Home(props) {
-  const label1 = "Ny liste";
-  const label2 = "Se gamle lister";
+  const { currentUser } = useAuth();
+  const router = useRouter();
+
+  if (currentUser) {
+    console.log(`${currentUser.email} is logged in`);
+    // router.push("/home");
+  }
   return (
     <Fragment>
       <BgImg />
       <Container
-        className="d-flex align-items-center  flex-column text-light bg-transparent overlay
+        className="d-flex align-items-center  flex-column text-light bg-transparent overlay 
 "
       >
-        <h1 className="text-center main__header shadow-lg ">
+        <h1 className="text-center main__header shadow-lg mb-5 text-dark bg-light">
           Velkommen til Tellelista
         </h1>
 
         <Link href={"/login-user"} passHref>
-          <Button className="center btn btn-lg">Login</Button>
+          <Button variant="info" className="center btn btn-lg mb-5 text-dark">
+            Login
+          </Button>
         </Link>
-        <h4 className="mt-4">Eller opprett ny bruker</h4>
+
         <Link href={"/new-user"} passHref>
-          <Button className="center btn btn-lg">Ny bruker</Button>
+          <Button variant="info" className="center btn btn-lg text-dark">
+            Ny bruker
+          </Button>
         </Link>
       </Container>
       <Footer />

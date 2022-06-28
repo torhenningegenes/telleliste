@@ -19,12 +19,11 @@ function CountButton(props) {
   }
   return (
     <>
-      {" "}
       <button
         className="customBtn"
         onClick={handleBtnClick}
         style={{
-          backgroundColor: clicked ? "#48e055" : "grey",
+          backgroundColor: clicked ? "#48e055" : "#B7B7B7",
           color: clicked ? "#276629" : "white",
         }}
       >

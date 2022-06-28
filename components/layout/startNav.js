@@ -16,7 +16,7 @@ function StartNav() {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
       <Container>
-        <Link href={"/home"} passHref>
+        <Link href={"/"} passHref>
           <Navbar.Brand>📝 Tellelista</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

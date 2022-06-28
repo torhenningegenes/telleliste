@@ -62,6 +62,8 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const auth = getAuth(app);
   // console.log(currentUser);
+
+  //Getting the current user
   useEffect(() => {
     const auth = getAuth(app);
     const unsubscribe = onAuthStateChanged(auth, (user) => {
