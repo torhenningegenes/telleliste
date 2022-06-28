@@ -37,6 +37,10 @@ function DropdownAvdeling(props) {
     { value: "Avdeling 1", label: "Avdeling 1" },
     { value: "Avdeling 2", label: "Avdeling 2" },
     { value: "Avdeling 3", label: "Avdeling 3" },
+    { value: "Avdeling 4", label: "Avdeling 4" },
+    { value: "Avdeling 5", label: "Avdeling 5" },
+    { value: "Avdeling 6", label: "Avdeling 6" },
+    { value: "Avdeling 7", label: "Avdeling 7" },
     { value: "Avdeling 8", label: "Avdeling 8" },
   ];
   return (
@@ -60,7 +64,7 @@ function DropdownAvdeling(props) {
           <Button variant="primary">Resett</Button>
         </Card.Body>
       </Card>
-      <Card
+      <Container
         style={{ width: "50rem" }}
         className="d-flex align-items-center justify-content-center mt-3 mb-3"
       >
@@ -70,7 +74,7 @@ function DropdownAvdeling(props) {
           clicked={clicked}
           setClicked={setClicked}
         />
-      </Card>
+      </Container>
     </Container>
   );
 }
