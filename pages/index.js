@@ -37,7 +37,6 @@ function Home(props) {
           </Button>
         </Link>
       </Container>
-      <Footer />
     </Fragment>
   );
 }
