@@ -6,6 +6,7 @@ import AvdelingPage from "./[avdeling]";
 import { useState } from "react";
 import CurrentDate from "../../components/current-date";
 import Avdeling from "./avdeling";
+import BgImg from "../../components/bg-img";
 
 function RegKids() {
   const [isLoading, setIsLoading] = useState("Loading...");
@@ -64,7 +65,8 @@ function RegKids() {
   // When the user chooses department, remove
 
   return (
-    <Container>
+    <Container className="d-flex flex-column align-items-center justify-content-center">
+      <BgImg />
       <div className="d-flex flex-column align-items-center justify-content-center">
         <h1 className="margin--top--medium d-flex align-items-center justify-content-center">
           Oppmøteliste <CurrentDate />

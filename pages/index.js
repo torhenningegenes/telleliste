@@ -16,23 +16,23 @@ function Home(props) {
   }
   return (
     <Fragment>
-      <BgImg />
       <Container
-        className="d-flex align-items-center  flex-column text-light bg-transparent overlay 
-"
+        className="d-flex align-items-center flex-column text-light container-fluid bg-transparent
+        "
       >
-        <h1 className="text-center main__header shadow-lg mb-5 text-dark bg-light">
-          Velkommen til Tellelista
+        <BgImg />
+        <h1 className="text-center main__header shadow-lg mb-5 telle--lista--heading1">
+          Velkommen til Tellelista for barnehage
         </h1>
 
         <Link href={"/login-user"} passHref>
-          <Button variant="info" className="center btn btn-lg mb-5 text-dark">
+          <Button variant="light" className="center btn btn-lg mb-5 text-dark">
             Login
           </Button>
         </Link>
 
         <Link href={"/new-user"} passHref>
-          <Button variant="info" className="center btn btn-lg text-dark">
+          <Button variant="light" className="center btn btn-lg text-dark">
             Ny bruker
           </Button>
         </Link>

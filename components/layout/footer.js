@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer>
-      <h3>This is the footer</h3>
+    <footer className="footer mt-auto py-1 bg-dark fixed-bottom">
+      <p className="ms-2 text-light">This is the footer</p>
     </footer>
   );
 }

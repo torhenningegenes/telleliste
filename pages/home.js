@@ -1,22 +1,25 @@
-import SignUp from "../context/signUp";
-import { Fragment } from "react";
-import { Container } from "react-bootstrap";
+import Link from "next/link";
+
+import { Button, Container } from "react-bootstrap";
 import { useAuth } from "../context/auth-context";
 import BgImg from "../components/bg-img";
 
 function Home(props) {
   const { currentUser } = useAuth();
   return (
-    <Fragment>
-      <Container>
+    <>
+      <Container className="d-flex align-items-center flex-column text-light">
         <BgImg />
-        <div className="bg-transparent text-light center overlay margin--top--medium ">
+        <section className="margin--top--medium center">
           <h1 className="">Velkommen til tellelista!</h1>
           {/* <h1>{currentUser.email}</h1> */}
           <h2>Dette er en beskyttet rute!</h2>
-        </div>
+          <Link href={"/Reg"} passHref>
+            <Button variant="light">Registrer barnegruppe</Button>
+          </Link>
+        </section>
       </Container>
-    </Fragment>
+    </>
   );
 }
 

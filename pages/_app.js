@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
   const noAuthRequired = ["/home", "/login-user", "/new-user"];
   const router = useRouter();
   return (
-    <div>
+    <>
       <AuthProvider>
         <AppWrapper>
           <Head>
@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
           )}
         </AppWrapper>
       </AuthProvider>
-    </div>
+    </>
   );
 }
 
