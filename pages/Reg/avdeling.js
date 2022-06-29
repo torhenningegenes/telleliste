@@ -25,11 +25,12 @@ function Avdeling(props) {
   //   };
 
   //   console.log(filteredBarnegrupper(barn));
+
   if (!label === "Ingen avdeling valgt") {
-    return <div>Du har ikke valgt avdeling</div>;
+    return <div>Du har ikke valgt avdeling din tullebukk!</div>;
   } else {
     return (
-      <div>
+      <>
         <h3>Du har valgt: {label}</h3>
         <Barnegruppe
           label={label}
@@ -37,7 +38,7 @@ function Avdeling(props) {
           clicked={clicked}
           setClicked={setClicked}
         />
-      </div>
+      </>
     );
   }
 }

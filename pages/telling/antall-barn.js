@@ -4,7 +4,7 @@ import { useEffect } from "react";
 function AntallBarn(props) {
   let { antall } = props;
 
-  return <p>Antall barn:{antall}</p>;
+  return <div>Antall barn:{antall}</div>;
 }
 
 export default AntallBarn;

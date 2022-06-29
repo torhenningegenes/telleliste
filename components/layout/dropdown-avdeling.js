@@ -44,10 +44,10 @@ function DropdownAvdeling(props) {
     { value: "Avdeling 8", label: "Avdeling 8" },
   ];
   return (
-    <Container className="d-flex align-items-center justify-content-center flex-column ">
+    <Container className="d-flex align-items-start justify-content-center flex-row ">
       <Card
-        style={{ width: "50rem" }}
-        className="d-flex align-items-center justify-content-center mt-3 mb-3"
+        style={{ width: "30rem" }}
+        className="d-flex align-items-center justify-content-center mt-3 mb-3 shadow rounded"
       >
         <Card.Body>
           <Card.Title className="font-weight-bold">
@@ -64,16 +64,27 @@ function DropdownAvdeling(props) {
           <Button variant="primary">Resett</Button>
         </Card.Body>
       </Card>
+
       <Container
         style={{ width: "50rem" }}
-        className="d-flex align-items-center justify-content-center mt-3 mb-3"
+        className="d-flex align-items-center justify-content-center mb-3"
       >
-        <Avdeling
-          valgtAvdeling={valgtAvdeling}
-          barn={barn}
-          clicked={clicked}
-          setClicked={setClicked}
-        />
+        <Card
+          style={{ width: "30rem" }}
+          className="d-flex align-items-center justify-content-center mt-3 mb-3 shadow rounded"
+        >
+          <Card.Body>
+            <Card.Title></Card.Title>
+            <Card.Text>
+              <Avdeling
+                valgtAvdeling={valgtAvdeling}
+                barn={barn}
+                clicked={clicked}
+                setClicked={setClicked}
+              />
+            </Card.Text>
+          </Card.Body>
+        </Card>
       </Container>
     </Container>
   );

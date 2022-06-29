@@ -2,11 +2,9 @@ import DropdownAvdeling from "../../components/layout/dropdown-avdeling";
 import { Container, Card, Button } from "react-bootstrap";
 import { useRouter } from "next/router";
 import Barnegruppe from "./barnegruppe";
-import AvdelingPage from "./[avdeling]";
+
 import { useState } from "react";
 import CurrentDate from "../../components/current-date";
-import Avdeling from "./avdeling";
-import BgImg from "../../components/bg-img";
 
 function RegKids() {
   const [isLoading, setIsLoading] = useState("Loading...");
@@ -65,21 +63,22 @@ function RegKids() {
   // When the user chooses department, remove
 
   return (
-    <Container className="d-flex flex-column align-items-center justify-content-center">
-      <BgImg />
-      <div className="d-flex flex-column align-items-center justify-content-center">
-        <h1 className="margin--top--medium d-flex align-items-center justify-content-center">
-          Oppmøteliste <CurrentDate />
-        </h1>
-        <DropdownAvdeling
-          barn={barn}
-          valgtAvdeling={valgtAvdeling}
-          setValgtAvdeling={setValgtAvdeling}
-          clicked={clicked}
-          setClicked={setClicked}
-        />
-      </div>
-    </Container>
+    <>
+      <Container className="d-flex flex-column align-items-center justify-content-center h-100 bg-light ">
+        <div className="d-flex flex-column align-items-center justify-content-center">
+          <h1 className="text-dark margin--top--medium d-flex align-items-center justify-content-center">
+            Oppmøteliste <CurrentDate />
+          </h1>
+          <DropdownAvdeling
+            barn={barn}
+            valgtAvdeling={valgtAvdeling}
+            setValgtAvdeling={setValgtAvdeling}
+            clicked={clicked}
+            setClicked={setClicked}
+          />
+        </div>
+      </Container>
+    </>
   );
 }
 

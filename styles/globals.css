@@ -71,7 +71,23 @@ a {
   height: 100vh;
   z-index: -10;
 }
+.bg-color {
+  position: absolute;
+  background-color: #142b2e;
+}
+.bg-gradient {
+  position: absolute;
+  height: 100vh;
 
+  background: rgb(5, 68, 76);
+  background: linear-gradient(
+    0deg,
+    rgba(5, 68, 76, 1) 0%,
+    rgba(2, 168, 207, 0.6026785714285714) 100%,
+    rgba(4, 125, 153, 1) 100%
+  );
+  z-index: 1000;
+}
 .bg-overlay {
   position: absolute;
   top: 0;
@@ -82,7 +98,9 @@ a {
   height: 90vh;
   z-index: 10;
 }
-
+.bg {
+  z-index: -10000;
+}
 .overlay {
   position: absolute;
   top: 0;

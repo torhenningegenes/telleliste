@@ -9,8 +9,8 @@ function Kid(props) {
       className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center mt-4"
       key={uniqid}
     >
-      <h4 className="navnOgAvdeling">{navn}</h4>
-      <h6 className="navnOgAvdeling">{avdeling}</h6>
+      <div className="navnOgAvdeling">{navn}</div>
+      <div className="navnOgAvdeling">{avdeling}</div>
       <CountButton
         navn={navn}
         avdeling={avdeling}
