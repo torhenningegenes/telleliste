@@ -7,7 +7,7 @@ import StartNav from "../components/layout/startNav";
 import ProtecedRoutes from "../components/proteced-routes";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import BgColor from "../components/layout/bg-color";
+import Footer from "../components/layout/bg-color";
 
 function MyApp({ Component, pageProps }) {
   const noAuthRequired = ["/home", "/login-user", "/new-user"];
@@ -21,6 +21,7 @@ function MyApp({ Component, pageProps }) {
           </Head>
 
           <StartNav />
+          <Footer />
           {noAuthRequired.includes(router.pathname) ? (
             <Component {...pageProps} />
           ) : (

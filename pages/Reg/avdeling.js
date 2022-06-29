@@ -1,5 +1,5 @@
 import Barnegruppe from "./barnegruppe";
-
+import { Fragment } from "react";
 function Avdeling(props) {
   //getting props
   const { barn, valgtAvdeling, clicked, setClicked } = props;
@@ -26,19 +26,23 @@ function Avdeling(props) {
 
   //   console.log(filteredBarnegrupper(barn));
 
-  if (!label === "Ingen avdeling valgt") {
-    return <div>Du har ikke valgt avdeling din tullebukk!</div>;
+  if (label === "Ingen avdeling valgt") {
+    return (
+      <Fragment>
+        <h5>Ingen avdeling valgt</h5>
+      </Fragment>
+    );
   } else {
     return (
-      <>
-        <h3>Du har valgt: {label}</h3>
+      <Fragment>
+        <h5>Du har valgt: {label}</h5>
         <Barnegruppe
           label={label}
           sortedBarn={sortedBarn}
           clicked={clicked}
           setClicked={setClicked}
         />
-      </>
+      </Fragment>
     );
   }
 }

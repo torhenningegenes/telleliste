@@ -21,9 +21,6 @@ function DropdownAvdeling(props) {
   filterAvdeling();
   // console.log(nyArray);
 
-  const onChange = () => {
-    console.log("Avdeling valgt");
-  };
   //********************* ******************//
   // make a object based on avdelinger in barn.
   function createOptions(barn) {
@@ -64,8 +61,7 @@ function DropdownAvdeling(props) {
           <Button variant="primary">Resett</Button>
         </Card.Body>
       </Card>
-
-      <Container
+      {/* <Container
         style={{ width: "50rem" }}
         className="d-flex align-items-center justify-content-center mb-3"
       >
@@ -75,17 +71,16 @@ function DropdownAvdeling(props) {
         >
           <Card.Body>
             <Card.Title></Card.Title>
-            <Card.Text>
-              <Avdeling
-                valgtAvdeling={valgtAvdeling}
-                barn={barn}
-                clicked={clicked}
-                setClicked={setClicked}
-              />
-            </Card.Text>
+            <Card.Text></Card.Text>
+            <Avdeling
+              valgtAvdeling={valgtAvdeling}
+              barn={barn}
+              clicked={clicked}
+              setClicked={setClicked}
+            />
           </Card.Body>
         </Card>
-      </Container>
+      </Container> */}
     </Container>
   );
 }

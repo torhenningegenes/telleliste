@@ -1,7 +1,8 @@
 import DropdownAvdeling from "../../components/layout/dropdown-avdeling";
 import { Container, Card, Button } from "react-bootstrap";
 import { useRouter } from "next/router";
-import Barnegruppe from "./barnegruppe";
+import uniqid from "uniqid";
+import Avdeling from "./avdeling";
 
 import { useState } from "react";
 import CurrentDate from "../../components/current-date";
@@ -37,11 +38,11 @@ function RegKids() {
     { id: 10, navn: "Ellie", tilstede: true, avdeling: "Avdeling 8" },
     { id: 11, navn: "Nora", tilstede: true, avdeling: "Avdeling 8" },
     { id: 12, navn: "Tor Henning", tilstede: true, avdeling: "Avdeling 8" },
-    { id: 13, navn: "Stian", tilstede: true, avdeling: "Avdeling 5" },
-    { id: 13, navn: "Lisbet", tilstede: true, avdeling: "Avdeling 5" },
-    { id: 13, navn: "Joakim", tilstede: true, avdeling: "Avdeling 5" },
-    { id: 13, navn: "Michael", tilstede: true, avdeling: "Avdeling 5" },
-    { id: 13, navn: "Christian", tilstede: true, avdeling: "Avdeling 5" },
+    { id: uniqid(), navn: "Stian", tilstede: true, avdeling: "Avdeling 5" },
+    { id: uniqid(), navn: "Lisbet", tilstede: true, avdeling: "Avdeling 5" },
+    { id: uniqid(), navn: "Joakim", tilstede: true, avdeling: "Avdeling 5" },
+    { id: uniqid(), navn: "Michael", tilstede: true, avdeling: "Avdeling 5" },
+    { id: uniqid(), navn: "Christian", tilstede: true, avdeling: "Avdeling 5" },
   ];
 
   const router = useRouter();
@@ -65,10 +66,10 @@ function RegKids() {
   return (
     <>
       <Container className="d-flex flex-column align-items-center justify-content-center h-100 bg-light ">
-        <div className="d-flex flex-column align-items-center justify-content-center">
-          <h1 className="text-dark margin--top--medium d-flex align-items-center justify-content-center">
-            Oppmøteliste <CurrentDate />
-          </h1>
+        <h1 className="text-dark margin--top--medium d-flex align-items-center justify-content-center">
+          Oppmøteliste <CurrentDate />
+        </h1>
+        <div className="d-flex align-items-center justify-content-center">
           <DropdownAvdeling
             barn={barn}
             valgtAvdeling={valgtAvdeling}
@@ -76,6 +77,21 @@ function RegKids() {
             clicked={clicked}
             setClicked={setClicked}
           />
+          <Card
+            style={{ width: "30rem" }}
+            className="d-flex align-items-center justify-content-center mt-3 mb-3 shadow rounded"
+          >
+            <Card.Body>
+              <Card.Title></Card.Title>
+              <Card.Text></Card.Text>
+              <Avdeling
+                valgtAvdeling={valgtAvdeling}
+                barn={barn}
+                clicked={clicked}
+                setClicked={setClicked}
+              />
+            </Card.Body>
+          </Card>
         </div>
       </Container>
     </>
