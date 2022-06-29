@@ -10,7 +10,6 @@ export default function Barnegruppe(props) {
         <h4>Lag ny telleliste</h4>
         <h5>Tilstede</h5>
         <ul>
-          {" "}
           {sortedBarn.map((sortedBarn) => {
             return (
               <Kid
