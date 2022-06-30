@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Button, Container } from "react-bootstrap";
 import { useAuth } from "../context/auth-context";
 import BgImg from "../components/bg-img";
+import { FirestoreWrite } from "../firebase/firestore-write";
+import { FirestoreRead } from "../firebase/firestore-read";
 
 function Home(props) {
   const { currentUser } = useAuth();
@@ -17,6 +19,8 @@ function Home(props) {
           <Link href={"/Reg"} passHref>
             <Button variant="light">Registrer barnegruppe</Button>
           </Link>
+          <FirestoreWrite />
+          <FirestoreRead />
         </section>
       </Container>
     </>

@@ -1,4 +1,5 @@
 import { initializeApp, getApps, apps } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
@@ -27,10 +28,13 @@ const app = createOrGetApp();
 // };
 
 // const app = initializeApp(firebaseConfig);
-if (app) {
-  console.log("Firebase was succsessfully init..");
-  console.log(app);
-}
+// if (app) {
+//   console.log("Firebase was succsessfully init..");
+//   console.log(app);
+// }
 const auth = getAuth(app);
 
-export { auth, app };
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+console.log("Firestore was successfully init...");
+export { auth, app, db };
