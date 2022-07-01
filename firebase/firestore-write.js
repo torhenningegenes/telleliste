@@ -1,10 +1,23 @@
 import { db } from "./firebaseConfig";
-import { collection, addDoc, setDoc } from "firebase/firestore";
+import { collection, doc, addDoc, setDoc } from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
 import { Button } from "react-bootstrap";
-const citiesRef = collection(db, "cities");
+
 export function FirestoreWrite() {
   const addToDB = async function () {
+    // try {
+    //   const docRef = await addDoc(collection(db, "users"), {
+    //     first: "Ada",
+    //     last: "Lovelace",
+    //     born: 1815,
+    //   });
+    //   console.log("Document written with ID: ", docRef.id);
+    // } catch (e) {
+    //   console.error("Error adding document: ", e);
+    // }
+
+    const citiesRef = collection(db, "cities");
+
     await setDoc(doc(citiesRef, "SF"), {
       name: "San Francisco",
       state: "CA",
@@ -51,6 +64,9 @@ export function FirestoreWrite() {
       <Button variant="primary" onClick={addToDB}>
         Write to DB 1
       </Button>
+      {/* <Button variant="primary" onClick={writeToDB}>
+        Write to DB 2
+      </Button> */}
     </>
   );
 }
