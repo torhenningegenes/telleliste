@@ -12,7 +12,7 @@ function Home(props) {
 
   if (currentUser) {
     console.log(`${currentUser.email} is logged in`);
-    // router.push("/home");
+    router.push("/home");
   }
   return (
     <Fragment>

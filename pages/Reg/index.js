@@ -3,9 +3,10 @@ import { Container, Card, Button } from "react-bootstrap";
 import { useRouter } from "next/router";
 import uniqid from "uniqid";
 import Avdeling from "./avdeling";
-
 import { useState } from "react";
 import CurrentDate from "../../components/current-date";
+import { db } from "../../firebase/firebaseConfig";
+import { collection, doc, addDoc, setDoc } from "firebase/firestore";
 
 function RegKids() {
   const [isLoading, setIsLoading] = useState("Loading...");
@@ -14,6 +15,11 @@ function RegKids() {
     label: "Ingen avdeling valgt",
   });
   const [clicked, setClicked] = useState(false);
+  const [counted, setCounted] = useState(false);
+  const [hidden, setHidden] = useState();
+  // Creates collection in DB;
+  const oldCountings = collection(db, "oldCountings");
+
   // Here there will be a API-call to the firebase server for fetching the children. For Now we use dummy data.
   // One page per department. passing kids as props
   const barn = [
@@ -69,7 +75,7 @@ function RegKids() {
         <h1 className="text-dark margin--top--medium d-flex align-items-center justify-content-center">
           Oppmøteliste <CurrentDate />
         </h1>
-        <div className="d-flex align-items-center justify-content-center">
+        <div className="d-flex align-items-center justify-content-center flex-column">
           <DropdownAvdeling
             barn={barn}
             valgtAvdeling={valgtAvdeling}
@@ -89,6 +95,8 @@ function RegKids() {
                 barn={barn}
                 clicked={clicked}
                 setClicked={setClicked}
+                hidden={hidden}
+                setHidden={setHidden}
               />
             </Card.Body>
           </Card>

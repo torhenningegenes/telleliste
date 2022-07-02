@@ -41,7 +41,7 @@ function DropdownAvdeling(props) {
     { value: "Avdeling 8", label: "Avdeling 8" },
   ];
   return (
-    <Container className="d-flex align-items-start justify-content-center flex-row ">
+    <Container className="d-flex align-items-start justify-content-center flex-colum ">
       <Card
         style={{ width: "30rem" }}
         className="d-flex align-items-center justify-content-center mt-3 mb-3 shadow rounded"

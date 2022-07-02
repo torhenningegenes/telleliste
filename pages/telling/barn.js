@@ -1,4 +1,5 @@
 import { Fragment, useState, useRef } from "react";
+import RemoveButton from "../Reg/remove-button";
 import CountButton from "./button";
 import NyTelling from "./nytelling";
 function Barn(props) {
@@ -17,6 +18,7 @@ function Barn(props) {
           <h4>{navn}</h4>
           <h6>{avdeling}</h6>
         </div>
+
         <CountButton
           navn={navn}
           avdeling={avdeling}

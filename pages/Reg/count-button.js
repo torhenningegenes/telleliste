@@ -8,11 +8,15 @@ function CountButton(props) {
 
   function handleBtnClick() {
     // Changing state.
-    setClicked(true);
-    countContext.push({ navn: navn, avdeling: avdeling });
-    console.log(countContext);
+
     if (clicked === true) {
       setClicked(false);
+      countContext.pop({ navn: navn, avdeling: avdeling });
+      console.log(countContext);
+    } else {
+      setClicked(true);
+      countContext.push({ navn: navn, avdeling: avdeling });
+      console.log(countContext);
     }
 
     // Pushing kids clicked to new array. Populate countlist from that array

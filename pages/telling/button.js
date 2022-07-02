@@ -9,6 +9,7 @@ function CountButton(props) {
   const btnCss = classes.customBtn;
   const regBtn = classes.regretBtn;
   const { navn, avdeling } = props;
+  let countedArr = [];
   const myContext = useAppContext();
   // console.log(myContext[0].barnTelt);
   // let barnIdClicked;
@@ -20,7 +21,9 @@ function CountButton(props) {
   function barnCounted() {
     setCounted(true);
     myContext.push({ navn: navn, avdeling: avdeling });
-    console.log(myContext);
+
+    countedArr = [...myContext];
+    console.log("Hei fra ny array " + countedArr);
     totalKids.current = totalKids.current + 1;
     console.log("Ref" + totalKids.current);
   }

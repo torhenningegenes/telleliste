@@ -4,7 +4,6 @@ function RegistrereTelling(props) {
   //Getting context
   const myContext = useAppContext();
   // total count
-  let totalKids = myContext.length;
 
   // Creating date object.
   const options = {
@@ -25,6 +24,10 @@ function RegistrereTelling(props) {
       console.log("Telling registrert");
 
       myContext.push({ dato: currentDate });
+      console.log(myContext);
+      if (myContext.length < 0) {
+        myContext.length = 0;
+      }
       console.log(myContext);
       // let myContext_serialized = JSON.stringify(myContext);
       // localStorage.setItem(myContext, myContext_serialized);

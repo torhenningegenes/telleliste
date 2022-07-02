@@ -17,7 +17,7 @@ export function FirestoreWrite() {
     // }
 
     const citiesRef = collection(db, "cities");
-
+    const countRef = collection(db, "ld countings");
     await setDoc(doc(citiesRef, "SF"), {
       name: "San Francisco",
       state: "CA",

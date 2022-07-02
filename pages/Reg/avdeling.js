@@ -2,7 +2,7 @@ import Barnegruppe from "./barnegruppe";
 import { Fragment } from "react";
 function Avdeling(props) {
   //getting props
-  const { barn, valgtAvdeling, clicked, setClicked } = props;
+  const { barn, valgtAvdeling, clicked, setClicked, hidden, setHidden } = props;
   console.log(valgtAvdeling);
 
   const { label } = valgtAvdeling;
@@ -41,6 +41,8 @@ function Avdeling(props) {
           sortedBarn={sortedBarn}
           clicked={clicked}
           setClicked={setClicked}
+          hidden={hidden}
+          setHidden={setHidden}
         />
       </Fragment>
     );
