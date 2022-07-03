@@ -16,9 +16,13 @@ function RegKids() {
   });
   const [clicked, setClicked] = useState(false);
   const [counted, setCounted] = useState(false);
-  const [hidden, setHidden] = useState();
+  const [hidden, setHidden] = useState(true);
   // Creates collection in DB;
   const oldCountings = collection(db, "oldCountings");
+
+  // Labels for regButton
+  const regAttendence = "Registrer oppmøte";
+  const regCount = "Registrer telling";
 
   // Here there will be a API-call to the firebase server for fetching the children. For Now we use dummy data.
   // One page per department. passing kids as props
@@ -53,15 +57,15 @@ function RegKids() {
 
   const router = useRouter();
 
-  let nyArray = [];
-  function filterAvdeling() {
-    nyArray = barn.filter((barn) => barn.avdeling === "Avdeling 5");
-  }
+  // let nyArray = [];
+  // function filterAvdeling() {
+  //   nyArray = barn.filter((barn) => barn.avdeling === "Avdeling 5");
+  // }
 
-  //Function for determening array when selectin avdeling from drop down menu
-  filterAvdeling();
-  //   console.log(nyArray);
-  const avdelingArray = barn.filter((barn) => barn.avdeling === "Avdeling 8");
+  // //Function for determening array when selectin avdeling from drop down menu
+  // filterAvdeling();
+  // //   console.log(nyArray);
+  // const avdelingArray = barn.filter((barn) => barn.avdeling === "Avdeling 8");
   //   console.log(avdelingArray);
 
   const avdeling = "";

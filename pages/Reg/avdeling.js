@@ -1,8 +1,10 @@
 import Barnegruppe from "./barnegruppe";
 import { Fragment } from "react";
+import uniqid from "uniqid";
 function Avdeling(props) {
   //getting props
-  const { barn, valgtAvdeling, clicked, setClicked, hidden, setHidden } = props;
+  const { barn, valgtAvdeling, clicked, setClicked, hidden, setHidden, key } =
+    props;
   console.log(valgtAvdeling);
 
   const { label } = valgtAvdeling;
@@ -37,6 +39,7 @@ function Avdeling(props) {
       <Fragment>
         <h5>Du har valgt: {label}</h5>
         <Barnegruppe
+          key={uniqid()}
           label={label}
           sortedBarn={sortedBarn}
           clicked={clicked}
