@@ -31,7 +31,7 @@ function StartNav() {
             <Link href={"/"} passHref>
               <Nav.Link>Hjem</Nav.Link>
             </Link>
-            <Link href={"/telling"} passHref>
+            <Link href={"/Reg"} passHref>
               <Nav.Link>Ny telling</Nav.Link>
             </Link>
             <Link href={"/"} passHref>

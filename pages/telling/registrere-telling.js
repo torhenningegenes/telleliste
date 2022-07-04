@@ -29,14 +29,6 @@ function RegistrereTelling(props) {
         myContext.length = 0;
       }
       console.log(myContext);
-      // let myContext_serialized = JSON.stringify(myContext);
-      // localStorage.setItem(myContext, myContext_serialized);
-      // const liste1 = JSON.parse(localStorage.getItem(myContext));
-      // console.log(liste1);
-      // if (myContext.length < 0) {
-      //   myContext.length = 0;
-      // }
-      // console.log(localStorage);
     }
   }
   return (

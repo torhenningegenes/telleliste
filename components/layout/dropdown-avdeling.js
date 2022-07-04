@@ -6,7 +6,7 @@ import Avdeling from "../../pages/Reg/avdeling";
 function DropdownAvdeling(props) {
   //********************* ******************//
   // Getting our props. Barn is sent from index
-  const { barn } = props;
+  const { barn, kidPresent, setKidPresent } = props;
 
   const { valgtAvdeling, setValgtAvdeling, clicked, setClicked } = props;
 
@@ -20,6 +20,8 @@ function DropdownAvdeling(props) {
   //Function for determening array when selectin avdeling from drop down menu
   filterAvdeling();
   // console.log(nyArray);
+
+  // Function for saving "Avdeling"
 
   //********************* ******************//
   // make a object based on avdelinger in barn.
@@ -58,29 +60,8 @@ function DropdownAvdeling(props) {
             isSearchable
             onChange={setValgtAvdeling}
           />
-          <Button variant="primary">Resett</Button>
         </Card.Body>
       </Card>
-      {/* <Container
-        style={{ width: "50rem" }}
-        className="d-flex align-items-center justify-content-center mb-3"
-      >
-        <Card
-          style={{ width: "30rem" }}
-          className="d-flex align-items-center justify-content-center mt-3 mb-3 shadow rounded"
-        >
-          <Card.Body>
-            <Card.Title></Card.Title>
-            <Card.Text></Card.Text>
-            <Avdeling
-              valgtAvdeling={valgtAvdeling}
-              barn={barn}
-              clicked={clicked}
-              setClicked={setClicked}
-            />
-          </Card.Body>
-        </Card>
-      </Container> */}
     </Container>
   );
 }

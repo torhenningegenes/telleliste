@@ -5,7 +5,7 @@ import RemoveButton from "./remove-button";
 import { Fragment } from "react";
 import { useState } from "react";
 function Kid(props) {
-  const { key, navn, avdeling, clicked, setClicked } = props;
+  const { navn, avdeling, clicked, setClicked } = props;
 
   const [showKid, setShowKid] = useState(true);
   return (
@@ -28,7 +28,16 @@ function Kid(props) {
             setShowKid={setShowKid}
           />
         </li>
-      ) : null}
+      ) : (
+        <li
+          className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center text-muted mt-4"
+          key={uniqid()}
+        >
+          <div>Ikke tilstedet</div>
+          <div className="navnOgAvdeling">{navn}</div>
+          <div className="navnOgAvdeling">{avdeling}</div>
+        </li>
+      )}
     </Fragment>
   );
 }

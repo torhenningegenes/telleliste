@@ -17,6 +17,7 @@ function RegKids() {
   const [clicked, setClicked] = useState(false);
   const [counted, setCounted] = useState(false);
   const [hidden, setHidden] = useState(true);
+  const [kidPresent, setKidPresent] = useState(valgtAvdeling);
   // Creates collection in DB;
   const oldCountings = collection(db, "oldCountings");
 
@@ -77,7 +78,7 @@ function RegKids() {
     <>
       <Container className="d-flex flex-column align-items-center justify-content-center h-100 bg-light ">
         <h1 className="text-dark margin--top--medium d-flex align-items-center justify-content-center">
-          Oppmøteliste <CurrentDate />
+          {regCount} <CurrentDate />
         </h1>
         <div className="d-flex align-items-center justify-content-center flex-column">
           <DropdownAvdeling
@@ -86,6 +87,8 @@ function RegKids() {
             setValgtAvdeling={setValgtAvdeling}
             clicked={clicked}
             setClicked={setClicked}
+            kidPresent={kidPresent}
+            setKidPresent={setKidPresent}
           />
           <Card
             style={{ width: "30rem" }}
@@ -101,6 +104,8 @@ function RegKids() {
                 setClicked={setClicked}
                 hidden={hidden}
                 setHidden={setHidden}
+                kidPresent={kidPresent}
+                setKidPresent={setKidPresent}
               />
             </Card.Body>
           </Card>
