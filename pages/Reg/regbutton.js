@@ -1,4 +1,5 @@
 import { useAppContext } from "../AppWrapper";
+import { getDatabase, push, ref, set } from "firebase/database";
 
 function RegButton(props) {
   //Getting context
@@ -18,19 +19,35 @@ function RegButton(props) {
 
   //console.log(currentDate);
 
-  // function for pushing context to local storage/ JSON
+  // Function for writing to the database
   function regCountHandler() {
-    if (myContext) {
-      console.log("Telling registrert");
-
-      myContext.push({ dato: currentDate });
-      console.log(myContext);
-      if (myContext.length < 0) {
-        myContext.length = 0;
-      }
-      console.log(myContext);
-    }
+    myContext.push({ dato: currentDate });
+    const db = getDatabase();
+    push(ref(db, "Tellinger"), myContext);
+    myContext.length = 0;
+    console.log("Telling registrert");
+    console.log(myContext);
   }
+
+  //
+
+  //
+  // }}
+
+  // function for pushing context to local storage/ JSON
+  //   function regCountHandler() {
+  //     if (myContext) {
+  //         console.log("Telling registrert");
+
+  //       myContext.push({ dato: currentDate });
+  //       console.log(myContext);
+  //       if (myContext.length < 0) {
+  //         myContext.length = 0;
+  //       }
+  //       console.log(myContext);
+  //     }
+  //   }
+
   return (
     <div className="d-flex flex-row justify-content-between align-items-center text-center">
       <button
@@ -42,5 +59,4 @@ function RegButton(props) {
     </div>
   );
 }
-
 export default RegButton;

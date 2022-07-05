@@ -5,8 +5,6 @@ import uniqid from "uniqid";
 import Avdeling from "./avdeling";
 import { useState } from "react";
 import CurrentDate from "../../components/current-date";
-import { db } from "../../firebase/firebaseConfig";
-import { collection, doc, addDoc, setDoc } from "firebase/firestore";
 
 function RegKids() {
   const [isLoading, setIsLoading] = useState("Loading...");
@@ -18,8 +16,6 @@ function RegKids() {
   const [counted, setCounted] = useState(false);
   const [hidden, setHidden] = useState(true);
   const [kidPresent, setKidPresent] = useState(valgtAvdeling);
-  // Creates collection in DB;
-  const oldCountings = collection(db, "oldCountings");
 
   // Labels for regButton
   const regAttendence = "Registrer oppmøte";
@@ -49,11 +45,11 @@ function RegKids() {
     { id: 10, navn: "Ellie", tilstede: true, avdeling: "Avdeling 8" },
     { id: 11, navn: "Nora", tilstede: true, avdeling: "Avdeling 8" },
     { id: 12, navn: "Tor Henning", tilstede: true, avdeling: "Avdeling 8" },
-    { id: uniqid(), navn: "Stian", tilstede: true, avdeling: "Avdeling 5" },
-    { id: uniqid(), navn: "Lisbet", tilstede: true, avdeling: "Avdeling 5" },
-    { id: uniqid(), navn: "Joakim", tilstede: true, avdeling: "Avdeling 5" },
-    { id: uniqid(), navn: "Michael", tilstede: true, avdeling: "Avdeling 5" },
-    { id: uniqid(), navn: "Christian", tilstede: true, avdeling: "Avdeling 5" },
+    { id: uniqid, navn: "Stian", tilstede: true, avdeling: "Avdeling 5" },
+    { id: uniqid, navn: "Lisbet", tilstede: true, avdeling: "Avdeling 5" },
+    { id: uniqid, navn: "Joakim", tilstede: true, avdeling: "Avdeling 5" },
+    { id: uniqid, navn: "Michael", tilstede: true, avdeling: "Avdeling 5" },
+    { id: uniqid, navn: "Christian", tilstede: true, avdeling: "Avdeling 5" },
   ];
 
   const router = useRouter();

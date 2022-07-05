@@ -1,6 +1,7 @@
 import { initializeApp, getApps, apps } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
+import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -35,6 +36,8 @@ const app = createOrGetApp();
 const auth = getAuth(app);
 
 // Initialize Cloud Firestore and get a reference to the service
-const db = getFirestore(app);
-console.log("Firestore was successfully init...");
-export { auth, app, db };
+// const db = getFirestore(app);
+// console.log("Firestore was successfully init...");
+const database = getDatabase(app);
+console.log("Realtime databse was successfully init...");
+export { auth, app, database };
