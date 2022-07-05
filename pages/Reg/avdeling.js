@@ -14,6 +14,7 @@ function Avdeling(props) {
     kidPresent,
     setKidPresent,
   } = props;
+
   console.log(valgtAvdeling);
 
   const { label } = valgtAvdeling;
@@ -51,7 +52,6 @@ function Avdeling(props) {
           setKidPresent={setKidPresent}
           valgtAvdeling={valgtAvdeling}
         />
-        <RegButton />
       </Fragment>
     );
   }
