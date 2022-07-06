@@ -49,14 +49,12 @@ function RegButton(props) {
   //   }
 
   return (
-    <div className="d-flex flex-row justify-content-between align-items-center text-center">
-      <button
-        className="btn btn-info btn-lg mt-5 mb-4 "
-        onClick={regCountHandler}
-      >
-        Registrer telling
-      </button>
-    </div>
+    <button
+      className="btn btn-info btn-lg mt-5 mb-4 "
+      onClick={regCountHandler}
+    >
+      Registrer telling
+    </button>
   );
 }
 export default RegButton;

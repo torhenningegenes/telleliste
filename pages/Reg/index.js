@@ -5,6 +5,7 @@ import uniqid from "uniqid";
 import Avdeling from "./avdeling";
 import { useState } from "react";
 import CurrentDate from "../../components/current-date";
+import RegButton from "./regbutton";
 
 function RegKids() {
   const [isLoading, setIsLoading] = useState("Loading...");
@@ -88,7 +89,7 @@ function RegKids() {
           />
           <Card
             style={{ width: "30rem" }}
-            className="d-flex align-items-center justify-content-center mt-3 mb-3 shadow rounded"
+            className="d-flex align-items-center justify-content-center text-center mt-3 mb-3 shadow rounded"
           >
             <Card.Body>
               <Card.Title></Card.Title>
@@ -103,6 +104,7 @@ function RegKids() {
                 kidPresent={kidPresent}
                 setKidPresent={setKidPresent}
               />
+              <RegButton />
             </Card.Body>
           </Card>
         </div>

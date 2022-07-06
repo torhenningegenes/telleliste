@@ -4,7 +4,8 @@ import { Button, Container } from "react-bootstrap";
 import { useAuth } from "../context/auth-context";
 import BgImg from "../components/bg-img";
 import WriteToDB from "../firebase/writeToDB";
-import { FirestoreRead } from "../firebase/firestore-read";
+
+import ReadFromDB from "../firebase/readFromDB";
 
 function Home(props) {
   const { currentUser } = useAuth();
@@ -20,7 +21,7 @@ function Home(props) {
             <Button variant="light">Registrer barnegruppe</Button>
           </Link>
           <WriteToDB />
-          <FirestoreRead />
+          <ReadFromDB />
         </section>
       </Container>
     </>

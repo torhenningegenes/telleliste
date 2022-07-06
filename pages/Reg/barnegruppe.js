@@ -41,9 +41,6 @@ export default function Barnegruppe(props) {
               );
             })}
           </ul>
-          <div className="d-flex">
-            <RegButton />
-          </div>
         </Container>
       ) : null}
     </div>
