@@ -26,8 +26,7 @@ function ReadFromDB() {
       dbData = data;
     });
 
-    // console.log(Object.keys(dbData));
-    console.log(Object.values(dbData).map((e) => console.log(e)));
+    const dataArray = Object.values(dbData);
   };
 
   return (
