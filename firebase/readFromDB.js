@@ -26,7 +26,12 @@ function ReadFromDB() {
       dbData = data;
     });
 
-    const dataArray = Object.values(dbData);
+    const newArr = Object.values(dbData);
+    console.log(
+      newArr.forEach((e) => {
+        console.log(e.filter((a) => a.dato));
+      })
+    );
   };
 
   return (

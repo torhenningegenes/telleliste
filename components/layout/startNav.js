@@ -34,7 +34,7 @@ function StartNav() {
             <Link href={"/Reg"} passHref>
               <Nav.Link>Ny telling</Nav.Link>
             </Link>
-            <Link href={"/"} passHref>
+            <Link href={"/Old-lists"} passHref>
               <Nav.Link>Gamle lister</Nav.Link>
             </Link>
             {currentUser ? (
