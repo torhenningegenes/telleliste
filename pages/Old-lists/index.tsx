@@ -26,9 +26,6 @@ function OldLists() {
       console.log(e);
     });
 
-    newArr.map((e) => {
-      console.log(e);
-    });
     const finnAvd5 = newArr.filter((barn) => barn.navn === "Lars");
     console.log(finnAvd5);
   };
