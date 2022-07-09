@@ -18,8 +18,6 @@ export default function Barnegruppe(props) {
     key,
   } = props;
 
-  // Hide Kid if not present.
-
   return (
     <div>
       {sortedBarn.avdeling != "Ingen avdeling valgt" ? (
