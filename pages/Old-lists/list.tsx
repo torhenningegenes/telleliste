@@ -1,5 +1,7 @@
 function List(props) {
-  const { navn, avdeling } = props;
+  const { navn, avdeling, data } = props;
+
+  console.log(data);
   return (
     <li>
       <div className="navnOgAvdeling">{navn}</div>
