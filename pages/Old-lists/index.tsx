@@ -4,6 +4,11 @@ import Button from "../../node_modules/react-bootstrap/esm/Button";
 import { getDatabase, ref, onValue, get, child } from "firebase/database";
 import List from "./list";
 import { Fragment, useState } from "react";
+import SearchBar from "./search-bar";
+
+// Need: getting data from db
+// Search bar and button
+// renderd list.
 
 function OldLists() {
   const [showOldLists, setShowOldLists] = useState(false);
@@ -21,9 +26,9 @@ function OldLists() {
       const data = snapshot.val();
       // console.log(data);
       dbData = data;
+      console.log(dbData);
     });
 
-    console.log(dbData);
     // const newArr = Object.values(dbData);
     // const returnArr = Object.entries(newArr);
     // console.log(returnArr);
@@ -31,15 +36,9 @@ function OldLists() {
   readFromDB();
   // Map out old lists from DB
   const renderList = function () {
-    // return (
-    // <div>
-    //   <ul>
-    //     {returnArr.map((arr) => (
-    //       <List key={uniqid()} navn={arr.navn} avdeling={arr.avdeling} />
-    //     ))}
-    //   </ul>
-    // </div>
-    //);
+    const newArr = dbData;
+    console.log(newArr);
+
     // flatArr.filter((e) => {
     //   if (e.avdeling) {
     //     console.log(e);
@@ -57,7 +56,7 @@ function OldLists() {
       <div>
         <Button onClick={renderList}>Console.log liste</Button>
       </div>
-      {/* <List data={dbData} /> */}
+      <SearchBar />
     </div>
   );
 }

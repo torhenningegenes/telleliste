@@ -75,8 +75,11 @@ function RegKids() {
     <>
       <Container className="d-flex flex-column align-items-center justify-content-center h-100 bg-light ">
         <h1 className="text-dark margin--top--medium d-flex align-items-center justify-content-center">
-          {regCount} <CurrentDate />
+          {regCount}
         </h1>
+        <h3>
+          <CurrentDate />
+        </h3>
         <div className="d-flex align-items-center justify-content-center flex-column">
           <DropdownAvdeling
             barn={barn}
