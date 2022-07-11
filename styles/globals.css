@@ -1,5 +1,5 @@
 /* Colors: 
-
+Grey: #f8f9fa
 Cyan: #66d9e8  #ebfafb #3bc9db
 Tints: #f0fbfd 
 Shade: #0a1617 #142b2e #1f4146
@@ -14,7 +14,8 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  /* background-color: #ebfafb; */
+  background-color: #f8f9fa;
+  /* Created with https://www.css-gradient.com */
 }
 
 a {

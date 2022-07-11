@@ -1,10 +1,13 @@
 import { useAppContext } from "../AppWrapper";
 import { getDatabase, push, ref, set } from "firebase/database";
+import { Alert } from "react-bootstrap";
 
 function RegButton(props) {
   //Getting context
   const myContext = useAppContext();
   // total count
+
+  const { clicked, setClicked } = props;
 
   // Creating date object.
   const options = {
@@ -27,6 +30,8 @@ function RegButton(props) {
     myContext.length = 0;
     console.log("Telling registrert");
     console.log(myContext);
+    setClicked(false);
+    alert("Telling registrert");
   }
 
   //

@@ -4,7 +4,10 @@ import { Fragment } from "react";
 function SearchBar() {
   return (
     <Fragment>
-      <Container>
+      <Container
+        className="bg-white shadow p-2
+"
+      >
         <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Søk i gamle lister</Form.Label>

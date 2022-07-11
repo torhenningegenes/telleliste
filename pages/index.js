@@ -20,7 +20,6 @@ function Home(props) {
         className="d-flex align-items-center flex-column text-light container-fluid bg-transparent
         "
       >
-        <BgImg />
         <h1 className="text-center main__header shadow-lg mb-5 telle--lista--heading1">
           Velkommen til Tellelista for barnehage
         </h1>

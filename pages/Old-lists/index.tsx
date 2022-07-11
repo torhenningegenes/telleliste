@@ -5,6 +5,7 @@ import { getDatabase, ref, onValue, get, child } from "firebase/database";
 import List from "./list";
 import { Fragment, useState } from "react";
 import SearchBar from "./search-bar";
+import Container from "../../node_modules/react-bootstrap/esm/Container";
 
 // Need: getting data from db
 // Search bar and button
@@ -24,9 +25,9 @@ function OldLists() {
 
     onValue(tellingerPath, (snapshot) => {
       const data = snapshot.val();
-      // console.log(data);
+      console.log(data);
       dbData = data;
-      console.log(dbData);
+      //console.log(dbData);
     });
 
     // const newArr = Object.values(dbData);
@@ -36,8 +37,9 @@ function OldLists() {
   readFromDB();
   // Map out old lists from DB
   const renderList = function () {
-    const newArr = dbData;
+    let newArr = dbData;
     console.log(newArr);
+    return newArr;
 
     // flatArr.filter((e) => {
     //   if (e.avdeling) {
@@ -50,13 +52,19 @@ function OldLists() {
     //   });
     // });
   };
+
+  let test = renderList();
+  console.log(test);
   return (
-    <div className="margin--top--medium">
-      <h1>Finn gamle lister</h1>
-      <div>
-        <Button onClick={renderList}>Console.log liste</Button>
-      </div>
-      <SearchBar />
+    <div className="margin--top--medium bg-light">
+      <Container>
+        <h1>Finn gamle lister</h1>
+        <div>
+          <Button onClick={renderList}>Console.log liste</Button>
+        </div>
+        <SearchBar />
+        <h1>{test[2]}</h1>
+      </Container>
     </div>
   );
 }

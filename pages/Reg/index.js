@@ -73,7 +73,10 @@ function RegKids() {
 
   return (
     <>
-      <Container className="d-flex flex-column align-items-center justify-content-center h-100 bg-light ">
+      <Container
+        fluid
+        className="d-flex flex-column align-items-center justify-content-center h-100 bg-light "
+      >
         <h1 className="text-dark margin--top--medium d-flex align-items-center justify-content-center">
           {regCount}
         </h1>
@@ -107,7 +110,7 @@ function RegKids() {
                 kidPresent={kidPresent}
                 setKidPresent={setKidPresent}
               />
-              <RegButton />
+              <RegButton clicked={clicked} setClicked={setClicked} />
             </Card.Body>
           </Card>
         </div>
