@@ -31,6 +31,7 @@ function OldLists() {
       console.log(data);
       if (data !== null) {
         dbRef.current = [...Object.values(data)];
+        console.log(dbRef.current.filter((a) => (a.avdeling = "avdeling 8")));
 
         //console.log("Hei fra useRef", dbRef.current);
       }
@@ -47,7 +48,7 @@ function OldLists() {
   //console.log(oldLists);
   // Map out old lists from DB
 
-  console.log(dbRef.current);
+  console.log(dbRef.current.filter((a) => (a.avdeling = "avdeling 8")));
   const renderList = function () {
     setShowOldLists(true);
     // flatArr.filter((e) => {
