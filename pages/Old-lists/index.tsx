@@ -14,6 +14,7 @@ import Container from "../../node_modules/react-bootstrap/esm/Container";
 function OldLists() {
   const [showOldLists, setShowOldLists] = useState(false);
   const [oldLists, setOldLists] = useState();
+  const [formState, setFormState] = useState(null);
   let dbRef = useRef([]);
 
   // send a call to the database
@@ -24,20 +25,16 @@ function OldLists() {
   //const readFromDB = async function () {
   const db = getDatabase();
   const tellingerPath = ref(db, "Tellinger");
+  onValue(tellingerPath, (snapshot) => {
+    const data = snapshot.val();
+    console.log(data);
+    if (data !== null) {
+      dbRef.current = [...Object.values(data)];
 
-  useEffect(() => {
-    onValue(tellingerPath, (snapshot) => {
-      const data = snapshot.val();
-      console.log(data);
-      if (data !== null) {
-        dbRef.current = [...Object.values(data)];
-        console.log(dbRef.current.filter((a) => (a.avdeling = "avdeling 8")));
-
-        //console.log("Hei fra useRef", dbRef.current);
-      }
-    });
-  }),
-    [];
+      //console.log("Hei fra useRef", dbRef.current);
+    }
+  });
+  useEffect(() => {}), [];
 
   // const newArr = Object.values(dbData);
   // const returnArr = Object.entries(newArr);
@@ -48,19 +45,10 @@ function OldLists() {
   //console.log(oldLists);
   // Map out old lists from DB
 
-  console.log(dbRef.current.filter((a) => (a.avdeling = "avdeling 8")));
   const renderList = function () {
+    console.log(dbRef.current.filter((a) => (a.avdeling = "avdeling 8")));
     setShowOldLists(true);
-    // flatArr.filter((e) => {
-    //   if (e.avdeling) {
-    //     console.log(e);
-    //   }
-    // });
-    // newArr.forEach((a) => {
-    //   a.forEach((e) => {
-    //     console.log(e);
-    //   });
-    // });
+    console.log(showOldLists);
   };
 
   return (
@@ -70,8 +58,8 @@ function OldLists() {
         <div>
           <Button onClick={renderList}>Console.log liste</Button>
         </div>
-        <SearchBar />
-        <h1>her blir det liv rai rai</h1>
+        <SearchBar formState={formState} setFormState={setFormState} />
+        <h1>her kommer liste</h1>
       </Container>
     </div>
   );
