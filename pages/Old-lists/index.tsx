@@ -16,7 +16,10 @@ function OldLists() {
   const [oldLists, setOldLists] = useState();
   //const [formState, setFormState] = useState("");
   let dbRef = useRef([]);
-
+  const avdelingerFilterd: string[] = dbRef.current.filter(
+    (f) => (f.avdeling = "avdeling")
+  );
+  console.log(avdelingerFilterd);
   // send a call to the database
   let avdeling: string;
   let navn: string;
@@ -27,7 +30,7 @@ function OldLists() {
   const tellingerPath = ref(db, "Tellinger");
   onValue(tellingerPath, (snapshot) => {
     const data = snapshot.val();
-    console.log(data);
+    //console.log(data);
     if (data !== null) {
       dbRef.current = [...Object.values(data)];
 
@@ -46,9 +49,8 @@ function OldLists() {
   // Map out old lists from DB
 
   const renderList = function () {
-    console.log(dbRef.current.filter((a) => (a.avdeling = "avdeling 8")));
-    setShowOldLists(true);
-    console.log(showOldLists);
+    console.log("Click");
+    console.log(dbRef.current.filter((a) => a.avdeling === "avdeling 8"));
   };
 
   return (
@@ -58,8 +60,19 @@ function OldLists() {
         <div>
           <Button onClick={renderList}>Console.log liste</Button>
         </div>
-        <SearchBar formState={formState} setFormState={setFormState} />
+        <SearchBar />
         <h1>her kommer liste</h1>
+        <ul>
+          {dbRef.current.flat().map((oldList) => {
+            return (
+              <li key={uniqid()}>
+                <p>{oldList.avdeling} </p>
+                <p>{oldList.dato}</p>
+                <p>{oldList.navn}</p>
+              </li>
+            );
+          })}
+        </ul>
       </Container>
     </div>
   );
