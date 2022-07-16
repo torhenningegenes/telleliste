@@ -14,7 +14,7 @@ import Container from "../../node_modules/react-bootstrap/esm/Container";
 function OldLists() {
   const [showOldLists, setShowOldLists] = useState(false);
   const [oldLists, setOldLists] = useState();
-  const [formState, setFormState] = useState(null);
+  //const [formState, setFormState] = useState("");
   let dbRef = useRef([]);
 
   // send a call to the database
