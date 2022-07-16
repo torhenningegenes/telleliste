@@ -27,9 +27,6 @@ function Home(props) {
           <Link href={"/Old-lists"} passHref>
             <Button variant="primary">Finn gammel liste</Button>
           </Link>
-
-          <WriteToDB />
-          <ReadFromDB />
         </section>
       </Container>
     </>

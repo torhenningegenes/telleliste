@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAppContext } from "../AppWrapper";
+import { useAppContext } from "../../context/AppWrapper";
 
 function CountButton(props) {
   const { navn, avdeling } = props;

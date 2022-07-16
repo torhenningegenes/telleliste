@@ -27,7 +27,6 @@ export default function Barnegruppe(props) {
               return (
                 <Fragment>
                   <Kid
-                    key={uniqid()}
                     navn={sortedBarn.navn}
                     avdeling={sortedBarn.avdeling}
                     clicked={clicked}

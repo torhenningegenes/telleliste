@@ -11,7 +11,10 @@ function Kid(props) {
   return (
     <Fragment>
       {showKid ? (
-        <li className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center mt-4 shadow border-0 rounded-1">
+        <li
+          className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center mt-4 shadow border-0 rounded-1"
+          key={uniqid()}
+        >
           <div className="navnOgAvdeling">{navn}</div>
           <div className="navnOgAvdeling">{avdeling}</div>
           <CountButton

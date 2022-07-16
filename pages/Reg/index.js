@@ -46,11 +46,11 @@ function RegKids() {
     { id: 10, navn: "Ellie", tilstede: true, avdeling: "Avdeling 8" },
     { id: 11, navn: "Nora", tilstede: true, avdeling: "Avdeling 8" },
     { id: 12, navn: "Tor Henning", tilstede: true, avdeling: "Avdeling 8" },
-    { id: uniqid, navn: "Stian", tilstede: true, avdeling: "Avdeling 5" },
-    { id: uniqid, navn: "Lisbet", tilstede: true, avdeling: "Avdeling 5" },
-    { id: uniqid, navn: "Joakim", tilstede: true, avdeling: "Avdeling 5" },
-    { id: uniqid, navn: "Michael", tilstede: true, avdeling: "Avdeling 5" },
-    { id: uniqid, navn: "Christian", tilstede: true, avdeling: "Avdeling 5" },
+    { id: uniqid(), navn: "Stian", tilstede: true, avdeling: "Avdeling 5" },
+    { id: uniqid(), navn: "Lisbet", tilstede: true, avdeling: "Avdeling 5" },
+    { id: uniqid(), navn: "Joakim", tilstede: true, avdeling: "Avdeling 5" },
+    { id: uniqid(), navn: "Michael", tilstede: true, avdeling: "Avdeling 5" },
+    { id: uniqid(), navn: "Christian", tilstede: true, avdeling: "Avdeling 5" },
   ];
 
   const router = useRouter();

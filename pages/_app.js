@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.css";
 
-import { AppWrapper } from "./AppWrapper";
+import { AppWrapper } from "../context/AppWrapper";
 import { AuthProvider } from "../context/auth-context";
 import StartNav from "../components/layout/startNav";
 import ProtecedRoutes from "../components/proteced-routes";
