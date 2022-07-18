@@ -11,33 +11,48 @@ import Container from "../../node_modules/react-bootstrap/esm/Container";
 // Search bar and button
 // renderd list.
 
-function OldLists() {
+const OldLists = () => {
+  // function OldLists() {
   const [showOldLists, setShowOldLists] = useState(false);
   const [oldLists, setOldLists] = useState();
   //const [formState, setFormState] = useState("");
-  let dbRef = useRef([]);
-  const avdelingerFilterd: string[] = dbRef.current.filter(
-    (f) => (f.avdeling = "avdeling")
-  );
-  console.log(avdelingerFilterd);
+  const [dbRef, setDbRef] = useState([]);
+  const [loading, setLoading] = useState(true);
+  //const avdelingerFilterd: string[] = dbRef.current.filter(
+  //   (f) => f.avdeling === "avdeling"
+  // );
+  // console.log("avdFiltered", avdelingerFilterd);
   // send a call to the database
   let avdeling: string;
   let navn: string;
-  let dbData: any[];
 
-  //const readFromDB = async function () {
+  // const readFromDB = () => {
   const db = getDatabase();
   const tellingerPath = ref(db, "Tellinger");
-  onValue(tellingerPath, (snapshot) => {
-    const data = snapshot.val();
-    //console.log(data);
-    if (data !== null) {
-      dbRef.current = [...Object.values(data)];
+  // };
+  useEffect(() => {
+    onValue(tellingerPath, (snapshot) => {
+      const data = snapshot.val();
+      /* snapshot.forEach((childSnapshot) => {
+        const childKey = childSnapshot.key;
+        const childData = childSnapshot.val();
+        console.log("childData", childData);
+        dbData.push(childData);
+      }); */
 
-      //console.log("Hei fra useRef", dbRef.current);
-    }
-  });
-  useEffect(() => {}), [];
+      setDbRef(Object.values(data));
+      setLoading(false);
+      // console.log("flat", Object.values(data).flat());
+
+      // if (data !== null) {
+
+      //dbData = Object.values(data).flat();
+
+      //dbRef.current = [...Object.values(data)];
+
+      //console.log("Hei fra useRef ", dbRef.current);
+    });
+  }, []);
 
   // const newArr = Object.values(dbData);
   // const returnArr = Object.entries(newArr);
@@ -49,32 +64,45 @@ function OldLists() {
   // Map out old lists from DB
 
   const renderList = function () {
-    console.log("Click");
-    console.log(dbRef.current.filter((a) => a.avdeling === "avdeling 8"));
+    //console.log(dbRef);
+
+    // Function for filtering data from list
+    const filt = dbRef
+      .flat()
+      .filter((a) => a.avdeling || a.dato === "Avdeling 8" || "dato");
+    const date = dbRef.flat().some((v) => v.dato);
+    console.log("Click", date);
+    setDbRef(filt);
+    // console.log("flat", dbRef.flat());
+
+    // console.log("tester", test);
   };
 
   return (
     <div className="margin--top--medium bg-light">
       <Container>
+        {loading ? <div>loading...</div> : <div>Loading ferdig!</div>}
         <h1>Finn gamle lister</h1>
         <div>
           <Button onClick={renderList}>Console.log liste</Button>
         </div>
         <SearchBar />
         <h1>her kommer liste</h1>
-        <ul>
-          {dbRef.current.flat().map((oldList) => {
-            return (
-              <li key={uniqid()}>
-                <p>{oldList.avdeling} </p>
-                <p>{oldList.dato}</p>
-                <p>{oldList.navn}</p>
-              </li>
-            );
-          })}
-        </ul>
+        {
+          <ul className="list-group">
+            {dbRef.flat().map((item) => {
+              return (
+                <li className="list-group-item" key={uniqid()}>
+                  <p>{item.avdeling} </p>
+                  <p>{item.dato}</p>
+                  <p>{item.navn}</p>
+                </li>
+              );
+            })}
+          </ul>
+        }
       </Container>
     </div>
   );
-}
+};
 export default OldLists;
