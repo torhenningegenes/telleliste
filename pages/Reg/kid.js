@@ -15,8 +15,12 @@ function Kid(props) {
           className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center mt-4 shadow border-0 rounded-1"
           key={uniqid()}
         >
-          <div className="navnOgAvdeling">{navn}</div>
-          <div className="navnOgAvdeling">{avdeling}</div>
+          <div className="navnOgAvdeling" key={uniqid()}>
+            {navn}
+          </div>
+          <div className="navnOgAvdeling" key={uniqid()}>
+            {avdeling}
+          </div>
           <CountButton
             key={uniqid()}
             navn={navn}

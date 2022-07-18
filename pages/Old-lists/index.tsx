@@ -33,12 +33,6 @@ const OldLists = () => {
   useEffect(() => {
     onValue(tellingerPath, (snapshot) => {
       const data = snapshot.val();
-      /* snapshot.forEach((childSnapshot) => {
-        const childKey = childSnapshot.key;
-        const childData = childSnapshot.val();
-        console.log("childData", childData);
-        dbData.push(childData);
-      }); */
 
       setDbRef(Object.values(data));
       setLoading(false);
@@ -49,8 +43,7 @@ const OldLists = () => {
       //dbData = Object.values(data).flat();
 
       //dbRef.current = [...Object.values(data)];
-
-      //console.log("Hei fra useRef ", dbRef.current);
+      //console.log("Hei fra DB; ", data);
     });
   }, []);
 
@@ -64,18 +57,16 @@ const OldLists = () => {
   // Map out old lists from DB
 
   const renderList = function () {
-    //console.log(dbRef);
-
     // Function for filtering data from list
     const filt = dbRef
       .flat()
-      .filter((a) => a.avdeling || a.dato === "Avdeling 8" || "dato");
-    const date = dbRef.flat().some((v) => v.dato);
-    console.log("Click", date);
+      .filter((a) => a.avdeling || a.dato === "Avdeling 1" || "dato");
+    //const date = dbRef.flat().some((v) => v.dato);
+    // console.log("Click", filt);
     setDbRef(filt);
     // console.log("flat", dbRef.flat());
 
-    // console.log("tester", test);
+    console.log(dbRef);
   };
 
   return (
@@ -84,23 +75,27 @@ const OldLists = () => {
         {loading ? <div>loading...</div> : <div>Loading ferdig!</div>}
         <h1>Finn gamle lister</h1>
         <div>
-          <Button onClick={renderList}>Console.log liste</Button>
+          <Button onClick={renderList}>Render liste</Button>
         </div>
-        <SearchBar />
-        <h1>her kommer liste</h1>
+        <SearchBar dbRef={dbRef} />
+        {/* <h1>her kommer liste</h1>
         {
           <ul className="list-group">
             {dbRef.flat().map((item) => {
               return (
-                <li className="list-group-item" key={uniqid()}>
-                  <p>{item.avdeling} </p>
-                  <p>{item.dato}</p>
-                  <p>{item.navn}</p>
-                </li>
+                <>
+                  <div>Tellinger</div>
+                  <li className="list-group-item" key={uniqid()}>
+                    <p>{item.avdeling} </p>
+                    <p>{item.dato}</p>
+                    <p>{item.navn}</p>
+                  </li>
+                </>
               );
             })}
           </ul>
-        }
+        } */}
+        <List dbRef={dbRef} />
       </Container>
     </div>
   );

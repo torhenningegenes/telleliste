@@ -18,7 +18,7 @@ function RegButton(props) {
   };
   const date = new Date().toLocaleDateString("nb-No", options);
   const time = new Date().toLocaleTimeString();
-  const currentDate = `${date} ${time}`;
+  const currentDate = `Dato: ${date}, Klokken: ${time}`;
 
   //console.log(currentDate);
 

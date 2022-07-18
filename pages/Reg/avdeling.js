@@ -1,8 +1,17 @@
 import Barnegruppe from "./barnegruppe";
-import { Fragment } from "react";
+import { Fragment, useState, useEffect } from "react";
 import RegButton from "./regbutton";
+import { useAppContext } from "../../context/AppWrapper";
+import uniqid from "uniqid";
 
 function Avdeling(props) {
+  //***************** State *******************/
+
+  const [labelToContext, setlabelToContext] = useState("");
+  //***********************************************/
+
+  //***************** Props *******************/
+
   //getting props
   const {
     barn,
@@ -14,21 +23,47 @@ function Avdeling(props) {
     kidPresent,
     setKidPresent,
   } = props;
+  //***********************************************/
 
-  console.log(valgtAvdeling);
+  //***************** Context *******************/
+  const myContext = useAppContext();
+  //***********************************************/
+
+  //***************** Variables *******************/
 
   const { label } = valgtAvdeling;
-  console.log(label);
+  console.log(valgtAvdeling);
+
+  //***********************************************/
+
+  //***************** Functions *******************/
 
   // //Filter barn into avdelinger
   let sortedBarn = [];
   function filterAvdeling() {
     sortedBarn = barn.filter((barn) => barn.avdeling === `${label}`);
-    console.log(sortedBarn);
+    console.log("Hei fra sorted", sortedBarn);
   }
 
   //Function for determening array when selectin avdeling from drop down menu
   filterAvdeling();
+  //Function for setting "avdeling" label to context
+
+  // useEffect(() => {
+  //   setlabelToContext(label);
+  //   myContext.push(labelToContext);
+  //   console.log("Hei fra context label", myContext);
+  // }, []);
+
+  // const setAvdelingToContext = function () {
+  //   if (label != "Ingen avdeling valgt") {
+  //     console.log(label);
+  //     myContext.push(label);
+  //     console.log("Hei fra context label", myContext);
+  //   }
+  // };
+
+  //***********************************************/
 
   // Renders UI conditionally based on choice of "avdeling"
   if (label === "Ingen avdeling valgt") {
@@ -42,6 +77,7 @@ function Avdeling(props) {
       <Fragment>
         <h5 className="text-center">Du har valgt: {label}</h5>
         <Barnegruppe
+          key={uniqid()}
           label={label}
           sortedBarn={sortedBarn}
           clicked={clicked}
