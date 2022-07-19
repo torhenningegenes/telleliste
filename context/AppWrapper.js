@@ -5,7 +5,7 @@ export function AppWrapper({ children }) {
   // Set state as context
   // const [regTelling, setRegTelling] = useState();
 
-  let sharedState = ["Telling"];
+  let sharedState = [];
   return (
     <AppContext.Provider value={sharedState}>{children}</AppContext.Provider>
   );

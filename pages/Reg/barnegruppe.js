@@ -15,7 +15,6 @@ export default function Barnegruppe(props) {
     setClicked,
     hidden,
     setHidden,
-    key,
   } = props;
 
   return (
@@ -25,8 +24,9 @@ export default function Barnegruppe(props) {
           <ul>
             {sortedBarn.map((sortedBarn, index) => {
               return (
-                <Fragment>
+                <>
                   <Kid
+                    key={uniqid()}
                     navn={sortedBarn.navn}
                     avdeling={sortedBarn.avdeling}
                     clicked={clicked}
@@ -34,7 +34,7 @@ export default function Barnegruppe(props) {
                     setHidden={setHidden}
                     hidden={hidden}
                   />
-                </Fragment>
+                </>
               );
             })}
           </ul>

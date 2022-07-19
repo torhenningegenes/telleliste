@@ -23,13 +23,15 @@ function List(props) {
           {clean.map((item) => {
             return (
               <>
-                <li className="list-group-item mb-1 shadow" key={uniqid()}>
-                  <p>{item.dato}</p>
-                </li>
-                <li className="list-group-item mb-1 shadow" key={uniqid()}>
-                  <p>{item.avdeling}</p>
-                  <p>{item.navn}</p>
-                </li>
+                <div key={uniqid()}>
+                  <li key={uniqid()} className="list-group-item mb-1 shadow">
+                    <p>{item.dato}</p>
+                  </li>
+                  <li key={uniqid()} className="list-group-item mb-1 shadow">
+                    <p>{item.avdeling}</p>
+                    <p>{item.navn}</p>
+                  </li>
+                </div>
               </>
             );
           })}
