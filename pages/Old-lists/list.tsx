@@ -18,7 +18,7 @@ function List(props) {
       <h1>her kommer liste</h1>
       {
         <ul className="list-group">
-          <h2>{avdelingName}</h2>
+          <h2 className="text-bold shadow-xl text-blue-600">{avdelingName}</h2>
           {/* Need to fix mapping logic */}
           {clean.map((item) => {
             return (
