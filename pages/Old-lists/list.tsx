@@ -14,7 +14,7 @@ function List(props) {
     .filter((e) => e != "Telling");
   console.log("Clean array: ", clean);
 
-  console.log(clean.indexOf("dato"));
+  console.log(dbRef.includes("avdeling"));
 
   return (
     <>
