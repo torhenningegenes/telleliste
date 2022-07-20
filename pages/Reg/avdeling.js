@@ -1,7 +1,7 @@
 import Barnegruppe from "./barnegruppe";
 import { Fragment, useState, useEffect } from "react";
 import RegButton from "./regbutton";
-import { useAppContext } from "../../context/AppWrapper";
+
 import uniqid from "uniqid";
 
 function Avdeling(props) {
@@ -26,13 +26,12 @@ function Avdeling(props) {
   //***********************************************/
 
   //***************** Context *******************/
-  const myContext = useAppContext();
+
   //***********************************************/
 
   //***************** Variables *******************/
 
   const { label } = valgtAvdeling;
-  console.log(valgtAvdeling);
 
   //***********************************************/
 

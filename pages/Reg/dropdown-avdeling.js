@@ -1,7 +1,7 @@
 import { Container, Card, Button } from "react-bootstrap";
 import Select from "react-select";
 import makeAnimated from "react-select";
-import Avdeling from "../../pages/Reg/avdeling";
+import Avdeling from "./avdeling";
 
 function DropdownAvdeling(props) {
   //********************* ******************//

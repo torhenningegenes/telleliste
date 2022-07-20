@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Container } from "react-bootstrap";
+
 import Kid from "./kid";
 
 import uniqid from "uniqid";
@@ -33,6 +34,7 @@ export default function Barnegruppe(props) {
                     setClicked={setClicked}
                     setHidden={setHidden}
                     hidden={hidden}
+                    label={label}
                   />
                 </>
               );

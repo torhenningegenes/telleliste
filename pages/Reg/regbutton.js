@@ -7,8 +7,8 @@ function RegButton(props) {
   const myContext = useAppContext();
   // total count
 
-  const { clicked, setClicked } = props;
-
+  const { clicked, setClicked, valgtAvdeling } = props;
+  const label = valgtAvdeling;
   // Creating date object.
   const options = {
     weekday: "long",
@@ -26,7 +26,9 @@ function RegButton(props) {
   function regCountHandler() {
     myContext.push({ dato: currentDate });
     const db = getDatabase();
-    push(ref(db, "Tellinger"), myContext);
+    //push(ref(db, "Tellinger"), myContext);
+    push(ref(db, "Tellinger"), { Telling: myContext });
+
     myContext.length = 0;
     console.log("Telling registrert");
     console.log(myContext);

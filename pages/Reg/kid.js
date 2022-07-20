@@ -5,9 +5,10 @@ import RemoveButton from "./remove-button";
 import { Fragment } from "react";
 import { useState } from "react";
 function Kid(props) {
-  const { navn, avdeling, clicked, setClicked } = props;
+  const { navn, avdeling, clicked, setClicked, label } = props;
 
   const [showKid, setShowKid] = useState(true);
+
   return (
     <Fragment>
       {showKid ? (
@@ -27,6 +28,7 @@ function Kid(props) {
             avdeling={avdeling}
             clicked={clicked}
             setClicked={setClicked}
+            label={label}
           />
 
           <RemoveButton

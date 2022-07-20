@@ -1,4 +1,4 @@
-import DropdownAvdeling from "../../components/layout/dropdown-avdeling";
+import DropdownAvdeling from "./dropdown-avdeling";
 import { Container, Card, Button } from "react-bootstrap";
 import { useRouter } from "next/router";
 import uniqid from "uniqid";
@@ -120,7 +120,11 @@ function RegKids() {
                 kidPresent={kidPresent}
                 setKidPresent={setKidPresent}
               />
-              <RegButton clicked={clicked} setClicked={setClicked} />
+              <RegButton
+                clicked={clicked}
+                setClicked={setClicked}
+                valgtAvdeling={valgtAvdeling}
+              />
             </Card.Body>
           </Card>
         </div>
