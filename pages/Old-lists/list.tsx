@@ -9,9 +9,12 @@ function List(props) {
   // string methoder. Sette alt som lowercase så sette første bokstav til Uppercase. fjerne alt white-space så legge til whitespace på [8]
   const clean = dbRef
     .flat()
+    .reverse()
     .filter((e) => e != "Hei fra context")
     .filter((e) => e != "Telling");
   console.log("Clean array: ", clean);
+
+  console.log(clean.indexOf("dato"));
 
   return (
     <>
@@ -23,15 +26,11 @@ function List(props) {
           {clean.map((item) => {
             return (
               <>
-                <div key={uniqid()}>
-                  <li key={uniqid()} className="list-group-item mb-1 shadow">
-                    <p>{item.dato}</p>
-                  </li>
-                  <li key={uniqid()} className="list-group-item mb-1 shadow">
-                    <p>{item.avdeling}</p>
-                    <p>{item.navn}</p>
-                  </li>
-                </div>
+                <li key={uniqid()} className="list-group-item mb-1 shadow">
+                  {item.dato ? <p>{item.dato}</p> : null}
+                  {item.avdeling ? <p>{item.avdeling}</p> : null}
+                  {item.navn ? <p>{item.navn}</p> : null}
+                </li>
               </>
             );
           })}
