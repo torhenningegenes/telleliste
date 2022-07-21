@@ -27,7 +27,7 @@ function RegButton(props) {
     myContext.push({ dato: currentDate });
     const db = getDatabase();
     //push(ref(db, "Tellinger"), myContext);
-    push(ref(db, "Tellinger"), { Telling: myContext });
+    push(ref(db, "Tellinger"), myContext);
 
     myContext.length = 0;
     console.log("Telling registrert");

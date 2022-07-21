@@ -6,6 +6,8 @@ function List(props) {
   const dbArray: string[] = Object.values(dbRef);
   let avdelingName: string = "Avdeling 8";
 
+  console.log("Object.values", dbArray);
+
   // Sette name i filter fra user search bruke backticks
   // string methoder. Sette alt som lowercase så sette første bokstav til Uppercase. fjerne alt white-space så legge til whitespace på [8]
   const clean = dbArray
@@ -13,7 +15,7 @@ function List(props) {
     .reverse()
     .filter((e) => e != "Hei fra context");
   //.filter((e) => e != "Telling");
-  console.log("Clean array: ", clean);
+  //console.log("Clean array: ", clean);
 
   return (
     <>
@@ -21,9 +23,14 @@ function List(props) {
       {
         <ul className="list-group">
           <h2 className="text-bold shadow-xl text-blue-600">{avdelingName}</h2>
-
-          {/* Need to fix mapping logic */}
-          {/* {Object.keys(clean).map((item) => { */}
+          <div>
+            {" "}
+            <h1>Test Card</h1>
+            <h2>
+              {clean.map((i) => i.avdeling).filter((a) => a === "Avdeling 1")}
+            </h2>
+            <p>{clean.map((i) => i.navn)}</p>
+          </div>
           {clean.map((item) => {
             return (
               <>
@@ -31,7 +38,9 @@ function List(props) {
                   {/* {item.Telling.dato ? <p>{item.dato}</p> : null}
                   {item.avdeling ? <p>{item.avdeling}</p> : null}
                   {item.navn ? <p>{item.navn}</p> : null} */}
-                  {JSON.stringify(item)}
+                  {item.navn}
+                  {item.dato}
+                  {/* {JSON.stringify(item)} */}
                 </li>
               </>
             );
