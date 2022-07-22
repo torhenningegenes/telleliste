@@ -1,11 +1,13 @@
 import { useAppContext } from "../../context/AppWrapper";
 import { getDatabase, push, ref, set } from "firebase/database";
 import { Alert } from "react-bootstrap";
+import { useRouter } from "next/router";
 
 function RegButton(props) {
   //Getting context
   const myContext = useAppContext();
-  // total count
+  //Setting router
+  const router = useRouter();
 
   const { clicked, setClicked, valgtAvdeling } = props;
   const label = valgtAvdeling;
@@ -34,6 +36,7 @@ function RegButton(props) {
     console.log(myContext);
     setClicked(false);
     alert("Telling registrert");
+    router.push("/Reg");
   }
 
   //

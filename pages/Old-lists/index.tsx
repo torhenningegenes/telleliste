@@ -95,7 +95,7 @@ const OldLists = () => {
             })}
           </ul>
         } */}
-        <List dbRef={dbRef} />
+        <List dbRef={dbRef} loading={loading} setLoading={setLoading} />
       </Container>
     </div>
   );
