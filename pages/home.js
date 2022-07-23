@@ -29,6 +29,10 @@ function Home(props) {
           </Link>
         </section>
       </Container>
+      <h1 className="text-3xl font-bold underline text-blue-500">
+        Hello world!
+      </h1>
+      <div className="container mx-auto flex justify-center">hei på deg</div>
     </>
   );
 }
