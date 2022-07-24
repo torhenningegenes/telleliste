@@ -32,7 +32,9 @@ function Home(props) {
       <h1 className="text-3xl font-bold underline text-blue-500">
         Hello world!
       </h1>
-      <div className="container mx-auto flex justify-center">hei på deg</div>
+      <div className="container mx-auto flex justify-center font-sans">
+        velkommen til tellelista
+      </div>
     </>
   );
 }
