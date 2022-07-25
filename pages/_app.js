@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../styles/global.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 import { AppWrapper } from "../context/AppWrapper";
