@@ -6,6 +6,7 @@ import List from "./list";
 import { Fragment, useEffect, useRef, useState } from "react";
 import SearchBar from "./search-bar";
 import Container from "../../node_modules/react-bootstrap/esm/Container";
+import NewCounting from "./new-counting";
 
 // Need: getting data from db
 // Search bar and button
@@ -74,6 +75,7 @@ const OldLists = () => {
       <Container>
         {loading ? <div>loading...</div> : <div>Loading ferdig!</div>}
         <h1>Finn gamle lister</h1>
+        <NewCounting />
         <div>
           <Button onClick={renderList}>Render liste</Button>
         </div>

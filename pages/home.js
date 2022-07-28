@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Popover } from "@headlessui/react";
+
 import { Button, Container } from "react-bootstrap";
 import { useAuth } from "../context/auth-context";
 
@@ -53,7 +53,8 @@ function Home(props) {
             </svg>
           </div>
         </div>
-        <Popover className="relative">
+
+        {/* <Popover className="relative">
           {({ open }) => (
             <>
               <div className="h-14 w-64 bg-white rounded-t-lg mt-4 flex align-baseline">
@@ -100,7 +101,7 @@ function Home(props) {
               </Popover.Panel>
             </>
           )}
-        </Popover>
+        </Popover> */}
       </div>
     </>
   );
