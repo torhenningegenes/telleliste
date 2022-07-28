@@ -3,6 +3,13 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    colors: {
+      "sky-50": "#ecfeff",
+      "sky-100": "#cffafe",
+      "sky-500": "#0ea5e9",
+      "sky-700": "#0369a1",
+      "sky-800": "#075985",
+    },
     extend: {},
   },
   variants: {

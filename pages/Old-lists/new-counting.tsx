@@ -6,8 +6,8 @@ function NewCounting() {
       <Popover className="relative">
         {({ open }) => (
           <>
-            <div className="h-14 w-64 bg-blue-900 rounded-t-lg mt-4 flex align-baseline">
-              <span className="text-blue-200 mt-2 ml-9 text-center text-lg tracking-wider">
+            <div className="h-14 w-64 bg-sky-800 rounded-t-lg mt-4 flex align-baseline">
+              <span className="text-sky-50 mt-2 ml-9 text-center text-lg tracking-wider">
                 avdeling.props{" "}
               </span>
             </div>
