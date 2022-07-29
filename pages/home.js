@@ -26,35 +26,7 @@ function Home(props) {
         </section>
       </Container>
 
-      <div className="container justify-center font-sans flex flex-row mt-6 h-96 bg-gray-200 ">
-        <div className="countedcomponent">
-          <div className="h-12 w-64 bg-white rounded-t-lg">
-            <div className=" text-gray-600 mt-2 ml-9 text-left text-lg tracking-wider">
-              Avdeling 5
-            </div>
-          </div>
-          <div className="h-12 w-64 bg-blue-500 rounded-b-lg flex flex-row align-baseline justify-around">
-            <div className="text-blue-100 mt-3 ml-3 tracking-wider">
-              Se hele listen
-            </div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 mt-3 mr-7 text-blue-200"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"
-              />
-            </svg>
-          </div>
-        </div>
-
-        {/* <Popover className="relative">
+      {/* <Popover className="relative">
           {({ open }) => (
             <>
               <div className="h-14 w-64 bg-white rounded-t-lg mt-4 flex align-baseline">
@@ -102,7 +74,6 @@ function Home(props) {
             </>
           )}
         </Popover> */}
-      </div>
     </>
   );
 }

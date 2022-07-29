@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Colors: 
+Grey: #f8f9fa
+Cyan: #66d9e8  #ebfafb #3bc9db
+Tints: #f0fbfd 
+Shade: #0a1617 #142b2e #1f4146
+
+
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap");
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #f8f9fa;
+  /* Created with https://www.css-gradient.com */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.center {
+  text-align: center;
+}
+
+.list-barn {
+  width: 100%;
+}
+
+.hide {
+  opacity: 0;
+  /*
+  alternatively:
+  opacity: 0%;
+  filter: opacity(0%);
+*/
+}
+
+.telle--lista--heading1 {
+  color: #0a1617;
+}
+.main__header {
+  margin-top: 96px;
+}
+
+.user__login {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/**********/
+/* Background image */
+/**********/
+
+.bg-img {
+  position: absolute;
+  color: #ebfafb;
+  background-image: url("../img/oceanBg.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #ebfafb;
+  /* background-attachment: fixed; */
+  height: 100vh;
+  z-index: -10;
+}
+.bg-color {
+  position: absolute;
+  background-color: #142b2e;
+}
+.bg-gradient {
+  position: absolute;
+  height: 100vh;
+
+  background: rgb(5, 68, 76);
+  background: linear-gradient(
+    0deg,
+    rgba(5, 68, 76, 1) 0%,
+    rgba(2, 168, 207, 0.6026785714285714) 100%,
+    rgba(4, 125, 153, 1) 100%
+  );
+  z-index: 1000;
+}
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 90vh;
+  z-index: 10;
+}
+.bg {
+  z-index: -10000;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+}
+
+/**********/
+/* Utility classes */
+/**********/
+
+.margin--top--medium {
+  margin-top: 96px;
+}
+
+.navnOgAvdeling {
+  margin: 5px;
+}
+
+/******************/
+/*Buttons*/
+/******************/
+
+.customBtn {
+  background-color: #8ce99a;
+  color: rgb(39, 102, 41);
+  border: solid 2px #276629;
+  padding: 5px;
+  font-size: 31px;
+  height: 100px;
+  width: 100px;
+  box-shadow: 0 2px 4px rgb(45, 45, 45);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 70%;
+}
+
+.customBtn:active {
+  background-color: #f0fbfd;
+  box-shadow: 0 0 2px rgb(45, 45, 45);
+  transform: translateY(2px);
+  border-radius: 70%;
+}
+
+.btnCounted {
+  background-color: #f0fbfd;
+  box-shadow: 0 0 2px rgb(45, 45, 45);
+  transform: translateY(2px);
+  border-radius: 70%;
+}
+
+.regretBtn {
+  background-color: #ff2b20;
+  color: rgb(102, 2, 2);
+  border: solid 2px #ffffff;
+  padding: 5px;
+  font-size: 21px;
+  height: 50px;
+  width: 50px;
+  box-shadow: 0 2px 4px rgb(0, 0, 0);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 70%;
+}
+
+footer {
+  font-size: 18px;
+  color: #f0fbfd;
+  height: 35px;
+}

@@ -1,12 +1,11 @@
 import ReadFromDB from "../../firebase/readFromDB";
 import uniqid from "uniqid";
-import Button from "../../node_modules/react-bootstrap/esm/Button";
 import { getDatabase, ref, onValue, get, child } from "firebase/database";
 import List from "./list";
 import { Fragment, useEffect, useRef, useState } from "react";
 import SearchBar from "./search-bar";
-import Container from "../../node_modules/react-bootstrap/esm/Container";
 import NewCounting from "./new-counting";
+import React from "react";
 
 // Need: getting data from db
 // Search bar and button
@@ -48,6 +47,26 @@ const OldLists = () => {
     });
   }, []);
 
+  const dbArray = Object.values(dbRef);
+  console.log("Hello from arr ", dbArray);
+  const clean = dbArray
+    //.flat()
+    .reverse()
+    .filter((e) => e != "Hei fra context");
+  //.filter((e) => e != "Telling");
+  // console.log("Clean array: ", clean);
+  const [
+    telling1,
+    telling2,
+    telling3,
+    telling4,
+    telling5,
+    telling6,
+    telling7,
+    telling8,
+  ] = clean;
+  console.log("log fra telling", telling1, telling2);
+
   // const newArr = Object.values(dbData);
   // const returnArr = Object.entries(newArr);
   // console.log(returnArr);
@@ -72,15 +91,28 @@ const OldLists = () => {
 
   return (
     <div className="margin--top--medium bg-light">
-      <Container>
-        {loading ? <div>loading...</div> : <div>Loading ferdig!</div>}
-        <h1>Finn gamle lister</h1>
+      {loading ? <div>loading...</div> : <div>Loading ferdig!</div>}
+      <h1>Finn gamle lister</h1>
+      <div className="container flex flex-row justify-evenly flex-wrap">
+        <NewCounting telling1={telling1} />
+        <pre>
+          <React.Fragment>{JSON.stringify(telling1)}</React.Fragment>
+        </pre>
+
         <NewCounting />
-        <div>
+        <NewCounting />
+        <NewCounting />
+        <NewCounting />
+        <NewCounting />
+        <NewCounting />
+        <NewCounting />
+      </div>
+
+      {/* <div>
           <Button onClick={renderList}>Render liste</Button>
-        </div>
-        <SearchBar dbRef={dbRef} />
-        {/* <h1>her kommer liste</h1>
+        </div> */}
+      <SearchBar dbRef={dbRef} />
+      {/* <h1>her kommer liste</h1>
         {
           <ul className="list-group">
             {dbRef.flat().map((item) => {
@@ -97,8 +129,7 @@ const OldLists = () => {
             })}
           </ul>
         } */}
-        <List dbRef={dbRef} loading={loading} setLoading={setLoading} />
-      </Container>
+      {/* <List dbRef={dbRef} loading={loading} setLoading={setLoading} /> */}
     </div>
   );
 };

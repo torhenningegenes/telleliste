@@ -18,7 +18,7 @@ function List(props) {
   //.filter((e) => e != "Telling");
   // console.log("Clean array: ", clean);
   const [telling1, telling2, telling3] = clean;
-  console.log("log fra telling", telling1);
+  console.log("log fra telling", telling1, telling2);
 
   // function getAvdelingName(arr) {
   //   arr.map((a) => {

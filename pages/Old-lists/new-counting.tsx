@@ -1,14 +1,19 @@
 import { Popover } from "@headlessui/react";
 
-function NewCounting() {
+function NewCounting({ telling1 }) {
+  console.log("Hei fra props: ", telling1);
+
   return (
     <>
-      <Popover className="relative">
+      <Popover className="relative mb-6">
         {({ open }) => (
           <>
-            <div className="h-14 w-64 bg-sky-800 rounded-t-lg mt-4 flex align-baseline">
-              <span className="text-sky-50 mt-2 ml-9 text-center text-lg tracking-wider">
-                avdeling.props{" "}
+            <div className="h-24 w-64 bg-sky-800 rounded-t-lg flex flex-col justify-around align-middle">
+              <span className="text-sky-100  text-center text-2xl tracking-wider">
+                Vakker
+              </span>
+              <span className="text-sky-100 text-center text-lg tracking-wider">
+                Kl. 20:36
               </span>
             </div>
 
@@ -16,8 +21,8 @@ function NewCounting() {
               <div
                 className={`${
                   open
-                    ? "rounded-b-0 h-14 w-64 bg-white flex flex-row align-baseline justify-around"
-                    : "h-14 w-64 bg-white rounded-b-lg flex flex-row align-baseline justify-around"
+                    ? "rounded-b-0 h-14 w-64 bg-white flex flex-row align-baseline justify-around shadow-md"
+                    : "h-14 w-64 bg-white rounded-b-lg flex flex-row align-baseline justify-around shadow-md"
                 }`}
               >
                 <div className="text-gray-700 mt-3 ml-3 tracking-wider">
@@ -31,18 +36,27 @@ function NewCounting() {
                   fill="currentColor"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   />
                 </svg>
               </div>
             </Popover.Button>
 
             <Popover.Panel className="absolute z-10">
-              <div className="grid grid-cols-2 bg-white w-64 rounded-b-lg text-gray-700">
+              <div className="grid grid-cols-1 bg-white w-64 rounded-b-lg text-gray-700">
                 <ul className="mt-2">
-                  <li className="">lorem</li>
+                  <li className="">
+                    <span>Dato: </span>
+                    <span>29.6.22-20:29</span>
+                  </li>
+                  <li>lipsum</li>
+                  <li>lipsum</li>
+                  <li>lipsum</li>
+                  <li>lipsum</li>
+                  <li>lipsum</li>
+                  <li>lipsum</li>
                 </ul>
               </div>
 
