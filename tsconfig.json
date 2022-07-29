@@ -15,6 +15,11 @@
     "jsx": "preserve",
     "watch": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/Old-lists/index.js"
+  ],
   "exclude": ["node_modules"]
 }
