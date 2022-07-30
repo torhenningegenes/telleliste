@@ -93,21 +93,20 @@ const OldLists = () => {
     <div className="margin--top--medium bg-light">
       {loading ? <div>loading...</div> : <div>Loading ferdig!</div>}
       <h1>Finn gamle lister</h1>
-      <div className="container flex flex-row justify-evenly flex-wrap">
-        <NewCounting telling1={telling1} />
-        <pre>
-          <React.Fragment>{JSON.stringify(telling1)}</React.Fragment>
-        </pre>
+      <div className="container flex flex-row justify-between flex-wrap">
+        <NewCounting loading={loading} telling={telling2} />
 
-        <NewCounting />
-        <NewCounting />
-        <NewCounting />
-        <NewCounting />
-        <NewCounting />
-        <NewCounting />
-        <NewCounting />
+        <NewCounting loading={loading} />
+        <NewCounting loading={loading} />
+        <NewCounting loading={loading} />
+        <NewCounting loading={loading} />
+        <NewCounting loading={loading} />
+        <NewCounting loading={loading} />
+        <NewCounting loading={loading} />
       </div>
-
+      {/* <pre>
+        <React.Fragment>{JSON.stringify(telling1)}</React.Fragment>
+      </pre> */}
       {/* <div>
           <Button onClick={renderList}>Render liste</Button>
         </div> */}
