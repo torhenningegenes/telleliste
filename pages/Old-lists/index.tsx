@@ -1,7 +1,7 @@
 import ReadFromDB from "../../firebase/readFromDB";
-import uniqid from "uniqid";
+
 import { getDatabase, ref, onValue, get, child } from "firebase/database";
-import List from "./list";
+
 import { Fragment, useEffect, useRef, useState } from "react";
 import SearchBar from "./search-bar";
 import NewCounting from "./new-counting";
@@ -48,13 +48,13 @@ const OldLists = () => {
   }, []);
 
   const dbArray = Object.values(dbRef);
-  console.log("Hello from arr ", dbArray);
+  //console.log("Hello from arr ", dbArray);
   const clean = dbArray
     //.flat()
     .reverse()
     .filter((e) => e != "Hei fra context");
   //.filter((e) => e != "Telling");
-  // console.log("Clean array: ", clean);
+  console.log("Clean array: ", clean);
   const [
     telling1,
     telling2,
@@ -65,7 +65,7 @@ const OldLists = () => {
     telling7,
     telling8,
   ] = clean;
-  console.log("log fra telling", telling1, telling2);
+  //console.log("log fra telling", telling1, telling2, "Telling3: ", telling3);
 
   // const newArr = Object.values(dbData);
   // const returnArr = Object.entries(newArr);
@@ -77,16 +77,15 @@ const OldLists = () => {
   // Map out old lists from DB
 
   const renderList = function () {
-    // Function for filtering data from list
-    const filt = dbRef
-      .flat()
-      .filter((a) => a.avdeling || a.dato === "Avdeling 1" || "dato");
-    //const date = dbRef.flat().some((v) => v.dato);
-    // console.log("Click", filt);
-    setDbRef(filt);
-    // console.log("flat", dbRef.flat());
-
-    console.log(dbRef);
+    // // Function for filtering data from list
+    // const filt = dbRef
+    //   .flat()
+    //   .filter((a) => a.avdeling || a.dato === "Avdeling 1" || "dato");
+    // //const date = dbRef.flat().some((v) => v.dato);
+    // // console.log("Click", filt);
+    // setDbRef(filt);
+    // // console.log("flat", dbRef.flat());
+    // console.log(dbRef);
   };
 
   return (
@@ -94,15 +93,18 @@ const OldLists = () => {
       {loading ? <div>loading...</div> : <div>Loading ferdig!</div>}
       <h1>Finn gamle lister</h1>
       <div className="container flex flex-row justify-between flex-wrap">
+        <NewCounting loading={loading} telling={telling1} />
+
         <NewCounting loading={loading} telling={telling2} />
+        <NewCounting loading={loading} telling={telling3} />
+        <NewCounting loading={loading} telling={telling4} />
+
+        {/* <NewCounting loading={loading} />
+        <NewCounting loading={loading} />
+        <NewCounting loading={loading} />
 
         <NewCounting loading={loading} />
-        <NewCounting loading={loading} />
-        <NewCounting loading={loading} />
-        <NewCounting loading={loading} />
-        <NewCounting loading={loading} />
-        <NewCounting loading={loading} />
-        <NewCounting loading={loading} />
+  <NewCounting loading={loading} /> */}
       </div>
       {/* <pre>
         <React.Fragment>{JSON.stringify(telling1)}</React.Fragment>

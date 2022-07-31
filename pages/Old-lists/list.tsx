@@ -2,7 +2,7 @@ import React from "react";
 import uniqid from "uniqid";
 import Table from "react-bootstrap/Table";
 
-function List(props) {
+function List(props: { loading: any; setLoading: any; dbRef: any }) {
   const { loading, setLoading, dbRef } = props;
 
   const dbArray = Object.values(dbRef);
@@ -17,7 +17,7 @@ function List(props) {
     .filter((e) => e != "Hei fra context");
   //.filter((e) => e != "Telling");
   // console.log("Clean array: ", clean);
-  const [telling1, telling2, telling3] = clean;
+  const [telling1, telling2]: any[] = clean;
   console.log("log fra telling", telling1, telling2);
 
   // function getAvdelingName(arr) {
@@ -38,7 +38,7 @@ function List(props) {
       ) : (
         <>
           <ul className="list-group" key={uniqid()}>
-            {telling1.map((i) => {
+            {telling1.map((i: any) => {
               return (
                 <li key={uniqid()} className="list-group-item mb-1 shadow">
                   {i.navn}
