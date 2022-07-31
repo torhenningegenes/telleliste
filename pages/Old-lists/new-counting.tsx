@@ -7,6 +7,8 @@ function NewCounting(props: { loading: any; telling: any }) {
   const { loading, telling } = props;
   if (loading === false) {
     const avdelingNavn: string = telling[0].avdeling;
+    const klokkeSlett = telling[telling.length - 1];
+    console.log(klokkeSlett.klokkeslett);
 
     // By Checking if loading the database is true, we prevent getting undefined from props.
 
@@ -23,7 +25,7 @@ function NewCounting(props: { loading: any; telling: any }) {
                     {avdelingNavn ? avdelingNavn : "Avdeling"}
                   </span>
                   <span className="text-sky-100 text-center text-lg tracking-wider">
-                    Kl. 20:36
+                    Kl: {klokkeSlett ? klokkeSlett.klokkeslett : null}
                   </span>
                 </div>
 
@@ -77,8 +79,6 @@ function NewCounting(props: { loading: any; telling: any }) {
                       </li>
                     </ul>
                   </div>
-
-                  <img src="/solutions.jpg" alt="" />
                 </Popover.Panel>
               </>
             )}
@@ -87,7 +87,7 @@ function NewCounting(props: { loading: any; telling: any }) {
       </>
     );
   } else {
-    return <div>Foo</div>;
+    return <div className="spinner"></div>;
   }
 }
 

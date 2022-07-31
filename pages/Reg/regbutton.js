@@ -26,7 +26,7 @@ function RegButton(props) {
 
   // Function for writing to the database
   function regCountHandler() {
-    myContext.push({ dato: currentDate });
+    myContext.push({ dato: date, klokkeslett: time });
     const db = getDatabase();
     //push(ref(db, "Tellinger"), myContext);
     push(ref(db, "Tellinger"), myContext);

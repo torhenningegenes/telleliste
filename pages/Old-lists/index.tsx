@@ -92,12 +92,17 @@ const OldLists = () => {
     <div className="margin--top--medium bg-light">
       {loading ? <div>loading...</div> : <div>Loading ferdig!</div>}
       <h1>Finn gamle lister</h1>
-      <div className="container flex flex-row justify-between flex-wrap">
+      <SearchBar dbRef={dbRef} />
+      <div className="container flex flex-row justify-between flex-wrap mt-4">
         <NewCounting loading={loading} telling={telling1} />
 
         <NewCounting loading={loading} telling={telling2} />
         <NewCounting loading={loading} telling={telling3} />
         <NewCounting loading={loading} telling={telling4} />
+        <NewCounting loading={loading} telling={telling5} />
+        <NewCounting loading={loading} telling={telling6} />
+        <NewCounting loading={loading} telling={telling7} />
+        <NewCounting loading={loading} telling={telling8} />
 
         {/* <NewCounting loading={loading} />
         <NewCounting loading={loading} />
@@ -112,7 +117,7 @@ const OldLists = () => {
       {/* <div>
           <Button onClick={renderList}>Render liste</Button>
         </div> */}
-      <SearchBar dbRef={dbRef} />
+
       {/* <h1>her kommer liste</h1>
         {
           <ul className="list-group">
