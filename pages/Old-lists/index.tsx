@@ -93,7 +93,7 @@ const OldLists = () => {
       {loading ? <div>loading...</div> : <div>Loading ferdig!</div>}
       <h1>Finn gamle lister</h1>
       <SearchBar dbRef={dbRef} />
-      <div className="container flex flex-row justify-between flex-wrap mt-4">
+      <div className="container flex flex-row justify-around flex-wrap mt-4">
         <NewCounting loading={loading} telling={telling1} />
 
         <NewCounting loading={loading} telling={telling2} />

@@ -1,26 +1,26 @@
 import { Fragment, useState, useRef } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 
-function SearchBar(props) {
+function SearchBar(props: any) {
   //const { formState, setFormState } = props;
   const [formState, setFormState] = useState("");
-  let formRef: string = useRef("");
+  let formRef: any = useRef("");
 
   // Take value from search. Use string methods like make lower case and remove whitespaces. Then filter on word `.filter(${input})`
   // If ${input} === true render html with list.
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     console.log("Click");
     e.preventDefault();
     console.log(formState);
   };
   return (
     <>
-      <Container
+      {/* <Container
         className="bg-white shadow p-2
 "
-      >
-        <Form>
+      > */}
+      {/* <Form>
           <Form.Group className="mb-3" controlId="searchOldLists">
             <Form.Label>Søk i gamle lister</Form.Label>
             <Form.Control
@@ -32,9 +32,9 @@ function SearchBar(props) {
             />
             <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
             {/* <Form.Text className="text-muted">Søk</Form.Text> */}
-          </Form.Group>
+      {/* </Form.Group> */}
 
-          <Button
+      {/* <Button
             variant="primary"
             type="submit"
             className="rounded btn-lg "
@@ -43,20 +43,20 @@ function SearchBar(props) {
             Søk etter gamle lister
           </Button>
         </Form>
-      </Container>
+      </Container> */}
 
       <div className="flex justify-center">
         <div className="mb-3 xl:w-96">
           <div className="input-group relative flex flex-wrap items-stretch w-full mb-4">
             <input
               type="search"
-              className="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              className="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-sky-700 focus:outline-none"
               placeholder="Search"
               aria-label="Search"
               aria-describedby="button-addon2"
             />
             <button
-              className="btn inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out items-center"
+              className="inline-block px-6 py-2.5 bg-sky-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-500 hover:shadow-lg focus:bg-sky-500  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out items-center"
               type="button"
               id="button-addon2"
             >

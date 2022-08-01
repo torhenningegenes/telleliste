@@ -1,6 +1,7 @@
 import React from "react";
 import { Popover } from "@headlessui/react";
 import { useState } from "react";
+import uniqid from "uniqid";
 
 function NewCounting(props: { loading: any; telling: any }) {
   //Reciving props
@@ -9,6 +10,7 @@ function NewCounting(props: { loading: any; telling: any }) {
     const avdelingNavn: string = telling[0].avdeling;
     const klokkeSlett = telling[telling.length - 1];
     console.log(klokkeSlett.klokkeslett);
+    console.log(telling);
 
     // By Checking if loading the database is true, we prevent getting undefined from props.
 
@@ -58,25 +60,16 @@ function NewCounting(props: { loading: any; telling: any }) {
 
                 <Popover.Panel className="absolute z-10">
                   <div className="grid grid-cols-1 bg-white w-64 rounded-b-lg text-gray-700">
+                    {/* <pre>
+                      <React.Fragment>{JSON.stringify(telling)}</React.Fragment>
+                    </pre> */}
+
                     <ul className="mt-2">
-                      <li className="">
-                        <span>Dato: </span>
-                        <span>29.6.22-20:29</span>
-                      </li>
-                      <li>lipsum</li>
-                      <li>lipsum</li>
-                      <li>lipsum</li>
-                      <li>lipsum</li>
-                      <li>lipsum</li>
-                      <li>lipsum</li>
-                      <li>
-                        {" "}
-                        <pre>
-                          <React.Fragment>
-                            {JSON.stringify(telling)}
-                          </React.Fragment>
-                        </pre>
-                      </li>
+                      {telling.map((barn: any) => (
+                        <li key={uniqid()} className="text-lg mb-1">
+                          {barn.navn}
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </Popover.Panel>
