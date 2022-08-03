@@ -6,6 +6,7 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import SearchBar from "./search-bar";
 import NewCounting from "./new-counting";
 import React from "react";
+import { clearIndicatorCSS } from "react-select/dist/declarations/src/components/indicators";
 
 // Need: getting data from db
 // Search bar and button
@@ -67,32 +68,12 @@ const OldLists = () => {
   ] = clean;
   //console.log("log fra telling", telling1, telling2, "Telling3: ", telling3);
 
-  // const newArr = Object.values(dbData);
-  // const returnArr = Object.entries(newArr);
-  // console.log(returnArr);
-  //};
-
-  //readFromDB();
-  //console.log(oldLists);
-  // Map out old lists from DB
-
-  const renderList = function () {
-    // // Function for filtering data from list
-    // const filt = dbRef
-    //   .flat()
-    //   .filter((a) => a.avdeling || a.dato === "Avdeling 1" || "dato");
-    // //const date = dbRef.flat().some((v) => v.dato);
-    // // console.log("Click", filt);
-    // setDbRef(filt);
-    // // console.log("flat", dbRef.flat());
-    // console.log(dbRef);
-  };
-
   return (
     <div className="margin--top--medium bg-light">
-      {loading ? <div>loading...</div> : <div>Loading ferdig!</div>}
+      {loading ? <div className="spinner"></div> : null}
       <h1>Finn gamle lister</h1>
-      <SearchBar dbRef={dbRef} />
+
+      <SearchBar dbArr={clean} />
       <div className="container flex flex-row justify-around flex-wrap mt-4">
         <NewCounting loading={loading} telling={telling1} />
 
