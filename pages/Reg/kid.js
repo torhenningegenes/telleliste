@@ -13,8 +13,8 @@ function Kid(props) {
     <Fragment>
       {showKid ? (
         <li
-          className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center mt-4 shadow border-0 rounded-1"
           key={uniqid()}
+          className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center mt-4 shadow border-0 rounded-1"
         >
           <div className="navnOgAvdeling" key={uniqid()}>
             {navn}
@@ -39,8 +39,8 @@ function Kid(props) {
         </li>
       ) : (
         <li
-          className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center text-muted mt-4 shadow border-0 rounded-1"
           key={uniqid()}
+          className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center text-muted mt-4 shadow border-0 rounded-1"
         >
           <div>Ikke tilstedet</div>
           <div className="navnOgAvdeling">{navn}</div>

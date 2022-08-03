@@ -3,6 +3,7 @@ import { Form, Button, Container } from "react-bootstrap";
 
 function SearchBar(props: any) {
   //const { formState, setFormState } = props;
+  const { dbArr } = props;
   const [formState, setFormState] = useState("");
   let formRef: any = useRef("");
 
@@ -13,6 +14,17 @@ function SearchBar(props: any) {
     console.log("Click");
     e.preventDefault();
     console.log(formState);
+
+    // trying to make a function for searching the array
+
+    let userInput = "Stian";
+    const avdeling = dbArr.forEach((count) => {
+      count.forEach((el) => {
+        console.log(el.filter((n) => n.navn == `${userInput}`));
+      });
+      console.log("--------------");
+    });
+    console.log(avdeling);
   };
   return (
     <>
@@ -51,14 +63,17 @@ function SearchBar(props: any) {
             <input
               type="search"
               className="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-sky-700 focus:outline-none"
-              placeholder="Search"
+              placeholder="Søk"
               aria-label="Search"
               aria-describedby="button-addon2"
+              value={formState}
+              onChange={(e) => setFormState(e.target.value)}
             />
             <button
               className="inline-block px-6 py-2.5 bg-sky-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-500 hover:shadow-lg focus:bg-sky-500  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out items-center"
               type="button"
               id="button-addon2"
+              onClick={handleSubmit}
             >
               <svg
                 aria-hidden="true"

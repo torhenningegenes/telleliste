@@ -9,8 +9,8 @@ function NewCounting(props: { loading: any; telling: any }) {
   if (loading === false) {
     const avdelingNavn: string = telling[0].avdeling;
     const klokkeSlett = telling[telling.length - 1];
-    console.log(klokkeSlett.klokkeslett);
-    console.log(telling);
+    // console.log(klokkeSlett.klokkeslett);
+    // console.log(telling);
 
     // By Checking if loading the database is true, we prevent getting undefined from props.
 
@@ -66,7 +66,10 @@ function NewCounting(props: { loading: any; telling: any }) {
 
                     <ul className="mt-2">
                       {telling.map((barn: any) => (
-                        <li key={uniqid()} className="text-lg mb-1">
+                        <li
+                          key={uniqid()}
+                          className="text-lg mb-1 hover:text-sky-500"
+                        >
                           {barn.navn}
                         </li>
                       ))}
