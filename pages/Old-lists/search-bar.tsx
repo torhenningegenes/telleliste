@@ -29,14 +29,21 @@ function SearchBar(props: any) {
 
           // }
           let res = Object.values(o);
-          console.log(res);
+          let keys = Object.keys(o);
+          //console.log(keys);
+          if (keys.includes("dato")) {
+            console.log(o);
+          }
+          if (res.includes("Stian")) {
+            console.log(res);
+          }
         });
         console.log("----------- ---------- --------");
       });
       return searchRes;
     }
     arrayTest(dbArr);
-    console.log(searchRes);
+    console.log("Foo", searchRes);
   };
   return (
     <>
