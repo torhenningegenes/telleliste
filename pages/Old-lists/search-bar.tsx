@@ -17,14 +17,26 @@ function SearchBar(props: any) {
 
     // trying to make a function for searching the array
 
-    let userInput = "Stian";
-    const avdeling = dbArr.forEach((count) => {
-      count.forEach((el) => {
-        console.log(el.filter((n) => n.navn == `${userInput}`));
+    // We need to do object conversion on level up in our foreach
+    let searchRes;
+    let rest;
+    function arrayTest(array) {
+      array.forEach((element) => {
+        element.forEach((o) => {
+          // if (o.navn === "Stian") {
+          //   console.log(o);
+          //   searchRes = o;
+
+          // }
+          let res = Object.values(o);
+          console.log(res);
+        });
+        console.log("----------- ---------- --------");
       });
-      console.log("--------------");
-    });
-    console.log(avdeling);
+      return searchRes;
+    }
+    arrayTest(dbArr);
+    console.log(searchRes);
   };
   return (
     <>
@@ -56,6 +68,7 @@ function SearchBar(props: any) {
           </Button>
         </Form>
       </Container> */}
+      <div className="bg-gray-300">Result:{}</div>
 
       <div className="flex justify-center">
         <div className="mb-3 xl:w-96">
