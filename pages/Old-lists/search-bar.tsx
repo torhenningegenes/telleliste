@@ -5,6 +5,7 @@ function SearchBar(props: any) {
   //const { formState, setFormState } = props;
   const { dbArr } = props;
   const [formState, setFormState] = useState("");
+  const [res, setRes] = useState("hei");
   let formRef: any = useRef("");
 
   // Take value from search. Use string methods like make lower case and remove whitespaces. Then filter on word `.filter(${input})`
@@ -19,28 +20,26 @@ function SearchBar(props: any) {
 
     // We need to do object conversion on level up in our foreach
     let searchRes;
-    let rest;
+
     function arrayTest(array) {
       array.forEach((element) => {
-        element.forEach((o) => {
-          // if (o.navn === "Stian") {
-          //   console.log(o);
-          //   searchRes = o;
+        console.log(element.filter((navn) => navn.length > 6));
 
+        element.forEach((o) => {
           // }
-          let res = Object.values(o);
+          let result = Object.values(o);
           let keys = Object.keys(o);
           //console.log(keys);
-          if (keys.includes("dato")) {
-            console.log(o);
-          }
-          if (res.includes("Stian")) {
-            console.log(res);
-          }
+          // if (keys.includes("dato")) {
+          // console.log(o);
+          // }
+          // if (result.includes(`Stian`)) {
+          //   console.log(result);
+          // }
         });
         console.log("----------- ---------- --------");
       });
-      return searchRes;
+      return res;
     }
     arrayTest(dbArr);
     console.log("Foo", searchRes);
@@ -75,7 +74,10 @@ function SearchBar(props: any) {
           </Button>
         </Form>
       </Container> */}
-      <div className="bg-gray-300">Result:{}</div>
+      <div className="bg-gray-300">
+        Result:
+        {formState}
+      </div>
 
       <div className="flex justify-center">
         <div className="mb-3 xl:w-96">
