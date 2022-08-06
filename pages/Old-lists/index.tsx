@@ -69,9 +69,11 @@ const OldLists = () => {
   //console.log("log fra telling", telling1, telling2, "Telling3: ", telling3);
 
   return (
-    <div className="margin--top--medium bg-light">
+    <div className="container text-center margin--top--medium bg-gray-50">
       {loading ? <div className="spinner"></div> : null}
-      <h1>Finn gamle lister</h1>
+      <h1 className=" text-gray-600 text-4xl uppercase tracking-wide mb-6">
+        Søk i gamle lister
+      </h1>
 
       <SearchBar dbArr={clean} />
       <div className="container flex flex-row justify-around flex-wrap mt-4">

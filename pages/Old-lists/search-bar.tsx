@@ -1,3 +1,5 @@
+import * as React from "react";
+
 import { Fragment, useState, useRef } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 
@@ -5,8 +7,7 @@ function SearchBar(props: any) {
   //const { formState, setFormState } = props;
   const { dbArr } = props;
   const [formState, setFormState] = useState("");
-  const [res, setRes] = useState("hei");
-  let formRef: any = useRef("");
+  const [res, setRes] = useState(null);
 
   // Take value from search. Use string methods like make lower case and remove whitespaces. Then filter on word `.filter(${input})`
   // If ${input} === true render html with list.
@@ -19,69 +20,63 @@ function SearchBar(props: any) {
     // trying to make a function for searching the array
 
     // We need to do object conversion on level up in our foreach
-    let searchRes;
+    let searchRes: any = [];
 
-    function arrayTest(array) {
-      array.forEach((element) => {
-        console.log(element.filter((navn) => navn.length > 6));
+    function arrayTest(array: any) {
+      array.forEach((element: any) => {
+        let firstValues = Object.values(element);
 
-        element.forEach((o) => {
+        // This gives us the last all counting where input was counted was seen.
+        if (element.find((obj: any) => obj.navn === `${formState}`)) {
+          if (searchRes) {
+            searchRes.push(element);
+            console.log(searchRes);
+          }
+        }
+
+        // console.log(
+        //   element.find((barn) => barn.navn === "Stian"),
+        //Gives last element in array
+        //   element[element.length - 1]
+        // );
+
+        // firstValues.filter((i) => {
+        //   i.includes("Stian");
+        //   console.log(element);
+        // });
+
+        element.forEach((o: any) => {
           // }
-          let result = Object.values(o);
+          let values = Object.values(o);
           let keys = Object.keys(o);
-          //console.log(keys);
+          let dates = values[values.length - 1];
+          //searchRes = values;
+          //console.log(values);
+          // console.log(lastItem);
+
           // if (keys.includes("dato")) {
-          // console.log(o);
+          // console.log(o.dato);
+          // console.log(o.navn);
+
           // }
-          // if (result.includes(`Stian`)) {
-          //   console.log(result);
+          // if (searchRes.filter((e) => e.includes("Helene"))) {
+          //   console.log(searchRes);
+          //   // console.log(o.dato);
           // }
         });
         console.log("----------- ---------- --------");
       });
-      return res;
+      return searchRes;
     }
     arrayTest(dbArr);
     console.log("Foo", searchRes);
+    setRes(searchRes);
   };
   return (
     <>
-      {/* <Container
-        className="bg-white shadow p-2
-"
-      > */}
-      {/* <Form>
-          <Form.Group className="mb-3" controlId="searchOldLists">
-            <Form.Label>Søk i gamle lister</Form.Label>
-            <Form.Control
-              onSubmit={handleSubmit}
-              type="text-box"
-              placeholder="Søk her"
-              value={formState}
-              onChange={(e) => setFormState(e.target.value)}
-            />
-            <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
-            {/* <Form.Text className="text-muted">Søk</Form.Text> */}
-      {/* </Form.Group> */}
-
-      {/* <Button
-            variant="primary"
-            type="submit"
-            className="rounded btn-lg "
-            onClick={handleSubmit}
-          >
-            Søk etter gamle lister
-          </Button>
-        </Form>
-      </Container> */}
-      <div className="bg-gray-300">
-        Result:
-        {formState}
-      </div>
-
       <div className="flex justify-center">
         <div className="mb-3 xl:w-96">
-          <div className="input-group relative flex flex-wrap items-stretch w-full mb-4">
+          <div className="input-group relative flex flex-wrap items-stretch w-full mb-4 shadow-lg">
             <input
               type="search"
               className="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-sky-700 focus:outline-none"
@@ -115,6 +110,14 @@ function SearchBar(props: any) {
             </button>
           </div>
         </div>
+      </div>
+
+      <div className="bg-gray-300">
+        Result:
+        {formState}
+        <pre>
+          <React.Fragment>{JSON.stringify(res)}</React.Fragment>
+        </pre>
       </div>
     </>
   );
