@@ -14,16 +14,16 @@ function StartNav() {
   const router = useRouter();
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
+    <Navbar bg="light" variant="light" expand="lg" fixed="top">
       <Container>
         <Link href={"/"} passHref>
-          <Navbar.Brand>📝 Tellelista</Navbar.Brand>
+          <Navbar.Brand>📝 Tellelisten</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto text-center">
             <Link href={"/"} passHref>
-              <Nav.Link>Om tellelista</Nav.Link>
+              <Nav.Link>Om tellelisten</Nav.Link>
             </Link>
           </Nav>
           {/* Adding a new <Nav> element seperates the content in the menu */}
@@ -39,7 +39,7 @@ function StartNav() {
             </Link>
             {currentUser ? (
               <Button
-                variant="outline-info"
+                variant="info"
                 valu="Logg ut"
                 onClick={() => {
                   logOut();

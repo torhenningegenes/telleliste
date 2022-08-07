@@ -17,11 +17,11 @@ function MyApp({ Component, pageProps }) {
       <AuthProvider>
         <AppWrapper>
           <Head>
-            <title>Tellelista</title>
+            <title>Tellelisten for barnehage</title>
           </Head>
 
           <StartNav />
-          <Footer />
+
           {noAuthRequired.includes(router.pathname) ? (
             <Component {...pageProps} />
           ) : (

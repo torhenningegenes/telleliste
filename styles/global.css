@@ -18,8 +18,7 @@ body {
   margin: 0;
   font-family: Ubuntu, Roboto, -apple-system, BlinkMacSystemFont, Segoe UI,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #f8f9fa;
-  /* Created with https://www.css-gradient.com */
+  background: rgb(7, 110, 145);
 }
 
 a {

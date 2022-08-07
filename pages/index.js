@@ -1,12 +1,11 @@
 import { Container, Button } from "react-bootstrap";
-import { Fragment } from "react";
-import Footer from "../components/layout/footer";
+
 import Link from "next/link";
-import BgImg from "../components/bg-img";
+
 import { useAuth } from "../context/auth-context";
 import { useRouter } from "next/router";
 
-function Home(props) {
+function Home() {
   const { currentUser } = useAuth();
   const router = useRouter();
 
@@ -15,9 +14,9 @@ function Home(props) {
     router.push("/home");
   }
   return (
-    <Fragment>
-      <Container
-        className="d-flex align-items-center flex-column text-light container-fluid bg-transparent
+    <>
+      <div
+        className="container mx-auto px-4
         "
       >
         <h1 className="text-center main__header shadow-lg mb-5 telle--lista--heading1">
@@ -35,8 +34,8 @@ function Home(props) {
             Ny bruker
           </Button>
         </Link>
-      </Container>
-    </Fragment>
+      </div>
+    </>
   );
 }
 

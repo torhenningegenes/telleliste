@@ -27,6 +27,9 @@ function NewCounting(props: { loading: any; telling: any }) {
                     {avdelingNavn ? avdelingNavn : "Avdeling"}
                   </span>
                   <span className="text-sky-100 text-center text-lg tracking-wider">
+                    {klokkeSlett ? klokkeSlett.dato : null}
+                  </span>
+                  <span className="text-sky-100 text-center text-lg tracking-wider">
                     Kl: {klokkeSlett ? klokkeSlett.klokkeslett : null}
                   </span>
                 </div>
@@ -64,7 +67,7 @@ function NewCounting(props: { loading: any; telling: any }) {
                       <React.Fragment>{JSON.stringify(telling)}</React.Fragment>
                     </pre> */}
 
-                    <ul className="mt-2">
+                    <ul className="mt-2 text-center px-0">
                       {telling.map((barn: any) => (
                         <li
                           key={uniqid()}

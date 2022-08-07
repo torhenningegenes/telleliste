@@ -30,7 +30,7 @@ function SearchBar(props: any) {
         if (element.find((obj: any) => obj.navn === `${formState}`)) {
           if (searchRes) {
             searchRes.push(element);
-            console.log(searchRes);
+            //console.log(searchRes);
           }
         }
 
@@ -113,7 +113,7 @@ function SearchBar(props: any) {
       </div>
 
       <div className="bg-gray-300">
-        Result:
+        <span className="mr-1">Ditt søk:</span>
         {formState}
         <pre>
           <React.Fragment>{JSON.stringify(res)}</React.Fragment>

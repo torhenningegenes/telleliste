@@ -14,8 +14,7 @@ import { clearIndicatorCSS } from "react-select/dist/declarations/src/components
 
 const OldLists = () => {
   // function OldLists() {
-  const [showOldLists, setShowOldLists] = useState(false);
-  const [oldLists, setOldLists] = useState();
+
   //const [formState, setFormState] = useState("");
   const [dbRef, setDbRef] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -69,13 +68,16 @@ const OldLists = () => {
   //console.log("log fra telling", telling1, telling2, "Telling3: ", telling3);
 
   return (
-    <div className="container text-center margin--top--medium bg-gray-50">
+    <div className="container text-center margin--top--medium bg-gray-50 shadow-lg py-4">
       {loading ? <div className="spinner"></div> : null}
-      <h1 className=" text-gray-600 text-4xl uppercase tracking-wide mb-6">
-        Søk i gamle lister
-      </h1>
+      <div className="header">
+        <h1 className=" text-gray-600 text-4xl uppercase tracking-wide mb-6">
+          Søk i gamle lister
+        </h1>
+      </div>
 
       <SearchBar dbArr={clean} />
+      <h3 className="text-gray-600 uppercase tracking-wide">Siste tellinger</h3>
       <div className="container flex flex-row justify-around flex-wrap mt-4">
         <NewCounting loading={loading} telling={telling1} />
 

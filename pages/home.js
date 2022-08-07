@@ -97,24 +97,19 @@ function Home(props) {
         </div>
       </nav>
 
-      <Container
-        fluid
-        className="d-flex align-items-center flex-column text-dark bg-gray-400"
-      >
-        <section className="margin--top--medium center bg-white p-3 shadow rounded-1">
-          <h1 className="">Velkommen til tellelista!</h1>
-          {/* <h1>{currentUser.email}</h1> */}
-          <h2>Dette er en beskyttet rute!</h2>
-          <Link href={"/Reg"} passHref>
-            <Button variant="primary" className="mx-2">
-              Ny telling
-            </Button>
-          </Link>
-          <Link href={"/Old-lists"} passHref>
-            <Button variant="primary">Finn gammel liste</Button>
-          </Link>
-        </section>
-      </Container>
+      <section className="text-center bg-gray-50 p-3 shadow rounded-1 mx-auto h-52 min-w-min">
+        <h1 className="">Velkommen til tellelista!</h1>
+        {/* <h1>{currentUser.email}</h1> */}
+        <h2>Dette er en beskyttet rute!</h2>
+        <Link href={"/Reg"} passHref>
+          <Button variant="primary" className="mx-2">
+            Ny telling
+          </Button>
+        </Link>
+        <Link href={"/Old-lists"} passHref>
+          <Button variant="primary">Finn gammel liste</Button>
+        </Link>
+      </section>
     </>
   );
 }
