@@ -18,7 +18,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #f8f9fa;
+  background: rgb(7, 110, 145);
   /* Created with https://www.css-gradient.com */
 }
 
@@ -63,57 +63,6 @@ a {
 /**********/
 /* Background image */
 /**********/
-
-.bg-img {
-  position: absolute;
-  color: #ebfafb;
-  background-image: url("../img/oceanBg.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-color: #ebfafb;
-  /* background-attachment: fixed; */
-  height: 100vh;
-  z-index: -10;
-}
-.bg-color {
-  position: absolute;
-  background-color: #142b2e;
-}
-.bg-gradient {
-  position: absolute;
-  height: 100vh;
-
-  background: rgb(5, 68, 76);
-  background: linear-gradient(
-    0deg,
-    rgba(5, 68, 76, 1) 0%,
-    rgba(2, 168, 207, 0.6026785714285714) 100%,
-    rgba(4, 125, 153, 1) 100%
-  );
-  z-index: 1000;
-}
-.bg-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.1);
-  height: 90vh;
-  z-index: 10;
-}
-.bg {
-  z-index: -10000;
-}
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 20;
-}
 
 /**********/
 /* Utility classes */

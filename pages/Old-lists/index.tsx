@@ -64,64 +64,46 @@ const OldLists = () => {
     telling6,
     telling7,
     telling8,
+    telling9,
+    telling10,
   ] = clean;
   //console.log("log fra telling", telling1, telling2, "Telling3: ", telling3);
 
   return (
-    <div className="container text-center margin--top--medium bg-gray-50 shadow-lg py-4">
-      {loading ? <div className="spinner"></div> : null}
-      <div className="header">
-        <h1 className=" text-gray-600 text-4xl uppercase tracking-wide mb-6">
-          Søk i gamle lister
-        </h1>
-      </div>
+    <section>
+      <div className="container text-center bg-gray-50 shadow-lg h-auto flex flex-col justify-center">
+        {loading ? (
+          <div className="spinner mt-20"></div>
+        ) : (
+          <div className="header mt-20">
+            <h1 className=" text-gray-600 text-4xl uppercase tracking-wide mb-6 mt-4">
+              Søk i gamle lister
+            </h1>
+          </div>
+        )}
 
-      <SearchBar dbArr={clean} />
-      <h3 className="text-gray-600 uppercase tracking-wide">Siste tellinger</h3>
-      <div className="container flex flex-row justify-around flex-wrap mt-4">
-        <NewCounting loading={loading} telling={telling1} />
+        <SearchBar dbArr={clean} />
+        <h3 className="text-gray-600 uppercase tracking-wide">
+          Siste tellinger
+        </h3>
+        <div className="container flex flex-row justify-around flex-wrap mt-4">
+          <NewCounting loading={loading} telling={telling1} />
 
-        <NewCounting loading={loading} telling={telling2} />
-        <NewCounting loading={loading} telling={telling3} />
-        <NewCounting loading={loading} telling={telling4} />
-        <NewCounting loading={loading} telling={telling5} />
-        <NewCounting loading={loading} telling={telling6} />
-        <NewCounting loading={loading} telling={telling7} />
-        <NewCounting loading={loading} telling={telling8} />
-
-        {/* <NewCounting loading={loading} />
-        <NewCounting loading={loading} />
-        <NewCounting loading={loading} />
-
-        <NewCounting loading={loading} />
-  <NewCounting loading={loading} /> */}
-      </div>
-      {/* <pre>
+          <NewCounting loading={loading} telling={telling2} />
+          <NewCounting loading={loading} telling={telling3} />
+          <NewCounting loading={loading} telling={telling4} />
+          <NewCounting loading={loading} telling={telling5} />
+          <NewCounting loading={loading} telling={telling6} />
+          <NewCounting loading={loading} telling={telling7} />
+          <NewCounting loading={loading} telling={telling8} />
+          <NewCounting loading={loading} telling={telling9} />
+          <NewCounting loading={loading} telling={telling10} />
+        </div>
+        {/* <pre>
         <React.Fragment>{JSON.stringify(telling1)}</React.Fragment>
       </pre> */}
-      {/* <div>
-          <Button onClick={renderList}>Render liste</Button>
-        </div> */}
-
-      {/* <h1>her kommer liste</h1>
-        {
-          <ul className="list-group">
-            {dbRef.flat().map((item) => {
-              return (
-                <>
-                  <div>Tellinger</div>
-                  <li className="list-group-item" key={uniqid()}>
-                    <p>{item.avdeling} </p>
-                    <p>{item.dato}</p>
-                    <p>{item.navn}</p>
-                  </li>
-                </>
-              );
-            })}
-          </ul>
-        } */}
-      {/* <List dbRef={dbRef} loading={loading} setLoading={setLoading} /> */}
-    </div>
+      </div>
+    </section>
   );
 };
 export default OldLists;

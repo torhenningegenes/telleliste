@@ -43,7 +43,7 @@ function DropdownAvdeling(props) {
     { value: "Avdeling 8", label: "Avdeling 8" },
   ];
   return (
-    <Container className="d-flex align-items-start justify-content-center flex-colum ">
+    <div className="container d-flex align-items-start justify-content-center flex-colum ">
       <Card
         style={{ width: "30rem" }}
         className="d-flex align-items-center justify-content-center mt-3 mb-3 shadow rounded"
@@ -62,7 +62,26 @@ function DropdownAvdeling(props) {
           />
         </Card.Body>
       </Card>
-    </Container>
+      <div className="flex justify-center">
+        <div className="bg-sky-500 w-4 rounded-l-lg"></div>
+        <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
+          <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">
+            Vennligst velg avdeling
+          </h5>
+          <p className="text-gray-700 text-base mb-4">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <Select
+            className="mb-3"
+            options={avdelinger}
+            placeholder="Velg avdeling"
+            isSearchable
+            onChange={setValgtAvdeling}
+          />
+        </div>
+      </div>
+    </div>
   );
 }
 

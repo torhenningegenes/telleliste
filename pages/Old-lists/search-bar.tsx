@@ -112,7 +112,7 @@ function SearchBar(props: any) {
         </div>
       </div>
 
-      <div className="bg-gray-300">
+      <div className="bg-gray-100 shadow-lg">
         <span className="mr-1">Ditt søk:</span>
         {formState}
         <pre>

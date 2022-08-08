@@ -17,6 +17,11 @@ function MyApp({ Component, pageProps }) {
       <AuthProvider>
         <AppWrapper>
           <Head>
+            <link
+              rel="icon"
+              type="image/png"
+              href="../public/favicon-32x32.png"
+            />
             <title>Tellelisten for barnehage</title>
           </Head>
 

@@ -83,10 +83,7 @@ function RegKids() {
 
   return (
     <>
-      <Container
-        fluid
-        className="d-flex flex-column align-items-center justify-content-center h-100 bg-light "
-      >
+      <div className=" container d-flex flex-column align-items-center justify-content-center h-100 bg-light ">
         <h1 className="text-dark margin--top--medium d-flex align-items-center justify-content-center">
           {regCount}
         </h1>
@@ -128,7 +125,7 @@ function RegKids() {
             </Card.Body>
           </Card>
         </div>
-      </Container>
+      </div>
     </>
   );
 }
