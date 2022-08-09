@@ -83,8 +83,8 @@ function RegKids() {
 
   return (
     <>
-      <div className=" container d-flex flex-column align-items-center justify-content-center h-100 bg-light ">
-        <h1 className="text-dark margin--top--medium d-flex align-items-center justify-content-center">
+      <section className=" container d-flex flex-column align-items-center justify-content-center h-100 bg-gray-100 shadow-md ">
+        <h1 className="text-gray-700 uppercase leading-3 mt-24 mb-4">
           {regCount}
         </h1>
         <h3>
@@ -125,7 +125,7 @@ function RegKids() {
             </Card.Body>
           </Card>
         </div>
-      </div>
+      </section>
     </>
   );
 }

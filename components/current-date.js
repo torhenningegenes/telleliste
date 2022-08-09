@@ -8,7 +8,7 @@ function CurrentDate() {
   };
   const date = new Date().toLocaleDateString("nb-No", options);
   const time = new Date().toLocaleTimeString();
-  const currentDate = `${date} ${time}`;
+  const currentDate = `${date} KL: ${time}`;
 
   const ukedager = [
     "Søndag",
@@ -26,7 +26,11 @@ function CurrentDate() {
 
   // console.log(currentDate);
   // const dayAndDate = currentDay + " " + currentDate;
-  return <div className="ms-2">{currentDate}</div>;
+  return (
+    <h5 className="ms-2 text-gray-700 uppercase leading-3 mt-4">
+      {currentDate}
+    </h5>
+  );
 }
 
 export default CurrentDate;
