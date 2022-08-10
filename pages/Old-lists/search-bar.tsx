@@ -27,12 +27,19 @@ function SearchBar(props: any) {
         let firstValues = Object.values(element);
 
         // This gives us the last all counting where input was counted was seen.
-        if (element.find((obj: any) => obj.navn === `${formState}`)) {
-          if (searchRes) {
-            searchRes.push(element);
-            //console.log(searchRes);
-          }
-        }
+        // if (element.find((obj: any) => obj.navn === `${formState}`)) {
+        //   if (searchRes) {
+        //     searchRes.push(element);
+        //     //console.log(searchRes);
+        //   }
+        // }
+
+        element.find(
+          (obj: any) =>
+            obj.navn === `${formState}` || obj.avdeling === `${formState}`
+        ) && searchRes
+          ? searchRes.push(element)
+          : console.log("No match");
 
         // console.log(
         //   element.find((barn) => barn.navn === "Stian"),

@@ -22,14 +22,14 @@ function NewCounting(props: { loading: any; telling: any }) {
           <Popover className="relative mb-6">
             {({ open }) => (
               <>
-                <div className="h-24 w-64 bg-sky-800 rounded-t-lg flex flex-col justify-around align-middle">
+                <div className="w-72 h-36 py-2 bg-sky-800 rounded-t-lg flex flex-col justify-around align-middle">
                   <span className="text-sky-100  text-center text-2xl tracking-wider">
                     {avdelingNavn ? avdelingNavn : "Avdeling"}
                   </span>
-                  <span className="text-sky-100 text-center text-lg tracking-wider">
+                  <span className="text-sky-100 text-center text-lg tracking-wider ">
                     {klokkeSlett ? klokkeSlett.dato : null}
                   </span>
-                  <span className="text-sky-100 text-center text-lg tracking-wider">
+                  <span className="text-sky-100 text-center text-base tracking-wider ">
                     Kl: {klokkeSlett ? klokkeSlett.klokkeslett : null}
                   </span>
                 </div>
@@ -38,8 +38,8 @@ function NewCounting(props: { loading: any; telling: any }) {
                   <div
                     className={`${
                       open
-                        ? "rounded-b-0 h-14 w-64 bg-white flex flex-row align-baseline justify-around shadow-md"
-                        : "h-14 w-64 bg-white rounded-b-lg flex flex-row align-baseline justify-around shadow-md"
+                        ? "rounded-b-0 h-14 w-72 bg-white flex flex-row align-baseline justify-around shadow-md"
+                        : "h-14 w-72 bg-white rounded-b-lg flex flex-row align-baseline justify-around shadow-md"
                     }`}
                   >
                     <div className="text-gray-700 mt-3 ml-3 tracking-wider">
