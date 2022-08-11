@@ -1,7 +1,5 @@
-import { Container, Card, Button } from "react-bootstrap";
 import Select from "react-select";
 import makeAnimated from "react-select";
-import Avdeling from "./avdeling";
 
 function DropdownAvdeling(props) {
   //********************* ******************//
@@ -43,8 +41,8 @@ function DropdownAvdeling(props) {
     { value: "Avdeling 8", label: "Avdeling 8" },
   ];
   return (
-    <div className="container d-flex align-items-start justify-content-center flex-colum ">
-      <Card
+    <div className="container d-flex align-items-start justify-content-center flex-colum mb-3 ">
+      {/* <Card
         style={{ width: "30rem" }}
         className="d-flex align-items-center justify-content-center mt-3 mb-3 shadow rounded"
       >
@@ -61,10 +59,10 @@ function DropdownAvdeling(props) {
             onChange={setValgtAvdeling}
           />
         </Card.Body>
-      </Card>
+      </Card> */}
 
       <div className="flex justify-center">
-        <div className="bg-sky-500 w-4 rounded-l-lg"></div>
+        <div className="bg-sky-500 w-1 rounded-l-lg"></div>
         <div className="block p-6 rounded-r-lg shadow-lg bg-white max-w-sm w-96">
           <h5 className="text-gray-600 text-xl leading-tight font-medium mb-2">
             Vennligst velg avdeling

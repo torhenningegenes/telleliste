@@ -11,8 +11,17 @@ function RemoveButton(props) {
     console.log(showKid);
   }
 
+  // return (
+  //   <button onClick={remove} className={classes.removeBtn} key={uniqid}>
+  //     X
+  //   </button>
+  // );
   return (
-    <button onClick={remove} className={classes.removeBtn} key={uniqid}>
+    <button
+      onClick={remove}
+      className="h-12 w-12 rounded-full border-2 border-red-900 bg-red-500 hover:bg-red-900"
+      key={uniqid}
+    >
       X
     </button>
   );

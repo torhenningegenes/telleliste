@@ -19,28 +19,26 @@ export default function Barnegruppe(props) {
   } = props;
 
   return (
-    <div>
+    <div className="container">
       {sortedBarn.avdeling != "Ingen avdeling valgt" ? (
-        <Container>
-          <ul>
-            {sortedBarn.map((sortedBarn, index) => {
-              return (
-                <>
-                  <Kid
-                    key={uniqid()}
-                    navn={sortedBarn.navn}
-                    avdeling={sortedBarn.avdeling}
-                    clicked={clicked}
-                    setClicked={setClicked}
-                    setHidden={setHidden}
-                    hidden={hidden}
-                    label={label}
-                  />
-                </>
-              );
-            })}
-          </ul>
-        </Container>
+        <ul className="flex flex-col justify-center">
+          {sortedBarn.map((sortedBarn, index) => {
+            return (
+              <>
+                <Kid
+                  key={uniqid()}
+                  navn={sortedBarn.navn}
+                  avdeling={sortedBarn.avdeling}
+                  clicked={clicked}
+                  setClicked={setClicked}
+                  setHidden={setHidden}
+                  hidden={hidden}
+                  label={label}
+                />
+              </>
+            );
+          })}
+        </ul>
       ) : null}
     </div>
   );

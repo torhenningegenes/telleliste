@@ -1,5 +1,5 @@
 import uniqid from "uniqid";
-import { Button } from "react-bootstrap";
+
 import CountButton from "./count-button";
 import RemoveButton from "./remove-button";
 import { Fragment } from "react";
@@ -14,28 +14,34 @@ function Kid(props) {
       {showKid ? (
         <li
           key={uniqid()}
-          className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center mt-4 shadow border-0 rounded-1"
+          //className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center mt-4 shadow border-0 rounded-1"
+          className="h-auto w-72  list-none flex flex-col justify-items-center	 items-center rounded shadow-lg mb-2 p-2 border-2 border-sky-700"
         >
-          <div className="navnOgAvdeling" key={uniqid()}>
+          <div
+            className="navnOgAvdeling text-lg uppercase text-gray-700 tracking-wide"
+            key={uniqid()}
+          >
             {navn}
           </div>
-          <div className="navnOgAvdeling" key={uniqid()}>
+          <div className="navnOgAvdeling text-gray-500" key={uniqid()}>
             {avdeling}
           </div>
-          <CountButton
-            key={uniqid()}
-            navn={navn}
-            avdeling={avdeling}
-            clicked={clicked}
-            setClicked={setClicked}
-            label={label}
-          />
+          <div>
+            <CountButton
+              key={uniqid()}
+              navn={navn}
+              avdeling={avdeling}
+              clicked={clicked}
+              setClicked={setClicked}
+              label={label}
+            />
 
-          <RemoveButton
-            key={uniqid()}
-            showKid={showKid}
-            setShowKid={setShowKid}
-          />
+            <RemoveButton
+              key={uniqid()}
+              showKid={showKid}
+              setShowKid={setShowKid}
+            />
+          </div>
         </li>
       ) : (
         <li

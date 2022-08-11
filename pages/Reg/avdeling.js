@@ -68,7 +68,9 @@ function Avdeling(props) {
   if (label === "Ingen avdeling valgt") {
     return (
       <Fragment>
-        <h5 className="text-center">Ingen avdeling valgt</h5>
+        <h5 className="text-center text-gray-700 uppercase mt-3">
+          Ingen avdeling valgt
+        </h5>
       </Fragment>
     );
   } else {

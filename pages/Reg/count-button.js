@@ -23,8 +23,25 @@ function CountButton(props) {
   }
   return (
     <>
-      <button
-        className="customBtn"
+      {clicked ? (
+        <button
+          className="w-16 h-16 rounded-full border-1 border-green-800 mr-1 ml-1 bg-green-300 text-green-800"
+          onClick={handleBtnClick}
+        >
+          {" "}
+          ✓
+        </button>
+      ) : (
+        <button
+          className="w-16 h-16 rounded-full  mr-1 ml-1 border-1 border-sky-700 bg-gray-200 text-sky-700  hover:bg-sky-100"
+          onClick={handleBtnClick}
+        >
+          ✓
+        </button>
+      )}
+
+      {/* <button
+        className="w-16 h-16 rounded-full  mr-1 hover:bg-green-200"
         onClick={handleBtnClick}
         style={{
           backgroundColor: clicked ? "#48e055" : "#B7B7B7",
@@ -32,7 +49,7 @@ function CountButton(props) {
         }}
       >
         ✓
-      </button>
+      </button> */}
     </>
   );
 }

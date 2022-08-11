@@ -100,7 +100,7 @@ function RegKids() {
             kidPresent={kidPresent}
             setKidPresent={setKidPresent}
           />
-          <Card
+          {/* <Card
             style={{ width: "30rem" }}
             className="d-flex align-items-center justify-content-center text-center mt-3 mb-3 shadow rounded"
           >
@@ -123,7 +123,27 @@ function RegKids() {
                 valgtAvdeling={valgtAvdeling}
               />
             </Card.Body>
-          </Card>
+          </Card> */}
+          <div className="flex flex-col justify-center align-center">
+            <div className="bg-sky-500 w-auto  h-1 rounded-t  "></div>
+            <div className="flex flex-col justify-center align-middle  p-6 rounded-br rounded-bl   shadow-lg bg-white max-w-sm w-auto">
+              <Avdeling
+                valgtAvdeling={valgtAvdeling}
+                barn={barn}
+                clicked={clicked}
+                setClicked={setClicked}
+                hidden={hidden}
+                setHidden={setHidden}
+                kidPresent={kidPresent}
+                setKidPresent={setKidPresent}
+              />
+              <RegButton
+                clicked={clicked}
+                setClicked={setClicked}
+                valgtAvdeling={valgtAvdeling}
+              />
+            </div>
+          </div>
         </div>
       </section>
     </>
