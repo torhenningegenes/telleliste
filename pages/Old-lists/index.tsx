@@ -1,16 +1,8 @@
-import ReadFromDB from "../../firebase/readFromDB";
-
-import { getDatabase, ref, onValue, get, child } from "firebase/database";
-
+import React from "react";
 import { Fragment, useEffect, useRef, useState } from "react";
+import { getDatabase, ref, onValue, get, child } from "firebase/database";
 import SearchBar from "./search-bar";
 import NewCounting from "./new-counting";
-import React from "react";
-import { clearIndicatorCSS } from "react-select/dist/declarations/src/components/indicators";
-
-// Need: getting data from db
-// Search bar and button
-// renderd list.
 
 const OldLists = () => {
   // function OldLists() {
@@ -83,6 +75,7 @@ const OldLists = () => {
         )}
 
         <SearchBar dbArr={clean} />
+
         <h3 className="text-gray-600 uppercase tracking-wide">
           Siste tellinger
         </h3>

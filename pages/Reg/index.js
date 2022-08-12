@@ -126,7 +126,7 @@ function RegKids() {
           </Card> */}
           <div className="flex flex-col justify-center align-center">
             <div className="bg-sky-500 w-auto  h-1 rounded-t  "></div>
-            <div className="flex flex-col justify-center align-middle  p-6 rounded-br rounded-bl   shadow-lg bg-white max-w-sm w-auto">
+            <div className="flex flex-col justify-items-center align-items-center p-6 rounded-br rounded-bl   shadow-lg bg-white max-w-sm w-auto">
               <Avdeling
                 valgtAvdeling={valgtAvdeling}
                 barn={barn}

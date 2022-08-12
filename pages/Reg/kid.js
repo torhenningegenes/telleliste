@@ -15,7 +15,7 @@ function Kid(props) {
         <li
           key={uniqid()}
           //className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center mt-4 shadow border-0 rounded-1"
-          className="h-auto w-72  list-none flex flex-col justify-items-center	 items-center rounded shadow-lg mb-2 p-2 border-2 border-sky-700"
+          className="h-auto w-72  list-none flex flex-col justify-items-center items-center rounded shadow mb-2 p-2 "
         >
           <div
             className="navnOgAvdeling text-lg uppercase text-gray-700 tracking-wide"

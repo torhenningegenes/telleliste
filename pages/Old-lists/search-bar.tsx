@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { Fragment, useState, useRef } from "react";
-import { Form, Button, Container } from "react-bootstrap";
+import SearchResult from "./search-result";
 
 function SearchBar(props: any) {
   //const { formState, setFormState } = props;
@@ -76,7 +76,6 @@ function SearchBar(props: any) {
       return searchRes;
     }
     arrayTest(dbArr);
-    console.log("Foo", searchRes);
     setRes(searchRes);
   };
   return (
@@ -120,11 +119,7 @@ function SearchBar(props: any) {
       </div>
 
       <div className="bg-gray-100 shadow-lg">
-        <span className="mr-1">Ditt søk:</span>
-        {formState}
-        <pre>
-          <React.Fragment>{JSON.stringify(res)}</React.Fragment>
-        </pre>
+        <SearchResult res={res} formState={formState} />
       </div>
     </>
   );

@@ -21,7 +21,7 @@ export default function Barnegruppe(props) {
   return (
     <div className="container">
       {sortedBarn.avdeling != "Ingen avdeling valgt" ? (
-        <ul className="flex flex-col justify-center">
+        <ul className="flex flex-col justify-center justify-items-center align-items-center pl-0">
           {sortedBarn.map((sortedBarn, index) => {
             return (
               <>
