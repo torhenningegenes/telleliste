@@ -83,7 +83,7 @@ function RegKids() {
 
   return (
     <>
-      <section className=" container d-flex flex-column align-items-center justify-content-center h-100 bg-gray-100 shadow-md ">
+      <section className=" container min-w-full d-flex flex-column align-items-center justify-content-center h-100 bg-gray-50 shadow-md ">
         <h1 className="text-gray-700 uppercase leading-3 mt-24 mb-4">
           {regCount}
         </h1>

@@ -1,6 +1,6 @@
 import React from "react";
-import { Popover } from "@headlessui/react";
-import { useState } from "react";
+import { Fragment } from "react";
+import { Popover, Transition } from "@headlessui/react";
 import uniqid from "uniqid";
 
 function NewCounting(props: { loading: any; telling: any }) {
@@ -42,13 +42,13 @@ function NewCounting(props: { loading: any; telling: any }) {
                         : "h-14 w-72 bg-white rounded-b-lg flex flex-row align-baseline justify-around shadow-md"
                     }`}
                   >
-                    <div className="text-gray-700 mt-3 ml-3 tracking-wider">
+                    <div className="text-gray-600 mt-3 ml-3 tracking-wider">
                       Se hele listen
                     </div>
 
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 mt-3 mr-7 text-gray-600"
+                      className="h-6 w-6 mt-3 mr-7 text-gray-400"
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
@@ -60,25 +60,34 @@ function NewCounting(props: { loading: any; telling: any }) {
                     </svg>
                   </div>
                 </Popover.Button>
-
-                <Popover.Panel className="absolute z-10">
-                  <div className="grid grid-cols-1 bg-white w-64 rounded-b-lg text-gray-700">
-                    {/* <pre>
+                <Transition
+                  as={Fragment}
+                  enter="transition ease-out duration-300"
+                  enterFrom="opacity-0 translate-y-1"
+                  enterTo="opacity-100 translate-y-0"
+                  leave="transition ease-in duration-150"
+                  leaveFrom="opacity-100 translate-y-0"
+                  leaveTo="opacity-0 translate-y-1"
+                >
+                  <Popover.Panel className="absolute z-10 ">
+                    <div className="grid grid-cols-1 bg-white w-72 rounded-b-lg text-gray-700 ">
+                      {/* <pre>
                       <React.Fragment>{JSON.stringify(telling)}</React.Fragment>
                     </pre> */}
 
-                    <ul className="mt-2 text-center px-0">
-                      {telling.map((barn: any) => (
-                        <li
-                          key={uniqid()}
-                          className="text-lg mb-1 hover:text-sky-500"
-                        >
-                          {barn.navn}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </Popover.Panel>
+                      <ul className="mt-2 text-center px-0">
+                        {telling.map((barn: any) => (
+                          <li
+                            key={uniqid()}
+                            className="text-lg mb-1  hover:text-sky-500"
+                          >
+                            {barn.navn}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </Popover.Panel>
+                </Transition>
               </>
             )}
           </Popover>

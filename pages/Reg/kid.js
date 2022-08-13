@@ -15,32 +15,42 @@ function Kid(props) {
         <li
           key={uniqid()}
           //className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center mt-4 shadow border-0 rounded-1"
-          className="h-auto w-72  list-none flex flex-col justify-items-center items-center rounded shadow mb-2 p-2 "
+          className="h-auto w-72  list-none flex flex-row justify-start  items-center rounded shadow mt-2 "
         >
-          <div
-            className="navnOgAvdeling text-lg uppercase text-gray-700 tracking-wide"
-            key={uniqid()}
-          >
-            {navn}
+          <div classname="sidebar">
+            {clicked ? (
+              null()
+            ) : (
+              <div className=" w-1 h-40  bg-sky-500 rounded-tl rounded-bl"></div>
+            )}
           </div>
-          <div className="navnOgAvdeling text-gray-500" key={uniqid()}>
-            {avdeling}
-          </div>
-          <div>
-            <CountButton
-              key={uniqid()}
-              navn={navn}
-              avdeling={avdeling}
-              clicked={clicked}
-              setClicked={setClicked}
-              label={label}
-            />
 
-            <RemoveButton
+          <div className="cardItems flex flex-col flex-grow justify-around items-center py-2">
+            <div
+              className="navnOgAvdeling text-lg uppercase text-gray-700 tracking-wide"
               key={uniqid()}
-              showKid={showKid}
-              setShowKid={setShowKid}
-            />
+            >
+              {navn}
+            </div>
+            <div className="navnOgAvdeling text-gray-500" key={uniqid()}>
+              {avdeling}
+            </div>
+            <div>
+              <CountButton
+                key={uniqid()}
+                navn={navn}
+                avdeling={avdeling}
+                clicked={clicked}
+                setClicked={setClicked}
+                label={label}
+              />
+
+              <RemoveButton
+                key={uniqid()}
+                showKid={showKid}
+                setShowKid={setShowKid}
+              />
+            </div>
           </div>
         </li>
       ) : (

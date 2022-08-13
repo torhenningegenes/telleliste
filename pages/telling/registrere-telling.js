@@ -1,4 +1,4 @@
-import { setUseAppContext, useAppContext } from "../AppWrapper";
+import useAppContext from "../../context/AppWrapper";
 
 function RegistrereTelling(props) {
   //Getting context

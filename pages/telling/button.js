@@ -1,6 +1,6 @@
 import classes from "./button.module.css";
 import { useState, useRef } from "react";
-import { useAppContext } from "../AppWrapper";
+import useAppContext from "../../context/AppWrapper";
 
 function CountButton(props) {
   //We dont need to use state on the count button
