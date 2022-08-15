@@ -19,10 +19,10 @@ function NavBar() {
   };
   return (
     <>
-      <nav className="bg-gray-50 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 mt-11">
+      <nav className="bg-white px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 mt-11 ">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
           <Link href={"/"} passHref>
-            <span className="cursor-pointer uppercase tracking-wide text-xl text-gray-700">
+            <span className="cursor-pointer uppercase tracking-wide text-xl bg-white text-gray-700">
               📝 Tellelisten
             </span>
           </Link>
@@ -58,31 +58,31 @@ function NavBar() {
             }
             id="navbar-default"
           >
-            <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:items-center md:justify-around md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 ">
+            <ul className="flex flex-col mt-4 rounded-lg md:bg-red-500  md:flex-row md:items-baseline  md:justify-center md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 ">
               <li>
                 <Link href={"/"} passHref aria-current="page">
-                  <p className="block md:text-gray-500 md:text-lg  md:no-underline md:hover:text-sky-500 transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
+                  <span className=" md:text-gray-500 md:text-lg  md:no-underline md:hover:text-sky-500 transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
                     Hjem
-                  </p>
+                  </span>
                 </Link>
               </li>
               <li>
                 <Link href={"/Reg"}>
-                  <p className="block md:text-gray-500 md:text-lg  md:no-underline md:hover:text-sky-500 transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
+                  <span className=" md:text-gray-500 md:text-lg  md:no-underline md:hover:text-sky-500 transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
                     Ny telling
-                  </p>
+                  </span>
                 </Link>
               </li>
               <li>
                 <Link href={"/Old-lists"} passHref>
-                  <p className="block md:text-gray-500 md:text-lg  md:no-underline md:hover:text-sky-500 transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
+                  <span className=" md:text-gray-500 md:text-lg  md:no-underline md:hover:text-sky-500 transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
                     Gamle lister
-                  </p>
+                  </span>
                 </Link>
               </li>
 
               {currentUser ? (
-                <li>
+                <li className="  self-center">
                   <button
                     className="bg-sky-800 text-sky-100 h-11 w-28 rounded-lg hover:bg-sky-500 transition duration-300 ease-in-out"
                     variant="info"
