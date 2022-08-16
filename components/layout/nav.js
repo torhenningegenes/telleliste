@@ -58,38 +58,33 @@ function NavBar() {
             }
             id="navbar-default"
           >
-            <ul className="flex flex-col mt-4 rounded-lg items-center md:h-24  md:flex-row md:items-center md:justify-center md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 ">
-              <li>
-                <Link
-                  href={"/"}
-                  passHref
-                  aria-current="page"
-                  className="hover: "
-                >
-                  <span className="text-gray-600 text-lg hover:border-sky-700 border-2 rounded p-2 md:no-underline transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
+            <ul className="flex flex-col mt-4 rounded-lg justify-around  items-center md:h-24  md:flex-row md:items-center md:justify-center md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 ">
+              <li className="mb-4">
+                <Link href={"/"} passHref aria-current="page" className=" ">
+                  <span className=" text-gray-600  text-lg border-gray-700 hover:border-sky-500 border-2 md:border-0 md:border-white rounded-pill hover:bg-sky-500 p-2 md:no-underline transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
                     Hjem
                   </span>
                 </Link>
               </li>
-              <li>
+              <li className="mb-4">
                 <Link href={"/Reg"}>
-                  <span className="text-gray-600 text-lg hover:border-sky-700 border-2 rounded p-2  md:no-underline transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
+                  <span className="text-gray-600 text-lg border-gray-700 hover:border-sky-500 border-2 md:border-0 md:border-white rounded-pill p-2 md:no-underline transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
                     Ny telling
                   </span>
                 </Link>
               </li>
-              <li>
+              <li className="mb-3">
                 <Link href={"/Old-lists"} passHref>
-                  <span className=" md:text-gray-500 md:text-lg  md:no-underline md:hover:text-sky-500 transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
+                  <span className=" text-gray-600 text-lg border-gray-700 hover:border-sky-500 border-2 md:border-0 md:border-white rounded-pill p-2 md:no-underline transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
                     Gamle lister
                   </span>
                 </Link>
               </li>
 
               {currentUser ? (
-                <li className=" ">
+                <li className="mb-4">
                   <button
-                    className="mr-2 bg-sky-800 text-sky-100 h-11 w-28 rounded-lg hover:bg-sky-500 transition duration-300 ease-in-out"
+                    className="mr-2 bg-sky-800 text-sky-100 h-11 w-28 rounded-lg hover:bg-sky-500 transition duration-300 ease-in-out text-xl"
                     variant="info"
                     value="Logg ut"
                     onClick={() => {
