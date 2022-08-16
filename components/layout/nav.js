@@ -19,7 +19,7 @@ function NavBar() {
   };
   return (
     <>
-      <nav className="bg-white px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 mt-11 ">
+      <nav className="bg-white px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 mt-11 sticky top-0 z-50 h-auto">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
           <Link href={"/"} passHref>
             <span className="cursor-pointer uppercase tracking-wide text-xl bg-white text-gray-700">
@@ -58,17 +58,22 @@ function NavBar() {
             }
             id="navbar-default"
           >
-            <ul className="flex flex-col mt-4 rounded-lg md:bg-red-500  md:flex-row md:items-baseline  md:justify-center md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 ">
+            <ul className="flex flex-col mt-4 rounded-lg items-center md:h-24  md:flex-row md:items-center md:justify-center md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 ">
               <li>
-                <Link href={"/"} passHref aria-current="page">
-                  <span className=" md:text-gray-500 md:text-lg  md:no-underline md:hover:text-sky-500 transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
+                <Link
+                  href={"/"}
+                  passHref
+                  aria-current="page"
+                  className="hover: "
+                >
+                  <span className="text-gray-600 text-lg hover:border-sky-700 border-2 rounded p-2 md:no-underline transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
                     Hjem
                   </span>
                 </Link>
               </li>
               <li>
                 <Link href={"/Reg"}>
-                  <span className=" md:text-gray-500 md:text-lg  md:no-underline md:hover:text-sky-500 transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
+                  <span className="text-gray-600 text-lg hover:border-sky-700 border-2 rounded p-2  md:no-underline transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
                     Ny telling
                   </span>
                 </Link>
@@ -82,9 +87,9 @@ function NavBar() {
               </li>
 
               {currentUser ? (
-                <li className="  self-center">
+                <li className=" ">
                   <button
-                    className="bg-sky-800 text-sky-100 h-11 w-28 rounded-lg hover:bg-sky-500 transition duration-300 ease-in-out"
+                    className="mr-2 bg-sky-800 text-sky-100 h-11 w-28 rounded-lg hover:bg-sky-500 transition duration-300 ease-in-out"
                     variant="info"
                     value="Logg ut"
                     onClick={() => {
