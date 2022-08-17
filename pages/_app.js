@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import { AppWrapper } from "../context/AppWrapper";
 import { AuthProvider } from "../context/auth-context";
-import StartNav from "../components/layout/startNav";
+
 import NavBar from "../components/layout/nav";
 import ProtecedRoutes from "../components/proteced-routes";
 import Head from "next/head";
@@ -21,7 +21,6 @@ function MyApp({ Component, pageProps }) {
             <title>Tellelisten for barnehage</title>
           </Head>
 
-          <StartNav />
           <NavBar />
 
           {noAuthRequired.includes(router.pathname) ? (

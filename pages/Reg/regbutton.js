@@ -1,16 +1,31 @@
 import { useAppContext } from "../../context/AppWrapper";
 import { getDatabase, push, ref, set } from "firebase/database";
-import { Alert } from "react-bootstrap";
 import { useRouter } from "next/router";
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function RegButton(props) {
   //Getting context
   const myContext = useAppContext();
   //Setting router
   const router = useRouter();
+  const [tellingRegistrert, setTellingRegistrert] = useState(null);
 
   const { clicked, setClicked, valgtAvdeling } = props;
+
   const label = valgtAvdeling;
+
+  const notify = () =>
+    toast.info("Tellingen er registert!", {
+      position: "top-center",
+      autoClose: 4000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   // Creating date object.
   const options = {
     weekday: "long",
@@ -35,7 +50,8 @@ function RegButton(props) {
     console.log("Telling registrert");
     console.log(myContext);
     setClicked(false);
-    alert("Telling registrert");
+
+    notify();
     router.push("/Reg");
   }
 
@@ -60,12 +76,24 @@ function RegButton(props) {
 
   return (
     <div className="flex justify-center">
+      {tellingRegistrert ? <p>Telling er registrert</p> : null}
       <button
         className=" bg-sky-700 text-sky-100  rounded-full w-40 h-12 mt-5 mb-4 text-center hover:bg-sky-500 hover:text-gray-600"
         onClick={regCountHandler}
       >
         Registrer telling
       </button>
+      <ToastContainer
+        position="top-center"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+      />
     </div>
   );
 }
