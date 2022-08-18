@@ -1,7 +1,7 @@
 import { useAppContext } from "../../context/AppWrapper";
 import { getDatabase, push, ref, set } from "firebase/database";
 import { useRouter } from "next/router";
-import { useState } from "react";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -10,7 +10,6 @@ function RegButton(props) {
   const myContext = useAppContext();
   //Setting router
   const router = useRouter();
-  const [tellingRegistrert, setTellingRegistrert] = useState(null);
 
   const { clicked, setClicked, valgtAvdeling } = props;
 
@@ -76,7 +75,6 @@ function RegButton(props) {
 
   return (
     <div className="flex justify-center">
-      {tellingRegistrert ? <p>Telling er registrert</p> : null}
       <button
         className=" bg-sky-700 text-sky-100  rounded-full w-40 h-12 mt-5 mb-4 text-center hover:bg-sky-500 hover:text-gray-600"
         onClick={regCountHandler}

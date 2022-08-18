@@ -19,7 +19,7 @@ function NavBar() {
   };
   return (
     <>
-      <nav className="bg-white px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 sticky top-0 z-50 h-auto">
+      <nav className="bg-white px-2 sm:px-4 py-3 rounded dark:bg-gray-900 sticky top-0 z-50 h-auto">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
           <Link href={"/"} passHref>
             <span className="cursor-pointer uppercase tracking-wide text-xl bg-white text-gray-700">
@@ -61,21 +61,21 @@ function NavBar() {
             <ul className="flex flex-col mt-4 rounded-lg justify-around  items-center md:h-24  md:flex-row md:items-center md:justify-center md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 ">
               <li className="mb-3">
                 <Link href={"/"} passHref aria-current="page" className=" ">
-                  <span className=" text-gray-600 active:bg-red-500  text-lg border-gray-700 hover:border-sky-500 border-2 md:border-0 md:border-white rounded-pill  p-2 md:no-underline transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
+                  <span className=" text-gray-600 active:bg-red-500 font-sans font-light  text-lg  hover:bg-sky-500 hover:text-sky-50 md:border-0 md:border-white rounded-pill  p-2 md:no-underline transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
                     Hjem
                   </span>
                 </Link>
               </li>
               <li className="mb-3">
                 <Link href={"/Reg"}>
-                  <span className="text-gray-600 text-lg border-gray-700 hover:border-sky-500 border-2 md:border-0 md:border-white rounded-pill p-2 md:no-underline transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
+                  <span className="text-gray-600 text-lg font-light   hover:bg-sky-500 hover:text-sky-50 md:border-0 md:border-white rounded-pill p-2 md:no-underline transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
                     Ny telling
                   </span>
                 </Link>
               </li>
               <li className="mb-3">
                 <Link href={"/Old-lists"} passHref>
-                  <span className=" text-gray-600 text-lg border-gray-700 hover:border-sky-500 border-2 md:border-0 md:border-white rounded-pill p-2 md:no-underline transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
+                  <span className=" text-gray-600 text-lg font-light   hover:bg-sky-500 hover:text-sky-50  md:border-0 md:border-white rounded-pill p-2 md:no-underline transition duration-300 ease-in-out visited:text-red-600 cursor-pointer  tracking-wide">
                     Gamle lister
                   </span>
                 </Link>
@@ -99,7 +99,7 @@ function NavBar() {
                 <li>
                   <Link href={"/login-user"} passHref>
                     <button
-                      className="bg-sky-800 text-sky-100 h-11 w-28 rounded-lg hover:bg-sky-500 transition duration-300 ease-in-out"
+                      className="bg-sky-800 text-sky-100 font-light   h-11 w-28 rounded-lg hover:bg-sky-500 transition duration-300 ease-in-out"
                       variant="info"
                       as="input"
                       type="submit"
