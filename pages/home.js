@@ -8,16 +8,20 @@ function Home(props) {
 
   return (
     <section className="text-center bg-gray-50 p-3 shadow rounded-1 mx-auto h-52 min-w-min">
-      <h1 className="">Velkommen til tellelista!</h1>
+      <h1 className="text-gray-600 uppercase tracking-wide">
+        Velkommen til tellelista!
+      </h1>
       {/* <h1>{currentUser.email}</h1> */}
-      <h2>Dette er en beskyttet rute!</h2>
+
       <Link href={"/Reg"} passHref>
-        <Button variant="primary" className="mx-2">
+        <button className="bg-sky-800 hover:bg-sky-500 text-white font-bold py-2 px-4 rounded focus:ring-red-900 focus:shadow-outline active:bg-red-500">
           Ny telling
-        </Button>
+        </button>
       </Link>
       <Link href={"/Old-lists"} passHref>
-        <Button variant="primary">Finn gammel liste</Button>
+        <button className="bg-sky-800 hover:bg-sky-500 text-white font-bold py-2 px-4 rounded focus:ring-red-900 focus:shadow-outline active:bg-red-500">
+          Se gamlelister
+        </button>
       </Link>
     </section>
   );

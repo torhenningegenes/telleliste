@@ -1,7 +1,6 @@
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Card, Button, Form, Container, Alert } from "react-bootstrap";
-import { Fragment } from "react";
+
 import React, { useRef, useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useAuth, LogIn } from "../context/auth-context";
@@ -18,15 +17,19 @@ function LoginUser() {
   const { currentUser } = useAuth;
 
   const notify = () =>
-    toast.info("Tellingen er registert!", {
-      position: "top-center",
-      autoClose: 4000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
+    toast.error(
+      `Feil epost eller passord, 
+    Vennligst prøv igjen`,
+      {
+        position: "top-center",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      }
+    );
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -41,23 +44,21 @@ function LoginUser() {
       setLoading(true);
       await LogIn(emailRef.current.value, passwordRef.current.value);
       console.log("Success");
-      //router.push("/home");
 
       // Pass in e to get the error
     } catch (e) {
-      console.log(e);
+      console.log("log fra e: ", e);
       setError("Failed to login");
       console.log(error);
-      notify();
     }
-
+    error ? notify() : router.push("/home");
     setLoading(false);
   }
 
   return (
     <>
       {loading ? <div className="spinner"></div> : null}
-      <Container
+      {/* <Container
         className="d-flex align-items-center justify-content-center "
         style={{ minHeight: "80vh" }}
       >
@@ -87,7 +88,7 @@ function LoginUser() {
           </Card>
           <div className="w-100 text-center mt-2">{currentUser}</div>
         </div>
-      </Container>
+      </Container> */}
 
       <div className="w-full max-w-xs flex flex-col items-center mx-auto">
         <h3 className="text-gray-700">Logg inn</h3>
@@ -138,7 +139,7 @@ function LoginUser() {
           &copy;2022, tellelisten.no
         </p>
       </div>
-      <ToastContainer />
+      <ToastContainer className="" />
     </>
   );
 }

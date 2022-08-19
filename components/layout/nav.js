@@ -84,7 +84,7 @@ function NavBar() {
               {currentUser ? (
                 <li className="mb-3">
                   <button
-                    className="mr-2 bg-sky-800 text-sky-100 h-11 w-28 rounded-lg hover:bg-sky-500 transition duration-300 ease-in-out text-xl"
+                    className="mr-2 bg-sky-800 text-sky-100 font-light  h-11 w-28 rounded-lg hover:bg-sky-500 transition duration-300 ease-in-out"
                     variant="info"
                     value="Logg ut"
                     onClick={() => {
