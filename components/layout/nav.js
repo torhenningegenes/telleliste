@@ -83,6 +83,7 @@ function NavBar() {
 
               {currentUser ? (
                 <li className="mb-3">
+                  <p>Logget in som:{currentUser.email}</p>
                   <button
                     className="mr-2 bg-sky-800 text-sky-100 font-light  h-11 w-28 rounded-lg hover:bg-sky-500 transition duration-300 ease-in-out"
                     variant="info"
