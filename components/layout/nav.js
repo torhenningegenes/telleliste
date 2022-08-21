@@ -20,6 +20,9 @@ function NavBar() {
   return (
     <>
       <nav className="bg-white px-2 sm:px-4 py-3 rounded dark:bg-gray-900 sticky top-0 z-50 h-auto">
+        {/* <span>
+          <p>Innlogget som:{currentUser.email}</p>
+        </span> */}
         <div className="container flex flex-wrap justify-between items-center mx-auto">
           <Link href={"/"} passHref>
             <span className="cursor-pointer uppercase tracking-wide text-xl bg-white text-gray-700">
@@ -83,7 +86,6 @@ function NavBar() {
 
               {currentUser ? (
                 <li className="mb-3">
-                  <p>Logget in som:{currentUser.email}</p>
                   <button
                     className="mr-2 bg-sky-800 text-sky-100 font-light  h-11 w-28 rounded-lg hover:bg-sky-500 transition duration-300 ease-in-out"
                     variant="info"

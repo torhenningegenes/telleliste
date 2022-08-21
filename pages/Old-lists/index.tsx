@@ -20,7 +20,7 @@ const OldLists = () => {
 
   // const readFromDB = () => {
   const db = getDatabase();
-  const tellingerPath = ref(db, "Tellinger");
+  const tellingerPath = ref(db, "/Oppsaltunet/Tellinger");
   // };
   useEffect(() => {
     onValue(tellingerPath, (snapshot) => {
@@ -92,9 +92,9 @@ const OldLists = () => {
           <NewCounting loading={loading} telling={telling9} />
           <NewCounting loading={loading} telling={telling10} />
         </div>
-        {/* <pre>
-        <React.Fragment>{JSON.stringify(telling1)}</React.Fragment>
-      </pre> */}
+        <pre>
+          <React.Fragment>{JSON.stringify(telling1)}</React.Fragment>
+        </pre>
       </div>
     </section>
   );

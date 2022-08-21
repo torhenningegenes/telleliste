@@ -17,7 +17,7 @@ function Kid(props) {
           //className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center mt-4 shadow border-0 rounded-1"
           className="h-auto w-72  list-none flex flex-row justify-start  items-center rounded shadow mt-2 "
         >
-          <div classname="sidebar">
+          <div className="sidebar">
             {clicked ? (
               null()
             ) : (

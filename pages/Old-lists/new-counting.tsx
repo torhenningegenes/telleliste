@@ -6,7 +6,7 @@ import uniqid from "uniqid";
 function NewCounting(props: { loading: any; telling: any }) {
   //Reciving props
   const { loading, telling } = props;
-  if (loading === false) {
+  if (loading === false && telling) {
     const avdelingNavn: string = telling[0].avdeling;
     const klokkeSlett = telling[telling.length - 1];
     // console.log(klokkeSlett.klokkeslett);
@@ -95,7 +95,8 @@ function NewCounting(props: { loading: any; telling: any }) {
       </>
     );
   } else {
-    return <div className="spinner"></div>;
+    // return <div className="spinner"></div>;
+    return null;
   }
 }
 

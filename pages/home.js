@@ -14,12 +14,12 @@ function Home(props) {
       {/* <h1>{currentUser.email}</h1> */}
 
       <Link href={"/Reg"} passHref>
-        <button className="bg-sky-800 hover:bg-sky-500 text-white font-bold py-2 px-4 rounded focus:ring-red-900 focus:shadow-outline active:bg-red-500 mr-3">
+        <button className="bg-sky-800 hover:bg-sky-500 text-sky-100 font-light py-2 px-4 rounded focus:ring-red-900 focus:shadow-outline active:bg-red-500 mr-3">
           Ny telling
         </button>
       </Link>
       <Link href={"/Old-lists"} passHref>
-        <button className="bg-sky-800 hover:bg-sky-500 text-white font-bold py-2 px-4 rounded focus:ring-red-900 focus:shadow-outline active:bg-red-500">
+        <button className="bg-sky-800 text-sky-100 hover:bg-sky-500 font-light py-2 px-4 rounded focus:ring-red-900 focus:shadow-outline active:bg-red-500">
           Se gamlelister
         </button>
       </Link>

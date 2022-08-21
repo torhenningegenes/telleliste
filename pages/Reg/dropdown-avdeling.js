@@ -4,41 +4,22 @@ import makeAnimated from "react-select";
 function DropdownAvdeling(props) {
   //********************* ******************//
   // Getting our props. Barn is sent from index
-  const { barn, kidPresent, setKidPresent } = props;
+  const { barn, dbRef, kidPresent, setKidPresent } = props;
 
   const { valgtAvdeling, setValgtAvdeling, clicked, setClicked } = props;
 
-  //********************* ******************//
-  // if ref.value.current = avdeling 1 do filter avdeling avdeling 1.
-  let nyArray = [];
-  function filterAvdeling() {
-    nyArray = barn.filter((barn) => barn.avdeling === "Avdeling 5");
-  }
-
-  //Function for determening array when selectin avdeling from drop down menu
-  filterAvdeling();
-  // console.log(nyArray);
-
   // Function for saving "Avdeling"
 
-  //********************* ******************//
-  // make a object based on avdelinger in barn.
-  function createOptions(barn) {
-    // console.log("Hei fra values " + Object.values(barn));
-  }
-  createOptions(barn);
-
-  //********************* ******************//
   // Options for selection
   const avdelinger = [
-    { value: "Avdeling 1", label: "Avdeling 1" },
-    { value: "Avdeling 2", label: "Avdeling 2" },
-    { value: "Avdeling 3", label: "Avdeling 3" },
-    { value: "Avdeling 4", label: "Avdeling 4" },
-    { value: "Avdeling 5", label: "Avdeling 5" },
-    { value: "Avdeling 6", label: "Avdeling 6" },
-    { value: "Avdeling 7", label: "Avdeling 7" },
-    { value: "Avdeling 8", label: "Avdeling 8" },
+    { value: "Avdeling 1", label: "1" },
+    { value: "Avdeling 2", label: "2" },
+    { value: "Avdeling 3", label: "3" },
+    { value: "Avdeling 4", label: "4" },
+    { value: "Avdeling 5", label: "5" },
+    { value: "Avdeling 6", label: "6" },
+    { value: "Avdeling 7", label: "7" },
+    { value: "Avdeling 8", label: "8" },
   ];
   return (
     <div className="container d-flex align-items-start justify-content-center flex-colum mb-3 ">

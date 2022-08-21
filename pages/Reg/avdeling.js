@@ -5,11 +5,6 @@ import RegButton from "./regbutton";
 import uniqid from "uniqid";
 
 function Avdeling(props) {
-  //***************** State *******************/
-
-  const [labelToContext, setlabelToContext] = useState("");
-  //***********************************************/
-
   //***************** Props *******************/
 
   //getting props
@@ -22,6 +17,7 @@ function Avdeling(props) {
     setHidden,
     kidPresent,
     setKidPresent,
+    dbRef,
   } = props;
   //***********************************************/
 
@@ -32,20 +28,28 @@ function Avdeling(props) {
   //***************** Variables *******************/
 
   const { label } = valgtAvdeling;
-
+  console.log("Dette er label: ", label);
   //***********************************************/
 
   //***************** Functions *******************/
 
   // //Filter barn into avdelinger
   let sortedBarn = [];
+  let sortedBarn2 = [];
+
   function filterAvdeling() {
-    sortedBarn = barn.filter((barn) => barn.avdeling === `${label}`);
+    sortedBarn = barn.filter((barn) => barn.avdeling.includes(`${label}`));
     console.log("Hei fra sorted", sortedBarn);
+  }
+
+  function filterAvdeling2() {
+    sortedBarn2 = dbRef.filter((barn) => barn.Avdeling.includes(`${label}`));
+    console.log("Hei fra sorted 2", sortedBarn2);
   }
 
   //Function for determening array when selectin avdeling from drop down menu
   filterAvdeling();
+  filterAvdeling2();
   //Function for setting "avdeling" label to context
 
   // useEffect(() => {
@@ -81,6 +85,7 @@ function Avdeling(props) {
           key={uniqid()}
           label={label}
           sortedBarn={sortedBarn}
+          sortedBarn2={sortedBarn2}
           clicked={clicked}
           setClicked={setClicked}
           hidden={hidden}

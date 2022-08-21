@@ -1,21 +1,21 @@
-import DropdownAvdeling from "./dropdown-avdeling";
-import { Container, Card, Button } from "react-bootstrap";
-import { useRouter } from "next/router";
 import uniqid from "uniqid";
+import { getDatabase, push, ref, set, onValue } from "firebase/database";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import DropdownAvdeling from "./dropdown-avdeling";
 import Avdeling from "./avdeling";
-import { useState } from "react";
 import CurrentDate from "../../components/current-date";
 import RegButton from "./regbutton";
 
 function RegKids() {
-  const [isLoading, setIsLoading] = useState("Loading...");
   const [valgtAvdeling, setValgtAvdeling] = useState({
     value: "Ingen avdeling valgt",
     label: "Ingen avdeling valgt",
   });
   const [clicked, setClicked] = useState(false);
-  const [counted, setCounted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [hidden, setHidden] = useState(true);
+  const [dbRef, setDbRef] = useState([]);
   const [kidPresent, setKidPresent] = useState(valgtAvdeling);
 
   // Labels for regButton
@@ -24,6 +24,23 @@ function RegKids() {
 
   // Here there will be a API-call to the firebase server for fetching the children. For Now we use dummy data.
   // One page per department. passing kids as props
+
+  // const readFromDB = () => {
+
+  // Check with uid in array. then give ${correctKindergarten}
+
+  const db = getDatabase();
+  const tellingerPath = ref(db, "/Oppsaltunet/Barn");
+  // };
+  useEffect(() => {
+    onValue(tellingerPath, (snapshot) => {
+      const data = snapshot.val();
+
+      setDbRef(Object.values(data));
+      setLoading(false);
+    });
+  }, []);
+  console.log(dbRef);
   const barn = [
     { id: uniqid(), navn: "Louise", tilstede: true, avdeling: "Avdeling 1" },
     { id: uniqid(), navn: "Lars", tilstede: true, avdeling: "Avdeling 1" },
@@ -64,7 +81,14 @@ function RegKids() {
   ];
 
   const router = useRouter();
+  // let sortedBarn2 = [];
+  // function filterAvdeling2() {
+  //   sortedBarn2 = dbRef.filter((barn) => barn.Avdeling == "8");
+  //   //dbRef.filter((barn) => barn.avdeling === "Avdeling 8");
+  //   console.log("Hei fra sorted 2", sortedBarn2);
+  // }
 
+  // filterAvdeling2();
   // let nyArray = [];
   // function filterAvdeling() {
   //   nyArray = barn.filter((barn) => barn.avdeling === "Avdeling 5");
@@ -87,11 +111,12 @@ function RegKids() {
         <h1 className="text-gray-700 uppercase leading-3 mt-24 mb-4">
           {regCount}
         </h1>
-        <h3>
-          <CurrentDate />
-        </h3>
+
+        <CurrentDate />
+
         <div className="d-flex align-items-center justify-content-center flex-column">
           <DropdownAvdeling
+            dbRef={dbRef}
             barn={barn}
             valgtAvdeling={valgtAvdeling}
             setValgtAvdeling={setValgtAvdeling}
@@ -100,35 +125,13 @@ function RegKids() {
             kidPresent={kidPresent}
             setKidPresent={setKidPresent}
           />
-          {/* <Card
-            style={{ width: "30rem" }}
-            className="d-flex align-items-center justify-content-center text-center mt-3 mb-3 shadow rounded"
-          >
-            <Card.Body>
-              <Card.Title></Card.Title>
-              <Card.Text></Card.Text>
-              <Avdeling
-                valgtAvdeling={valgtAvdeling}
-                barn={barn}
-                clicked={clicked}
-                setClicked={setClicked}
-                hidden={hidden}
-                setHidden={setHidden}
-                kidPresent={kidPresent}
-                setKidPresent={setKidPresent}
-              />
-              <RegButton
-                clicked={clicked}
-                setClicked={setClicked}
-                valgtAvdeling={valgtAvdeling}
-              />
-            </Card.Body>
-          </Card> */}
+
           <div className="flex flex-col justify-center align-center">
             <div className="bg-sky-500 w-auto  h-1 rounded-t  "></div>
             <div className="flex flex-col justify-items-center align-items-center p-6 rounded-br rounded-bl   shadow-lg bg-white max-w-sm w-auto">
               <Avdeling
                 valgtAvdeling={valgtAvdeling}
+                dbRef={dbRef}
                 barn={barn}
                 clicked={clicked}
                 setClicked={setClicked}

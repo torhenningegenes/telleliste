@@ -18,7 +18,7 @@ function RegButton(props) {
   const notify = () =>
     toast.info("Tellingen er registert!", {
       position: "top-center",
-      autoClose: 4000,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -43,7 +43,7 @@ function RegButton(props) {
     myContext.push({ dato: date, klokkeslett: time });
     const db = getDatabase();
     //push(ref(db, "Tellinger"), myContext);
-    push(ref(db, "Tellinger"), myContext);
+    push(ref(db, "/Oppsaltunet/Tellinger"), myContext);
 
     myContext.length = 0;
     console.log("Telling registrert");
@@ -83,7 +83,7 @@ function RegButton(props) {
       </button>
       <ToastContainer
         position="top-center"
-        autoClose={4000}
+        autoClose={2000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
