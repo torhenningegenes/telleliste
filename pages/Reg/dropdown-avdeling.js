@@ -23,25 +23,6 @@ function DropdownAvdeling(props) {
   ];
   return (
     <div className="container d-flex align-items-start justify-content-center flex-colum mb-3 ">
-      {/* <Card
-        style={{ width: "30rem" }}
-        className="d-flex align-items-center justify-content-center mt-3 mb-3 shadow rounded"
-      >
-        <Card.Body>
-          <Card.Title className="font-weight-bold">
-            <h2> Vennligst velg avdeling</h2>
-          </Card.Title>
-          <Card.Text>Velg fra listen under</Card.Text>
-          <Select
-            className="mb-3"
-            options={avdelinger}
-            placeholder="Velg avdeling"
-            isSearchable
-            onChange={setValgtAvdeling}
-          />
-        </Card.Body>
-      </Card> */}
-
       <div className="flex justify-center">
         <div className="bg-sky-500 w-1 rounded-l-lg"></div>
         <div className="block p-6 rounded-r-lg shadow-lg bg-white max-w-sm w-96">

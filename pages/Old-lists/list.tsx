@@ -1,6 +1,5 @@
 import React from "react";
 import uniqid from "uniqid";
-import Table from "react-bootstrap/Table";
 
 function List(props: { loading: any; setLoading: any; dbRef: any }) {
   const { loading, setLoading, dbRef } = props;
@@ -52,19 +51,6 @@ function List(props: { loading: any; setLoading: any; dbRef: any }) {
       <pre>
         <React.Fragment>{JSON.stringify(clean)}</React.Fragment>
       </pre>
-      <Table striped bordered hover>
-        <tbody>
-          <tr>
-            <td>Avdeling</td>
-          </tr>
-          <tr>
-            <td>Dato</td>
-          </tr>
-          <tr>
-            <td>Barn</td>
-          </tr>
-        </tbody>
-      </Table>
     </>
   );
 }

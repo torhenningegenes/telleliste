@@ -1,13 +1,14 @@
 import "../styles/global.css";
 import "bootstrap/dist/css/bootstrap.css";
 
+import { useRouter } from "next/router";
+
+import Head from "next/head";
 import { AppWrapper } from "../context/AppWrapper";
 import { AuthProvider } from "../context/auth-context";
 
 import NavBar from "../components/layout/nav";
 import ProtecedRoutes from "../components/proteced-routes";
-import Head from "next/head";
-import { useRouter } from "next/router";
 import Footer from "../components/layout/bg-color";
 
 function MyApp({ Component, pageProps }) {

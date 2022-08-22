@@ -1,5 +1,5 @@
 import { collection, getDocs, doc, getDoc } from "firebase/firestore";
-import { Button } from "react-bootstrap";
+
 import { db } from "./firebaseConfig";
 
 export function FirestoreRead() {
@@ -22,9 +22,5 @@ export function FirestoreRead() {
     }
   };
 
-  return (
-    <Button variant="secondary" onClick={readFromDB}>
-      Read from DB
-    </Button>
-  );
+  return <button onClick={readFromDB}>Read from DB</button>;
 }

@@ -1,5 +1,4 @@
 import { getDatabase, ref, onValue, get, child } from "firebase/database";
-import { Button } from "react-bootstrap";
 
 function ReadFromDB() {
   let dbData;
@@ -36,9 +35,7 @@ function ReadFromDB() {
 
   return (
     <>
-      <Button variant="primary" onClick={readFromDB}>
-        Read from DB
-      </Button>
+      <button onClick={readFromDB}>Read from DB</button>
     </>
   );
 }

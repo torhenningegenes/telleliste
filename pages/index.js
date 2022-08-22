@@ -1,5 +1,3 @@
-import { Container, Button } from "react-bootstrap";
-
 import Link from "next/link";
 
 import { useAuth } from "../context/auth-context";
@@ -24,15 +22,11 @@ function Home() {
         </h1>
 
         <Link href={"/login-user"} passHref>
-          <Button variant="light" className="center btn btn-lg mb-5 text-dark">
-            Login
-          </Button>
+          <button className="center btn btn-lg mb-5 text-dark">Login</button>
         </Link>
 
         <Link href={"/new-user"} passHref>
-          <Button variant="light" className="center btn btn-lg text-dark">
-            Ny bruker
-          </Button>
+          <button className="center btn btn-lg text-dark">Ny bruker</button>
         </Link>
       </div>
     </>

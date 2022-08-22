@@ -1,9 +1,5 @@
-import { Fragment } from "react";
-import { Container } from "react-bootstrap";
-
-import Kid from "./kid";
-
 import uniqid from "uniqid";
+import Kid from "./kid";
 
 export default function Barnegruppe(props) {
   // Here we get props

@@ -58,37 +58,6 @@ function LoginUser() {
   return (
     <>
       {loading ? <div className="spinner"></div> : null}
-      {/* <Container
-        className="d-flex align-items-center justify-content-center "
-        style={{ minHeight: "80vh" }}
-      >
-        <div className="w-100 " style={{ maxWidth: "400px" }}>
-          <Card>
-            <Card.Body>
-              <h2 className="center mb-4">Logg in</h2>
-
-              {error && <Alert variant="danger">{error}</Alert>}
-              <Form onSubmit={handleSubmit}>
-                <Form.Group id="epost">
-                  <Form.Label>Epost</Form.Label>
-                  <Form.Control type="email" ref={emailRef} required />
-                </Form.Group>
-
-                <Form.Group id="password">
-                  <Form.Label>Passord</Form.Label>
-                  <Form.Control type="password" ref={passwordRef} required />
-                </Form.Group>
-
-                <Button type="submit" className="w-100 mt-2" disabled={loading}>
-                  Logg inn
-                </Button>
-              </Form>
-              <p className="text-dark">{currentUser && currentUser.email}</p>
-            </Card.Body>
-          </Card>
-          <div className="w-100 text-center mt-2">{currentUser}</div>
-        </div>
-      </Container> */}
 
       <div className="w-full max-w-xs flex flex-col items-center mx-auto">
         <h3 className="text-gray-700">Logg inn</h3>

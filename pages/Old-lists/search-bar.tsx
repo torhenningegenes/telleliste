@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import { Fragment, useState, useRef } from "react";
 import SearchResult from "./search-result";
 

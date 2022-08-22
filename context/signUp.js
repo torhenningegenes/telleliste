@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Card, Button, Form, Container, Alert } from "react-bootstrap";
+
 import React, { useRef, useState } from "react";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { useAuth, signup, currentUser } from "../context/auth-context";
@@ -44,7 +44,7 @@ function SignUp() {
 
   return (
     <Fragment>
-      <Container
+      {/* <Container
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "100vh" }}
       >
@@ -80,7 +80,7 @@ function SignUp() {
           <div className="w-100 text-center mt-2">Allerede konto? Log in</div>
           {currentUser}
         </div>
-      </Container>
+      </Container> */}
     </Fragment>
   );
 }
