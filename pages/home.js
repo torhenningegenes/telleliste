@@ -7,7 +7,7 @@ function Home(props) {
   console.log(currentUser);
 
   return (
-    <section className="text-center bg-gray-50 p-3 shadow rounded-1 mx-auto h-52 min-w-min">
+    <section className="text-center bg-gray-50 p-3 shadow rounded-1 mx-auto h-screen min-w-min">
       <h1 className="text-gray-600 uppercase tracking-wide">
         Velkommen til tellelista!
       </h1>
