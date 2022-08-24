@@ -79,7 +79,8 @@ function Avdeling(props) {
   } else {
     return (
       <Fragment>
-        <h5 className="text-center">Du har valgt: {label}</h5>
+        <h5 className="text-gray-700 text-center">Du har valgt: {label}</h5>
+        <h6 className="text-gray-700">Antall telt:{}</h6>
         <Barnegruppe
           key={uniqid()}
           label={label}

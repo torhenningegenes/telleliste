@@ -54,25 +54,6 @@ function RegButton(props) {
     router.push("/Reg");
   }
 
-  //
-
-  //
-  // }}
-
-  // function for pushing context to local storage/ JSON
-  //   function regCountHandler() {
-  //     if (myContext) {
-  //         console.log("Telling registrert");
-
-  //       myContext.push({ dato: currentDate });
-  //       console.log(myContext);
-  //       if (myContext.length < 0) {
-  //         myContext.length = 0;
-  //       }
-  //       console.log(myContext);
-  //     }
-  //   }
-
   return (
     <div className="flex justify-center">
       <button
