@@ -99,10 +99,10 @@ function NavBar() {
                   </button>
                 </li>
               ) : (
-                <li>
+                <li className="mb-3">
                   <Link href={"/login-user"} passHref>
                     <button
-                      className="bg-sky-800 text-sky-100 font-light   h-11 w-28 rounded-lg hover:bg-sky-500 transition duration-300 ease-in-out"
+                      className="mr-2 bg-sky-800 text-sky-100 font-light  h-11 w-28 rounded-lg hover:bg-sky-500 transition duration-300 ease-in-out"
                       variant="info"
                       as="input"
                       type="submit"
