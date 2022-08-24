@@ -14,13 +14,13 @@ export default function Barnegruppe(props) {
     setHidden,
   } = props;
 
-  console.log("Hei fra barnegruppe", sortedBarn2);
-  console.log("Navn: ", sortedBarn2["Barnets fornavn"]);
+  console.log("Hei fra barnegruppe", sortedBarn);
+  console.log("Navn: ", sortedBarn["Barnets fornavn"]);
   return (
-    <div className="container">
-      {sortedBarn2.avdeling != "Ingen avdeling valgt" ? (
-        <ul className="flex flex-col justify-center justify-items-center align-items-center pl-0">
-          {sortedBarn2.map((sortedBarn, index) => {
+    <div className="container ">
+      {sortedBarn.avdeling != "Ingen avdeling valgt" ? (
+        <ul className="flex flex-col justify-center justify-items-center align-items-center pl-0 min-w-min">
+          {sortedBarn.map((sortedBarn, index) => {
             return (
               <>
                 <Kid

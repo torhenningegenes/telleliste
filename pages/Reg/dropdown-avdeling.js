@@ -25,7 +25,7 @@ function DropdownAvdeling(props) {
     <div className="container d-flex align-items-start justify-content-center flex-colum mb-3 ">
       <div className="flex justify-center">
         <div className="bg-sky-500 w-1 rounded-l-lg"></div>
-        <div className="block p-6 rounded-r-lg shadow-lg bg-white max-w-sm w-96">
+        <div className="block p-6 rounded-r-lg shadow-lg bg-white max-w-sm min-w-min md:w-96">
           <h5 className="text-gray-600 text-xl leading-tight font-medium mb-2">
             Vennligst velg avdeling
           </h5>

@@ -35,21 +35,20 @@ function Avdeling(props) {
 
   // //Filter barn into avdelinger
   let sortedBarn = [];
-  let sortedBarn2 = [];
 
-  function filterAvdeling() {
-    sortedBarn = barn.filter((barn) => barn.avdeling.includes(`${label}`));
+  function filterAvdeling2() {
+    sortedBarn2 = barn.filter((barn) => barn.avdeling.includes(`${label}`));
     console.log("Hei fra sorted", sortedBarn);
   }
 
-  function filterAvdeling2() {
-    sortedBarn2 = dbRef.filter((barn) => barn.Avdeling.includes(`${label}`));
-    console.log("Hei fra sorted 2", sortedBarn2);
+  function filterAvdeling() {
+    sortedBarn = dbRef.filter((barn) => barn.Avdeling.includes(`${label}`));
+    //console.log("Hei fra sorted 2", sortedBarn2);
   }
 
   //Function for determening array when selectin avdeling from drop down menu
   filterAvdeling();
-  filterAvdeling2();
+
   //Function for setting "avdeling" label to context
 
   // useEffect(() => {
@@ -85,7 +84,6 @@ function Avdeling(props) {
           key={uniqid()}
           label={label}
           sortedBarn={sortedBarn}
-          sortedBarn2={sortedBarn2}
           clicked={clicked}
           setClicked={setClicked}
           hidden={hidden}
