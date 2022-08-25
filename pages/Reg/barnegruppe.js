@@ -6,7 +6,7 @@ export default function Barnegruppe(props) {
   const {
     valgtAvdeling,
     sortedBarn,
-    sortedBarn2,
+
     label,
     clicked,
     setClicked,

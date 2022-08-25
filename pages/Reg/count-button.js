@@ -4,7 +4,10 @@ import { useAppContext } from "../../context/AppWrapper";
 function CountButton(props) {
   const { navn, avdeling } = props;
   let [clicked, setClicked] = useState(false);
+
   const countContext = useAppContext();
+
+  // Adds a toast to notify user of how many kids has been counted.s
 
   function handleBtnClick() {
     // Changing state.
@@ -39,17 +42,6 @@ function CountButton(props) {
           ✓
         </button>
       )}
-
-      {/* <button
-        className="w-16 h-16 rounded-full  mr-1 hover:bg-green-200"
-        onClick={handleBtnClick}
-        style={{
-          backgroundColor: clicked ? "#48e055" : "#B7B7B7",
-          color: clicked ? "#276629" : "white",
-        }}
-      >
-        ✓
-      </button> */}
     </>
   );
 }
