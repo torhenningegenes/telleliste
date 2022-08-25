@@ -25,14 +25,6 @@ function SearchBar(props: any) {
       array.forEach((element: any) => {
         let firstValues = Object.values(element);
 
-        // This gives us the last all counting where input was counted was seen.
-        // if (element.find((obj: any) => obj.navn === `${formState}`)) {
-        //   if (searchRes) {
-        //     searchRes.push(element);
-        //     //console.log(searchRes);
-        //   }
-        // }
-
         element.find(
           (obj: any) =>
             obj.navn === `${formState}` || obj.avdeling === `${formState}`
