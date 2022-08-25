@@ -27,7 +27,7 @@ function CurrentDate() {
   // console.log(currentDate);
   // const dayAndDate = currentDay + " " + currentDate;
   return (
-    <h5 className="ms-2 text-gray-700 uppercase leading-3 mt-4 mb-4 text-sm md:text-base">
+    <h5 className="ms-2 text-gray-700 uppercase leading-3 mt-4 mb-4 text-sm md:text-xl">
       {currentDate}
     </h5>
   );
