@@ -4,7 +4,7 @@ import SearchResult from "./search-result";
 
 function SearchBar(props: any) {
   //const { formState, setFormState } = props;
-  const { dbArr } = props;
+  const { dbArr, loading } = props;
   const [formState, setFormState] = useState("");
   const [res, setRes] = useState(null);
 
@@ -58,7 +58,7 @@ function SearchBar(props: any) {
 
           // }
           // if (searchRes.filter((e) => e.includes("Helene"))) {
-          //   console.log(searchRes);
+          console.log("log fra searchres", searchRes);
           //   // console.log(o.dato);
           // }
         });
@@ -109,8 +109,8 @@ function SearchBar(props: any) {
         </div>
       </div>
 
-      <div className="bg-gray-100 shadow-lg">
-        <SearchResult res={res} formState={formState} />
+      <div className="bg-gray-100 shadow-lg flex flex-col justify-center">
+        <SearchResult res={res} formState={formState} loading={loading} />
       </div>
     </>
   );

@@ -74,7 +74,7 @@ const OldLists = () => {
           </div>
         )}
 
-        <SearchBar dbArr={clean} />
+        <SearchBar loading={loading} dbArr={clean} />
 
         <h3 className="text-gray-600 uppercase tracking-wide">
           Siste tellinger

@@ -1,6 +1,7 @@
-import Barnegruppe from "./barnegruppe";
 import { Fragment, useState, useEffect } from "react";
+import Barnegruppe from "./barnegruppe";
 import RegButton from "./regbutton";
+import { useAppContext } from "../../context/AppWrapper";
 
 import uniqid from "uniqid";
 
@@ -19,31 +20,25 @@ function Avdeling(props) {
     setKidPresent,
     dbRef,
   } = props;
-  //***********************************************/
 
   //***************** Context *******************/
-
-  //***********************************************/
+  const [counted, setCounted] = useState();
+  const myContext = useAppContext();
+  const totalCounted = myContext.length - 1;
 
   //***************** Variables *******************/
 
   const { label } = valgtAvdeling;
   console.log("Dette er label: ", label);
-  //***********************************************/
 
   //***************** Functions *******************/
 
   // //Filter barn into avdelinger
   let sortedBarn = [];
 
-  function filterAvdeling2() {
-    sortedBarn2 = barn.filter((barn) => barn.avdeling.includes(`${label}`));
-    console.log("Hei fra sorted", sortedBarn);
-  }
-
   function filterAvdeling() {
     sortedBarn = dbRef.filter((barn) => barn.Avdeling.includes(`${label}`));
-    //console.log("Hei fra sorted 2", sortedBarn2);
+    console.log("Hei fra sorted ", sortedBarn);
   }
 
   //Function for determening array when selectin avdeling from drop down menu

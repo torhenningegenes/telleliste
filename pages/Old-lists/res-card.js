@@ -4,20 +4,38 @@ import { useState } from "react";
 
 function ResCard(props) {
   const [loading, setLoading] = useState(true);
-  const { res } = props;
-  console.log("log fra search-result", res);
-  return (
-    <>
-      <div className="container">
-        <div className=" bg-sky-800 w-44 text-sky-100 px-1 py-2 rounded-r rounded-t">
-          Avdeling 8
+  const { res, navn, avdeling, dato, klokkeslett } = props;
+  // console.log("log fra props: ", navn);
+  //console.log("log fra search-result", res);
+  if (res) {
+    console.log("Fra res avdeling:", res[0].avdeling);
+  }
+
+  if (res) {
+    const avdeling = res[0].avdeling;
+    const totalCounted = res.length - 1;
+    return (
+      <>
+        <div className="container flex flex-col justify-center align-middle items-center">
+          <div className=" bg-sky-800 w-72 max-w-sm text-sky-100 px-1  rounded-r rounded-t">
+            {avdeling}
+          </div>
+          <div className="bg-gray-50 text-gray-700 w-72 max-w-sm shadow rounded-br rounded-bl mb-2 h-auto flex flex-col justify-center align-middle">
+            <ul className="flex flex-col justify-center align-middle p-0">
+              {res.map((e, i) => (
+                <li className="mb-1 text-gray-700">
+                  {e.navn}
+                  <span>{e.dato}</span>
+                  <span>{e.klokkeslett}</span>
+                </li>
+              ))}
+            </ul>
+            Totalt telt: {totalCounted}
+          </div>
         </div>
-        <div className="bg-gray-50 text-gray-700 w-44 shadow rounded-br rounded-bl mb-2 h-6 ">
-          <ul></ul>
-        </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 }
 
 export default ResCard;
