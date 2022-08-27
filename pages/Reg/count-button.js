@@ -6,7 +6,8 @@ function CountButton(props) {
   let [clicked, setClicked] = useState(false);
 
   const countContext = useAppContext();
-
+  const totalCounted = countContext.length;
+  //console.log(totalCounted);
   // Adds a toast to notify user of how many kids has been counted.s
 
   function handleBtnClick() {

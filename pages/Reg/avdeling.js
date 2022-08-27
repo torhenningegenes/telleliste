@@ -24,8 +24,8 @@ function Avdeling(props) {
   //***************** Context *******************/
   const [counted, setCounted] = useState();
   const myContext = useAppContext();
-  const totalCounted = myContext.length - 1;
-
+  const totalCounted = myContext.length;
+  console.log("log fra totalCounted", totalCounted);
   //***************** Variables *******************/
 
   const { label } = valgtAvdeling;
@@ -75,7 +75,7 @@ function Avdeling(props) {
     return (
       <Fragment>
         <h5 className="text-gray-700 text-center">Du har valgt: {label}</h5>
-        <h6 className="text-gray-700">Antall telt:{}</h6>
+        {/* <h6 className="text-gray-700">Antall telt:{}</h6> */}
         <Barnegruppe
           key={uniqid()}
           label={label}

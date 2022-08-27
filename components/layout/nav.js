@@ -1,15 +1,41 @@
 import React from "react";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useAuth } from "../../context/auth-context";
 import { useRouter } from "next/router";
 
 function NavBar() {
+  // Custom hook for handling closing of menu when clicking outside
+  const useClickOutside = (handler) => {
+    let domNode = useRef();
+    useEffect(() => {
+      let checkHandler = (event) => {
+        if (domNode != null && !menuRef.current.contains(event.target)) {
+          handler();
+        }
+      };
+
+      document.addEventListener("mousedown", handler);
+
+      return () => {
+        document.removeEventListener("mousedown", handler);
+      };
+    });
+
+    return domNode;
+  };
+
+  // Calls the hook
+  let domNode = useClickOutside(() => {
+    setShowMenu(false);
+  });
+
   const { currentUser, logOut } = useAuth();
   console.log(currentUser);
   const router = useRouter();
 
   const [showMenu, setShowMenu] = useState(false);
+
   const showHamburgerMenuHandler = function () {
     setShowMenu(true);
     console.log("click");
@@ -17,9 +43,13 @@ function NavBar() {
       setShowMenu(false);
     }
   };
+
   return (
     <>
-      <nav className="bg-white px-2 sm:px-4 py-3 rounded dark:bg-gray-900 sticky top-0 z-50 h-auto">
+      <nav
+        ref={domNode}
+        className="bg-white px-2 sm:px-4 py-3 rounded dark:bg-gray-900 sticky top-0 z-50 h-auto"
+      >
         {/* <span>
           <p>Innlogget som:{currentUser.email}</p>
         </span> */}
