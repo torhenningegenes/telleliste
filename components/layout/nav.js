@@ -4,28 +4,29 @@ import { useState, useRef, useEffect } from "react";
 import { useAuth } from "../../context/auth-context";
 import { useRouter } from "next/router";
 
+const useClickOutside = (handler) => {
+  let domNode = useRef();
+
+  useEffect(() => {
+    let checkHandler = (event) => {
+      if (!domNode.current.contains(event.target)) {
+        handler();
+      }
+    };
+
+    document.addEventListener("mousedown", checkHandler);
+
+    return () => {
+      document.removeEventListener("mousedown", checkHandler);
+    };
+  });
+
+  return domNode;
+};
+
 function NavBar() {
   // Custom hook for handling closing of menu when clicking outside
-  const useClickOutside = (handler) => {
-    let domNode = useRef();
-    useEffect(() => {
-      let checkHandler = (event) => {
-        if (domNode != null && !menuRef.current.contains(event.target)) {
-          handler();
-        }
-      };
 
-      document.addEventListener("mousedown", handler);
-
-      return () => {
-        document.removeEventListener("mousedown", handler);
-      };
-    });
-
-    return domNode;
-  };
-
-  // Calls the hook
   let domNode = useClickOutside(() => {
     setShowMenu(false);
   });
