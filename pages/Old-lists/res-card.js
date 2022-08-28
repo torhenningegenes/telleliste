@@ -17,7 +17,7 @@ function ResCard(props) {
     return (
       <>
         <div className="container flex flex-col justify-center align-middle items-center">
-          <div className=" bg-sky-800 w-72 max-w-sm text-sky-100 px-1  rounded-r rounded-t">
+          <div className=" bg-sky-800 w-72 max-w-sm text-sky-100 px-1 rounded-tr rounded-tl">
             {avdeling}
           </div>
           <div className="bg-gray-50 text-gray-700 w-72 max-w-sm shadow rounded-br rounded-bl mb-2 h-auto flex flex-col justify-center align-middle">

@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { useAuth } from "../../context/auth-context";
 import { useRouter } from "next/router";
 
+// Custom hook for closing navbar when clicking outside the navbar
 const useClickOutside = (handler) => {
   let domNode = useRef();
 
@@ -25,8 +26,7 @@ const useClickOutside = (handler) => {
 };
 
 function NavBar() {
-  // Custom hook for handling closing of menu when clicking outside
-
+  //Calling custom hook
   let domNode = useClickOutside(() => {
     setShowMenu(false);
   });
@@ -49,7 +49,7 @@ function NavBar() {
     <>
       <nav
         ref={domNode}
-        className="bg-white px-2 sm:px-4 py-3 rounded dark:bg-gray-900 sticky top-0 z-50 h-auto"
+        className=" px-2 bg-transparent sm:px-4 py-3 rounded dark:bg-gray-900 sticky top-0 z-50 h-auto"
       >
         {/* <span>
           <p>Innlogget som:{currentUser.email}</p>
