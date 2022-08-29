@@ -8,7 +8,7 @@ function SearchResult(props) {
   if (res) {
     const [res0, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10] =
       res;
-    console.log("Log fra res destructuring: ", res0, res2, res3);
+    // console.log("Log fra res destructuring: ", res0, res2, res3);
 
     //console.log("Log fra search result: ", res.avdeling);
 
@@ -24,12 +24,14 @@ function SearchResult(props) {
         </pre> */}
 
         <div className="bg-gray-100 ">
-          <div>{res.length > 1 ? null : <p>Beklager ingen treff.</p>}</div>
+          <div>{res.length >= 1 ? null : <p>Beklager ingen treff.</p>}</div>
           <ul className="flex flex-col justify-center items-center p-0">
             {res ? (
               <>
+                <ResCard res={res0} />
                 <ResCard res={res1} />
-                <ResCard res={res2} /> <ResCard res={res3} />
+                <ResCard res={res2} />
+                <ResCard res={res3} />
                 <ResCard res={res4} />
                 <ResCard res={res5} />
               </>

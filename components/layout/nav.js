@@ -49,7 +49,7 @@ function NavBar() {
     <>
       <nav
         ref={domNode}
-        className=" px-2 bg-transparent sm:px-4 py-3 rounded dark:bg-gray-900 sticky top-0 z-50 h-auto"
+        className=" px-2 bg-white sm:px-4 py-3 rounded dark:bg-gray-900 sticky top-0 z-50 h-auto"
       >
         {/* <span>
           <p>Innlogget som:{currentUser.email}</p>

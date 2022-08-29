@@ -5,8 +5,8 @@ import { useState } from "react";
 function ResCard(props) {
   const [loading, setLoading] = useState(true);
   const { res, navn, avdeling, dato, klokkeslett } = props;
-  // console.log("log fra props: ", navn);
-  //console.log("log fra search-result", res);
+  console.log("log fra props: ", navn);
+  console.log("log fra search-result", res);
   if (res) {
     console.log("Fra res avdeling:", res[0].avdeling);
   }
@@ -25,8 +25,8 @@ function ResCard(props) {
               {res.map((e, i) => (
                 <li className="mb-1 text-gray-700">
                   {e.navn}
-                  <span>{e.dato}</span>
-                  <span>{e.klokkeslett}</span>
+                  <span className=" text-sm">{e.klokkeslett}</span>
+                  <span className="block text-sm">{e.dato}</span>
                 </li>
               ))}
             </ul>

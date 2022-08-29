@@ -58,7 +58,7 @@ function Kid(props) {
           key={uniqid()}
           className="list-group-item list-barn d-flex flex-row justify-content-between align-items-center text-muted mt-4 shadow border-0 rounded-1"
         >
-          <div>Ikke tilstedet</div>
+          <div>Ikke til stede</div>
           <div className="navnOgAvdeling">{navn}</div>
           <div className="navnOgAvdeling">{avdeling}</div>
         </li>

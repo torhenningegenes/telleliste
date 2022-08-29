@@ -23,7 +23,7 @@ function SearchBar(props: any) {
 
     function arrayTest(array: any) {
       array.forEach((element: any) => {
-        let firstValues = Object.values(element);
+        //let firstValues = Object.values(element);
 
         element.find(
           (obj: any) =>
@@ -80,7 +80,7 @@ function SearchBar(props: any) {
               placeholder="Søk"
               aria-label="Search"
               aria-describedby="button-addon2"
-              value={formState}
+              value={formState.trimEnd()}
               onChange={(e) => setFormState(e.target.value)}
             />
             <button
