@@ -92,9 +92,9 @@ const OldLists = () => {
           <NewCounting loading={loading} telling={telling9} />
           <NewCounting loading={loading} telling={telling10} />
         </div>
-        <pre>
+        {/* <pre>
           <React.Fragment>{JSON.stringify(telling1)}</React.Fragment>
-        </pre>
+        </pre> */}
       </div>
     </section>
   );

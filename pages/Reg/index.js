@@ -76,7 +76,17 @@ function RegKids() {
         </h1>
 
         <CurrentDate />
-        {/* <VelgAvdeling /> */}
+        {/* <h3 className="text-gray-600 uppercase">Velg avdeling</h3>
+        <div className="flex flex-row justify-between flex-wrap px-4">
+          <VelgAvdeling avdeling={1} />
+          <VelgAvdeling avdeling={2} />
+          <VelgAvdeling avdeling={3} />
+          <VelgAvdeling avdeling={4} />
+          <VelgAvdeling avdeling={5} />
+          <VelgAvdeling avdeling={6} />
+          <VelgAvdeling avdeling={7} />
+          <VelgAvdeling avdeling={8} />
+        </div> */}
         <div className="d-flex align-items-center justify-content-center flex-column">
           <DropdownAvdeling
             dbRef={dbRef}

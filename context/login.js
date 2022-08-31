@@ -14,7 +14,7 @@ function LoginUser() {
 
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const { currentUser } = useAuth;
+  const { currentUser } = useAuth();
 
   const notify = () =>
     toast.error(
@@ -49,9 +49,10 @@ function LoginUser() {
     } catch (e) {
       console.log("log fra e: ", e);
       setError("Failed to login");
-      console.log(error);
+      console.log("log fra error", error);
     }
-    error ? notify() : router.push("/home");
+
+    currentUser ? router.push("/home") : notify();
     setLoading(false);
   }
 
