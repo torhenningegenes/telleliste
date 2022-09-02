@@ -39,6 +39,7 @@ export async function signup(email, password) {
 export async function LogIn(email, password) {
   console.log("login function");
   const auth = getAuth();
+
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in

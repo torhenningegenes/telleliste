@@ -58,6 +58,8 @@ const OldLists = () => {
     telling8,
     telling9,
     telling10,
+    telling11,
+    telling12,
   ] = clean;
   //console.log("log fra telling", telling1, telling2, "Telling3: ", telling3);
 
@@ -91,6 +93,8 @@ const OldLists = () => {
           <NewCounting loading={loading} telling={telling8} />
           <NewCounting loading={loading} telling={telling9} />
           <NewCounting loading={loading} telling={telling10} />
+          <NewCounting loading={loading} telling={telling11} />
+          <NewCounting loading={loading} telling={telling12} />
         </div>
         {/* <pre>
           <React.Fragment>{JSON.stringify(telling1)}</React.Fragment>

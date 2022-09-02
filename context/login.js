@@ -1,9 +1,9 @@
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useAuth, LogIn } from "../context/auth-context";
+import { useAuth, LogIn, currentUser } from "../context/auth-context";
 import { useRouter } from "next/router";
 
 function LoginUser() {
@@ -14,7 +14,7 @@ function LoginUser() {
 
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const { currentUser } = useAuth();
+  //const { currentUser } = useAuth();
 
   const notify = () =>
     toast.error(
@@ -25,7 +25,7 @@ function LoginUser() {
         autoClose: 4000,
         hideProgressBar: false,
         closeOnClick: true,
-        pauseOnHover: true,
+        pauseOnHover: false,
         draggable: true,
         progress: undefined,
       }
@@ -43,6 +43,7 @@ function LoginUser() {
       setError("");
       setLoading(true);
       await LogIn(emailRef.current.value, passwordRef.current.value);
+      setLoading(false);
       console.log("Success");
 
       // Pass in e to get the error
@@ -51,17 +52,17 @@ function LoginUser() {
       setError("Failed to login");
       console.log("log fra error", error);
     }
-
-    currentUser ? router.push("/home") : notify();
-    setLoading(false);
+    router.push("/home");
+    console.log("logger curentUser: ", currentUser);
+    currentUser ? console.log("logged inn") : notify();
   }
 
   return (
     <>
       {loading ? <div className="spinner"></div> : null}
 
-      <div className="w-full max-w-xs flex flex-col items-center mx-auto">
-        <h3 className="text-gray-700">Logg inn</h3>
+      <div className="w-full max-w-xs flex flex-col items-center mx-auto mt-6">
+        <h3 className="text-gray-600">Logg inn</h3>
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <div className="mb-4">
             <label
@@ -97,7 +98,7 @@ function LoginUser() {
           </div>
           <div className="flex flex-col items-center justify-between">
             <button
-              className="bg-sky-800 hover:bg-sky-500 text-white font-bold py-2 px-4 rounded focus:ring-red-900 focus:shadow-outline active:bg-red-500"
+              className="bg-sky-800 text-sky-50 hover:bg-sky-500  font-bold py-2 px-4 rounded focus:ring-red-900 focus:shadow-outline active:bg-red-500"
               type="submit"
               onClick={handleSubmit}
             >

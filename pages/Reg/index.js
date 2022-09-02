@@ -76,19 +76,54 @@ function RegKids() {
         </h1>
 
         <CurrentDate />
-        {/* <h3 className="text-gray-600 uppercase">Velg avdeling</h3>
+
+        <h3 className="text-gray-600 uppercase">Velg avdeling</h3>
         <div className="flex flex-row justify-between flex-wrap px-4">
-          <VelgAvdeling avdeling={1} />
-          <VelgAvdeling avdeling={2} />
-          <VelgAvdeling avdeling={3} />
-          <VelgAvdeling avdeling={4} />
-          <VelgAvdeling avdeling={5} />
-          <VelgAvdeling avdeling={6} />
-          <VelgAvdeling avdeling={7} />
-          <VelgAvdeling avdeling={8} />
-        </div> */}
+          <div className="max-w-3xl mx-auto flex justify-between flex-row flex-wrap">
+            <VelgAvdeling
+              avdeling={1}
+              valgtAvdeling={valgtAvdeling}
+              setValgtAvdeling={setValgtAvdeling}
+            />
+            <VelgAvdeling
+              avdeling={2}
+              valgtAvdeling={valgtAvdeling}
+              setValgtAvdeling={setValgtAvdeling}
+            />{" "}
+            <VelgAvdeling
+              avdeling={3}
+              valgtAvdeling={valgtAvdeling}
+              setValgtAvdeling={setValgtAvdeling}
+            />{" "}
+            <VelgAvdeling
+              avdeling={4}
+              valgtAvdeling={valgtAvdeling}
+              setValgtAvdeling={setValgtAvdeling}
+            />{" "}
+            <VelgAvdeling
+              avdeling={5}
+              valgtAvdeling={valgtAvdeling}
+              setValgtAvdeling={setValgtAvdeling}
+            />{" "}
+            <VelgAvdeling
+              avdeling={6}
+              valgtAvdeling={valgtAvdeling}
+              setValgtAvdeling={setValgtAvdeling}
+            />{" "}
+            <VelgAvdeling
+              avdeling={7}
+              valgtAvdeling={valgtAvdeling}
+              setValgtAvdeling={setValgtAvdeling}
+            />{" "}
+            <VelgAvdeling
+              avdeling={8}
+              valgtAvdeling={valgtAvdeling}
+              setValgtAvdeling={setValgtAvdeling}
+            />
+          </div>
+        </div>
         <div className="d-flex align-items-center justify-content-center flex-column">
-          <DropdownAvdeling
+          {/* <DropdownAvdeling
             dbRef={dbRef}
             valgtAvdeling={valgtAvdeling}
             setValgtAvdeling={setValgtAvdeling}
@@ -96,7 +131,7 @@ function RegKids() {
             setClicked={setClicked}
             kidPresent={kidPresent}
             setKidPresent={setKidPresent}
-          />
+          /> */}
 
           <div className="flex flex-col justify-center align-center">
             <div className="bg-sky-500 w-auto  h-1 rounded-t  "></div>
