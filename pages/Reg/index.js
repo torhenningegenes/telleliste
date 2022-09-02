@@ -63,7 +63,7 @@ function RegKids() {
   // const avdelingArray = barn.filter((barn) => barn.avdeling === "Avdeling 8");
   //   console.log(avdelingArray);
 
-  const avdeling = "";
+  const avdeling = [1, 2, 3, 4, 5, 6, 7, 8];
   // Lage dynamiske paths basert på avdeling key.
   // Populate countlist based on avdeling key
   // When the user chooses department, remove
