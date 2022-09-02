@@ -10,6 +10,7 @@ import { AuthProvider } from "../context/auth-context";
 import NavBar from "../components/layout/nav";
 import ProtecedRoutes from "../components/proteced-routes";
 import Footer from "../components/layout/bg-color";
+import ScreenSize from "../components/layout/Screen-Size";
 
 function MyApp({ Component, pageProps }) {
   const noAuthRequired = ["/home", "/login-user", "/new-user"];
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <AuthProvider>
         <AppWrapper>
+          {/* <ScreenSize /> */}
           <Head>
             <title>Tellelisten for barnehage</title>
           </Head>
@@ -31,6 +33,7 @@ function MyApp({ Component, pageProps }) {
               <Component {...pageProps} />
             </ProtecedRoutes>
           )}
+          <Footer />
         </AppWrapper>
       </AuthProvider>
     </>
