@@ -77,7 +77,7 @@ function RegKids() {
 
         <CurrentDate />
 
-        <h3 className="text-gray-600 uppercase">Velg avdeling</h3>
+        <h3 className="text-gray-600 uppercase mt-4">Velg avdeling</h3>
         <div className="flex flex-row justify-between flex-wrap px-4">
           <div className="max-w-3xl mx-auto flex justify-between flex-row flex-wrap">
             <VelgAvdeling
