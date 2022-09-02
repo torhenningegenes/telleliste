@@ -6,7 +6,7 @@ import wave from "../img/Wave.svg";
 function Home(props) {
   const { currentUser } = useAuth();
   console.log(currentUser);
-
+  //Adder en kommentar bare for å sjekke
   return (
     <>
       <section className=" text-center bg-gray-50 p-3 shadow rounded-1 mx-auto h-screen min-w-min z-0">
