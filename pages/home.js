@@ -15,6 +15,7 @@ function Home(props) {
           src={waveMobile}
           layout="responsive"
           className="z-0 absolute top-0 left-0 min-h-screen"
+          alt="blue waves"
         />
       </div>
 
@@ -23,13 +24,14 @@ function Home(props) {
           src={wave}
           layout="responsive"
           className="z-0 absolute top-0 left-0 min-h-screen"
+          alt="blue waves"
         />
       </div>
 
       <div className="absolute top-32 md:top-60 left-0 z-0 min-w-full">
-        <section className="text-center bg-transparent p-3 shadow rounded-1 mx-auto h-screen min-w-min z-1 flex flex-col">
+        <section className="text-center bg-transparent p-3 mx-auto h-screen min-w-min z-1 flex flex-col">
           <h1 className="text-sky-100 uppercase tracking-wide z-10">
-            Velkommen til tellelista!
+            Velkommen til tellelisten!
           </h1>
           {/* <h1>{currentUser.email}</h1> */}
           <div className="flex flex-col max-h-44 justify-between align-middle items-center mt-6">

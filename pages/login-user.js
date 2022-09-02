@@ -12,6 +12,7 @@ function LoginPage() {
             src={waveMobile}
             layout="responsive"
             className="z-0 absolute top-0 left-0 min-h-screen"
+            alt="blue waves"
           />
         </div>
 
@@ -20,6 +21,7 @@ function LoginPage() {
             src={wave}
             layout="responsive"
             className="z-0 absolute top-0 left-0 min-h-screen"
+            alt="blue waves"
           />
         </div>
         {/* <container
