@@ -53,8 +53,28 @@ function LoginUser() {
       console.log("log fra error", error);
     }
     router.push("/home");
-    console.log("logger curentUser: ", currentUser);
-    currentUser ? console.log("logged inn") : notify();
+
+    // let bruker = new Promise((resolve, reject) => {
+    //   if (currentUser) {
+    //     resolve("Curretn User: ", currentUser);
+    //   } else {
+    //     reject("No current user.");
+    //   }
+    // });
+
+    // bruker.then((value) => {
+    //   console.log(value);
+    // });
+
+    // bruker
+    //   .catch((e) => {
+    //     console.log(reject, e);
+    //   })
+    //   .catch((e) => {
+    //     console.log(e);
+    //   });
+    // console.log("logger curentUser: ", currentUser);
+    // currentUser ? console.log("logged inn") : notify();
   }
 
   return (
@@ -99,7 +119,7 @@ function LoginUser() {
               </div>
               <div className="flex flex-col items-center justify-between ">
                 <button
-                  className="bg-sky-800 text-sky-50 hover:bg-sky-500  font-bold py-2 px-4 rounded focus:ring-red-900 focus:shadow-outline active:bg-red-500"
+                  className="bg-sky-800 text-sky-50 hover:bg-sky-500 py-2 px-4 rounded focus:ring-red-900 focus:shadow-outline active:bg-red-500 font-light"
                   type="submit"
                   onClick={handleSubmit}
                 >

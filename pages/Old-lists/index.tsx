@@ -67,7 +67,7 @@ const OldLists = () => {
     <section>
       <div className="container text-center bg-gray-50 shadow-lg h-auto flex flex-col justify-center">
         {loading ? (
-          <div className="spinner mt-20"></div>
+          <div className="spinner mt-16 mx-auto mb-4"></div>
         ) : (
           <div className="header mt-20">
             <h1 className=" text-gray-600 text-4xl uppercase tracking-wide mb-6 mt-4">

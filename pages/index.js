@@ -25,9 +25,9 @@ function Home() {
           <button className="center btn btn-lg mb-5 text-dark">Login</button>
         </Link>
 
-        <Link href={"/new-user"} passHref>
+        {/* <Link href={"/new-user"} passHref>
           <button className="center btn btn-lg text-dark">Ny bruker</button>
-        </Link>
+        </Link> */}
       </div>
     </>
   );

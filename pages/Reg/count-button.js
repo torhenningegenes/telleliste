@@ -6,7 +6,7 @@ function CountButton(props) {
   let [clicked, setClicked] = useState(false);
 
   const countContext = useAppContext();
-  const totalCounted = countContext.length;
+
   //console.log(totalCounted);
   // Adds a toast to notify user of how many kids has been counted.s
 
@@ -16,17 +16,22 @@ function CountButton(props) {
     if (clicked === true) {
       setClicked(false);
       countContext.pop({ navn: navn, avdeling: avdeling });
-      console.log(countContext);
+      // console.log(countContext);
+      // console.log(countContext.length);
     } else {
       setClicked(true);
       countContext.push({ navn: navn, avdeling: avdeling });
-      console.log(countContext);
+      // console.log(countContext);
+      // console.log(countContext.length);
     }
 
     // Pushing kids clicked to new array. Populate countlist from that array
   }
   return (
     <>
+      <p className="text-center text-gray-500">
+        Nr telt: {countContext.length}
+      </p>
       {clicked ? (
         <button
           className="w-16 h-16 rounded-full border-1 border-green-800 mr-1 ml-1 bg-green-300 text-green-800"
