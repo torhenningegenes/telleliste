@@ -14,7 +14,8 @@ function SearchBar(props: any) {
   const handleSubmit = (e: any) => {
     console.log("Click");
     e.preventDefault();
-    console.log(formState);
+    //console.log(formState);
+    //console.log(dbArr);
 
     // trying to make a function for searching the array
 
@@ -27,7 +28,7 @@ function SearchBar(props: any) {
 
         element.find(
           (obj: any) =>
-            obj.navn === `${formState}` || obj.avdeling === `${formState}`
+            obj.navn === `${formState}` || obj.avdeling == `${formState}`
         ) && searchRes
           ? searchRes.push(element)
           : console.log("No match");
@@ -43,31 +44,32 @@ function SearchBar(props: any) {
         //   console.log(element);
         // });
 
-        element.forEach((o: any) => {
-          // }
-          let values = Object.values(o);
-          let keys = Object.keys(o);
-          let dates = values[values.length - 1];
-          //searchRes = values;
-          //console.log(values);
-          // console.log(lastItem);
+        // element.forEach((o: any) => {
+        //   // }
+        //   let values = Object.values(o);
+        //   let keys = Object.keys(o);
+        //   let dates = values[values.length - 1];
+        //searchRes = values;
+        //console.log(values);
+        // console.log(lastItem);
 
-          // if (keys.includes("dato")) {
-          // console.log(o.dato);
-          // console.log(o.navn);
+        // if (keys.includes("dato")) {
+        // console.log(o.dato);
+        // console.log(o.navn);
 
-          // }
-          // if (searchRes.filter((e) => e.includes("Helene"))) {
-          console.log("log fra searchres", searchRes);
-          //   // console.log(o.dato);
-          // }
-        });
-        console.log("----------- ---------- --------");
+        // }
+        // if (searchRes.filter((e) => e.includes("Helene"))) {
+        //console.log("log fra searchres", searchRes);
+        //   // console.log(o.dato);
+        // }
+        // });
+        // console.log("----------- ---------- --------");
       });
       return searchRes;
     }
     arrayTest(dbArr);
     setRes(searchRes);
+    console.log(res);
   };
   return (
     <>

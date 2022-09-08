@@ -5,8 +5,8 @@ import { useState } from "react";
 function ResCard(props) {
   const [loading, setLoading] = useState(true);
   const { res, navn, avdeling, dato, klokkeslett } = props;
-  console.log("log fra props: ", navn);
-  console.log("log fra search-result", res);
+  //console.log("log fra props: ", navn);
+  // console.log("log fra search-result", res);
   if (res) {
     console.log("Fra res avdeling:", res[0].avdeling);
   }

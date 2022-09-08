@@ -10,7 +10,7 @@ function NewCounting(props: { loading: any; telling: any }) {
     const avdelingNavn: string = telling[0].avdeling;
     const klokkeSlett = telling[telling.length - 1];
     const antallTelt = telling.length - 1;
-    console.log(antallTelt);
+    //console.log(antallTelt);
 
     // console.log(klokkeSlett.klokkeslett);
     // console.log(telling);

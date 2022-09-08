@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
-import { useAuth } from "../../context/auth-context";
 import { useRouter } from "next/router";
+import { useAuth } from "../../context/auth-context";
 
 // Custom hook for closing navbar when clicking outside the navbar
 const useClickOutside = (handler) => {

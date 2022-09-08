@@ -8,8 +8,9 @@ function SearchResult(props) {
   if (res) {
     const [res0, res1, res2, res3, res4, res5, res6, res7, res8, res9, res10] =
       res;
-    // console.log("Log fra res destructuring: ", res0, res2, res3);
 
+    //console.log("Log fra res destructuring: ", res0, res2, res3, res10);
+    //console.log(res);
     //console.log("Log fra search result: ", res.avdeling);
 
     return (
