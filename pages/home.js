@@ -52,6 +52,11 @@ function Home(props) {
                   Se gamlelister
                 </button>
               </Link>
+              <Link href={"/DevPage"} passHref className="block z-20">
+                <button className=" mt-2 bg-sky-50 text-sky-900 hover:bg-sky-500 hover:text-sky-50 font-light py-4 px-4  focus:ring-red-900 focus:shadow-outline active:bg-red-500 rounded-full">
+                  Ny knapp til dev
+                </button>
+              </Link>
             </div>
           </section>
         </div>
