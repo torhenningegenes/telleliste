@@ -18,7 +18,7 @@ function Home() {
         "
       >
         <h1 className="text-center main__header shadow-lg mb-5 telle--lista--heading1">
-          Velkommen til Tellelista for barnehage
+          Velkommen til Tellelista for barnehage 2023
         </h1>
 
         <Link href={"/login-user"} passHref>
